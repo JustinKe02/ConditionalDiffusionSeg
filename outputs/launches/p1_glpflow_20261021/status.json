@@ -1,0 +1,13 @@
+{
+  "stage": "completed",
+  "pid": 88002,
+  "plan_sha256": "5ac488e4163f0f5fe64e12bd951c0d564cbe8b81f460d027933f93b6f0bafbcd",
+  "updated": "2026-10-22T06:15:56+0800",
+  "started_arm": "2026-10-22T03:57:01+0800",
+  "completed_E0": "2026-10-21T23:57:24+0800",
+  "completed_E1": "2026-10-22T01:45:44+0800",
+  "completed_E2": "2026-10-22T03:57:01+0800",
+  "completed_E3": "2026-10-22T06:08:28+0800",
+  "screening_passed": false,
+  "finished": "2026-10-22T06:15:56+0800"
+}

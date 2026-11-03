@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-17T03:49:44.953040+00:00",
+  "project_root": "/root/autodl-tmp/ConditionalDiffusionSeg",
+  "measurement": {
+    "disk_total_gib": 50.0,
+    "disk_used_gib": 11.285171508789062,
+    "disk_free_gib": 38.71482849121094,
+    "project_allocated_gib": 0.025909423828125
+  },
+  "assumptions": {
+    "additional_runs": 24,
+    "parameters_per_model": 5132676,
+    "parameter_count_measured": false,
+    "tensorboard_gib_per_run": 0.25,
+    "prediction_gib_per_run": 0.25,
+    "metadata_gib_per_run": 0.03125,
+    "shared_debug_reports_and_misc_gib": 2,
+    "reserve_gib": 8.0,
+    "project_cap_gib": 26
+  },
+  "estimate": {
+    "per_run_gib": 0.6077328324317932,
+    "additional_persistent_gib": 16.585587978363037,
+    "atomic_write_extra_gib": 0.05736212432384491,
+    "required_free_including_reserve_gib": 24.642950102686882
+  },
+  "capacity_ok_under_assumptions": true,
+  "disk_budget_ok": true,
+  "project_cap_ok": true,
+  "limitations": [
+    "Estimate uses a configurable parameter assumption and size formulas, not measured sizes of all future artifacts.",
+    "Single-run runtime checks are implemented in trainer; this script only estimates total planned capacity.",
+    "Concurrent disk writers and extra reruns can invalidate this snapshot."
+  ]
+}

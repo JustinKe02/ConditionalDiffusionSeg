@@ -1,0 +1,2580 @@
+{
+  "scope": "single training seed42, historically developed val25; no new test inference",
+  "statistical_limitations": [
+    "Image-level resampling assumes independent images; parent/sample groups unverified",
+    "Descriptive post-development intervals, not confirmatory significance or equivalence",
+    "No estimate of training-seed variation; no multiplicity correction"
+  ],
+  "records": {
+    "R": {
+      "meta": {
+        "arm": "R",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt",
+        "checkpoint_sha256": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+        "epoch": 60
+      },
+      "finished_unix": 1793440694.810718,
+      "seconds": 1111.4802458286285,
+      "images": 25,
+      "all_final_counts_match": true
+    },
+    "I": {
+      "meta": {
+        "arm": "I",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_i/checkpoints/best.pt",
+        "checkpoint_sha256": "f2e26093db1f80840d521a248db1ef8ec95fce6c60019e3753168086b3a799d6",
+        "epoch": 100
+      },
+      "finished_unix": 1793441545.7901766,
+      "seconds": 845.6468226909637,
+      "images": 25,
+      "all_final_counts_match": true
+    },
+    "N": {
+      "meta": {
+        "arm": "N",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_n/checkpoints/best.pt",
+        "checkpoint_sha256": "11fe3b1ec14094dd6855704b342034c7eff2f159bae949daf3e104e49292c869",
+        "epoch": 50
+      },
+      "finished_unix": 1793442112.959093,
+      "seconds": 561.417133808136,
+      "images": 25,
+      "all_final_counts_match": true
+    },
+    "F": {
+      "meta": {
+        "arm": "F",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_f/checkpoints/best.pt",
+        "checkpoint_sha256": "12eb32498309c180fbade26310bdc17160273cb93df7e828d63452ae048d3699",
+        "epoch": 50
+      },
+      "finished_unix": 1793442682.8449287,
+      "seconds": 564.321781873703,
+      "images": 25,
+      "all_final_counts_match": true
+    }
+  },
+  "point_fraction": {
+    "R": {
+      "miou": 0.8855659394175421,
+      "boundary_f1": 0.740856574148706,
+      "thin_mean_iou": 0.780080752475478
+    },
+    "I": {
+      "miou": 0.8991949105679575,
+      "boundary_f1": 0.6658143535240785,
+      "thin_mean_iou": 0.8099275412942397
+    },
+    "N": {
+      "miou": 0.886189498881489,
+      "boundary_f1": 0.7360630555221547,
+      "thin_mean_iou": 0.7817442185054021
+    },
+    "F": {
+      "miou": 0.8814719698505834,
+      "boundary_f1": 0.7209620605622927,
+      "thin_mean_iou": 0.7731319202535594
+    }
+  },
+  "contrasts": {
+    "R-I": {
+      "differences": {
+        "miou": {
+          "point_pp": -1.3628971150415392,
+          "image_bootstrap_95_interval_pp": [
+            -3.1187857986976106,
+            1.0386042510042734
+          ]
+        },
+        "boundary_f1": {
+          "point_pp": 7.504222062462751,
+          "image_bootstrap_95_interval_pp": [
+            1.8123681427317104,
+            13.512978013819977
+          ]
+        },
+        "thin_mean_iou": {
+          "point_pp": -2.9846788818761683,
+          "image_bootstrap_95_interval_pp": [
+            -6.893908445661194,
+            1.9664554201600102
+          ]
+        }
+      },
+      "practical_gate_met": false
+    },
+    "R-N": {
+      "differences": {
+        "miou": {
+          "point_pp": -0.06235594639468767,
+          "image_bootstrap_95_interval_pp": [
+            -0.26010167422286984,
+            0.16683185808831824
+          ]
+        },
+        "boundary_f1": {
+          "point_pp": 0.47935186265513074,
+          "image_bootstrap_95_interval_pp": [
+            -1.763510349199273,
+            2.2346448649136494
+          ]
+        },
+        "thin_mean_iou": {
+          "point_pp": -0.16634660299240656,
+          "image_bootstrap_95_interval_pp": [
+            -0.5497339658500094,
+            0.2924295502715933
+          ]
+        }
+      },
+      "practical_gate_met": null
+    },
+    "N-F": {
+      "differences": {
+        "miou": {
+          "point_pp": 0.47175290309056095,
+          "image_bootstrap_95_interval_pp": [
+            0.057317539585961266,
+            0.8502423831248034
+          ]
+        },
+        "boundary_f1": {
+          "point_pp": 1.5100994959861946,
+          "image_bootstrap_95_interval_pp": [
+            0.05978033076701474,
+            2.980457440161976
+          ]
+        },
+        "thin_mean_iou": {
+          "point_pp": 0.8612298251842732,
+          "image_bootstrap_95_interval_pp": [
+            0.10377838252591035,
+            1.4885716945701033
+          ]
+        }
+      },
+      "practical_gate_met": true
+    },
+    "N-R": {
+      "differences": {
+        "miou": {
+          "point_pp": 0.06235594639468767,
+          "image_bootstrap_95_interval_pp": [
+            -0.16683185808831824,
+            0.26010167422286984
+          ]
+        },
+        "boundary_f1": {
+          "point_pp": -0.47935186265513074,
+          "image_bootstrap_95_interval_pp": [
+            -2.23464486491365,
+            1.7635103491992716
+          ]
+        },
+        "thin_mean_iou": {
+          "point_pp": 0.16634660299240656,
+          "image_bootstrap_95_interval_pp": [
+            -0.29242955027159345,
+            0.5497339658500093
+          ]
+        }
+      },
+      "practical_gate_met": true
+    }
+  },
+  "trajectories": {
+    "R": {
+      "1": {
+        "miou_4class": 0.8839745618317019,
+        "miou_foreground": 0.8463842496435241,
+        "iou_background": 0.996745498396235,
+        "f1_background": 0.9983700969370514,
+        "iou_monolayer": 0.7690747068110414,
+        "f1_monolayer": 0.8694654938540003,
+        "iou_fewlayer": 0.7849103528818463,
+        "f1_fewlayer": 0.8794955462211991,
+        "iou_multilayer": 0.9851676892376848,
+        "f1_multilayer": 0.99252843432687,
+        "precision_background": 0.9984395999681578,
+        "recall_background": 0.9983006035817131,
+        "precision_monolayer": 0.7807261787334149,
+        "recall_monolayer": 0.9809643914526613,
+        "precision_fewlayer": 0.9641865257268433,
+        "recall_fewlayer": 0.8084812105063579,
+        "precision_multilayer": 0.9932850984592347,
+        "recall_multilayer": 0.991772922139284,
+        "thin_mean_iou": 0.7769925298464438,
+        "few_to_mono_rate": 0.178295484960668,
+        "mono_to_background_rate": 0.008500675806140182,
+        "multi_to_few_rate": 0.003070580870474886,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.6108953394354071,
+            "boundary_f1_monolayer": 0.5832730884789905,
+            "boundary_f1_fewlayer": 0.5004279011010152,
+            "boundary_f1_multilayer": 0.6000819340760203,
+            "boundary_f1_foreground": 0.5612609745520087
+          },
+          "2": {
+            "boundary_f1_background": 0.7762617108520153,
+            "boundary_f1_monolayer": 0.722968495969343,
+            "boundary_f1_fewlayer": 0.6627697413057226,
+            "boundary_f1_multilayer": 0.776566592643067,
+            "boundary_f1_foreground": 0.7207682766393776
+          },
+          "4": {
+            "boundary_f1_background": 0.8824274369589904,
+            "boundary_f1_monolayer": 0.8144129335583157,
+            "boundary_f1_fewlayer": 0.7789354330322239,
+            "boundary_f1_multilayer": 0.8969045609887157,
+            "boundary_f1_foreground": 0.8300843091930851
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.46907187427689184,
+              0.15029332705476092,
+              0.11231198407778394,
+              0.19235439696419732
+            ],
+            "foreground": 0.1516532360322474
+          },
+          "2": {
+            "per_class": [
+              0.5777923055126032,
+              0.27028093520842694,
+              0.21659460942877581,
+              0.31823761379214033
+            ],
+            "foreground": 0.268371052809781
+          },
+          "4": {
+            "per_class": [
+              0.7112728868626067,
+              0.4295021248268747,
+              0.36704203567675614,
+              0.4938065790748518
+            ],
+            "foreground": 0.4301169131928275
+          }
+        }
+      },
+      "2": {
+        "miou_4class": 0.8846600053479188,
+        "miou_foreground": 0.8472905886671386,
+        "iou_background": 0.9967682553902592,
+        "f1_background": 0.9983815124258828,
+        "iou_monolayer": 0.7703513176462866,
+        "f1_monolayer": 0.8702807289916696,
+        "iou_fewlayer": 0.7862446583465724,
+        "f1_fewlayer": 0.8803325509444552,
+        "iou_multilayer": 0.9852757900085567,
+        "f1_multilayer": 0.9925832924243841,
+        "precision_background": 0.9984694259364696,
+        "recall_background": 0.9982936143951988,
+        "precision_monolayer": 0.7813701971164695,
+        "recall_monolayer": 0.9820231544056124,
+        "precision_fewlayer": 0.9645274577962567,
+        "recall_fewlayer": 0.8096565363729045,
+        "precision_multilayer": 0.9933551713207798,
+        "recall_multilayer": 0.9918126121615647,
+        "thin_mean_iou": 0.7782979879964296,
+        "few_to_mono_rate": 0.17786051323383026,
+        "mono_to_background_rate": 0.007857050910729227,
+        "multi_to_few_rate": 0.0030517969691452747,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.6125505723140905,
+            "boundary_f1_monolayer": 0.5937179665397951,
+            "boundary_f1_fewlayer": 0.5146999555051154,
+            "boundary_f1_multilayer": 0.6033607322267658,
+            "boundary_f1_foreground": 0.5705928847572254
+          },
+          "2": {
+            "boundary_f1_background": 0.7792899181737667,
+            "boundary_f1_monolayer": 0.7349296530475405,
+            "boundary_f1_fewlayer": 0.6757926417618787,
+            "boundary_f1_multilayer": 0.7814480233666231,
+            "boundary_f1_foreground": 0.7307234393920141
+          },
+          "4": {
+            "boundary_f1_background": 0.8844088843778543,
+            "boundary_f1_monolayer": 0.8237978574943886,
+            "boundary_f1_fewlayer": 0.786912480843967,
+            "boundary_f1_multilayer": 0.8985789409486321,
+            "boundary_f1_foreground": 0.8364297597623293
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.46896272805224953,
+              0.15261836090019032,
+              0.1160755186178915,
+              0.19337473298547045
+            ],
+            "foreground": 0.1540228708345174
+          },
+          "2": {
+            "per_class": [
+              0.5781756001566665,
+              0.27578140444132054,
+              0.22404509925362,
+              0.3200682038307573
+            ],
+            "foreground": 0.2732982358418993
+          },
+          "4": {
+            "per_class": [
+              0.7121757106968983,
+              0.43913988855572533,
+              0.3774543535510842,
+              0.4968603256646735
+            ],
+            "foreground": 0.43781818925716104
+          }
+        }
+      },
+      "4": {
+        "miou_4class": 0.8855659394175421,
+        "miou_foreground": 0.8484950378836978,
+        "iou_background": 0.9967786440190749,
+        "f1_background": 0.9983867235406518,
+        "iou_monolayer": 0.7720856946889648,
+        "f1_monolayer": 0.8713864086854792,
+        "iou_fewlayer": 0.7880758102619914,
+        "f1_fewlayer": 0.8814791920332744,
+        "iou_multilayer": 0.9853236087001377,
+        "f1_multilayer": 0.9926075571581645,
+        "precision_background": 0.9985070477168776,
+        "recall_background": 0.9982664283600411,
+        "precision_monolayer": 0.7827748433227466,
+        "recall_monolayer": 0.9826209210272253,
+        "precision_fewlayer": 0.9644012734736198,
+        "recall_fewlayer": 0.8116878625390921,
+        "precision_multilayer": 0.9933401410926355,
+        "recall_multilayer": 0.9918760529821611,
+        "thin_mean_iou": 0.780080752475478,
+        "few_to_mono_rate": 0.17643585096572745,
+        "mono_to_background_rate": 0.007064185492694858,
+        "multi_to_few_rate": 0.0030513454330556205,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.6154530495738997,
+            "boundary_f1_monolayer": 0.6093039435535927,
+            "boundary_f1_fewlayer": 0.5294966537782925,
+            "boundary_f1_multilayer": 0.6069184486350987,
+            "boundary_f1_foreground": 0.5819063486556613
+          },
+          "2": {
+            "boundary_f1_background": 0.7799839733982904,
+            "boundary_f1_monolayer": 0.7497859105472785,
+            "boundary_f1_fewlayer": 0.6891514555838837,
+            "boundary_f1_multilayer": 0.7836323563149561,
+            "boundary_f1_foreground": 0.740856574148706
+          },
+          "4": {
+            "boundary_f1_background": 0.8838621315839007,
+            "boundary_f1_monolayer": 0.8342601692122593,
+            "boundary_f1_fewlayer": 0.796152429839835,
+            "boundary_f1_multilayer": 0.8997001270069694,
+            "boundary_f1_foreground": 0.8433709086863547
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.46906978099920327,
+              0.156266289007563,
+              0.1205063748685594,
+              0.19495959729765533
+            ],
+            "foreground": 0.15724408705792592
+          },
+          "2": {
+            "per_class": [
+              0.5789958378291781,
+              0.28512238971096665,
+              0.2317898555006568,
+              0.32224411153845445
+            ],
+            "foreground": 0.27971878558335933
+          },
+          "4": {
+            "per_class": [
+              0.713000221737253,
+              0.45138100039566553,
+              0.38744165231283206,
+              0.49913075439534094
+            ],
+            "foreground": 0.44598446903461286
+          }
+        }
+      }
+    },
+    "I": {
+      "1": {
+        "miou_4class": 0.8996452868853161,
+        "miou_foreground": 0.8673120389998586,
+        "iou_background": 0.9966450305416884,
+        "f1_background": 0.9983196965875294,
+        "iou_monolayer": 0.8150707112881124,
+        "f1_monolayer": 0.8981145541262975,
+        "iou_fewlayer": 0.8062547012893452,
+        "f1_fewlayer": 0.8927364459882899,
+        "iou_multilayer": 0.9806107044221184,
+        "f1_multilayer": 0.9902104459323626,
+        "precision_background": 0.9984957282700428,
+        "recall_background": 0.9981437269617488,
+        "precision_monolayer": 0.8288320040497675,
+        "recall_monolayer": 0.9800363648065907,
+        "precision_fewlayer": 0.9627279552827812,
+        "recall_fewlayer": 0.832232143125656,
+        "precision_multilayer": 0.9885243661975254,
+        "recall_multilayer": 0.99190228722897,
+        "thin_mean_iou": 0.8106627062887288,
+        "few_to_mono_rate": 0.12876502750765575,
+        "mono_to_background_rate": 0.008841797000707988,
+        "multi_to_few_rate": 0.0033415025242673558,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.594157192311593,
+            "boundary_f1_monolayer": 0.5219239263326461,
+            "boundary_f1_fewlayer": 0.40955263548176263,
+            "boundary_f1_multilayer": 0.574586233044143,
+            "boundary_f1_foreground": 0.5020209316195173
+          },
+          "2": {
+            "boundary_f1_background": 0.7682596487541632,
+            "boundary_f1_monolayer": 0.6577712558745025,
+            "boundary_f1_fewlayer": 0.562967548373142,
+            "boundary_f1_multilayer": 0.7510983893046621,
+            "boundary_f1_foreground": 0.6572790645174355
+          },
+          "4": {
+            "boundary_f1_background": 0.8824592473730958,
+            "boundary_f1_monolayer": 0.7374206883644406,
+            "boundary_f1_fewlayer": 0.6758002192094541,
+            "boundary_f1_multilayer": 0.8757964723779126,
+            "boundary_f1_foreground": 0.763005793317269
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.45998671070751035,
+              0.12532939902267629,
+              0.08930637707616125,
+              0.18263823691673362
+            ],
+            "foreground": 0.1324246710051904
+          },
+          "2": {
+            "per_class": [
+              0.567202141619421,
+              0.23513878180416345,
+              0.17445128879851685,
+              0.3031169974751332
+            ],
+            "foreground": 0.2375690226926045
+          },
+          "4": {
+            "per_class": [
+              0.7028361943811834,
+              0.3844343794839539,
+              0.30823090592721486,
+              0.4742634352079879
+            ],
+            "foreground": 0.3889762402063856
+          }
+        }
+      },
+      "2": {
+        "miou_4class": 0.8989444897233971,
+        "miou_foreground": 0.8664184697496303,
+        "iou_background": 0.9965225496446974,
+        "f1_background": 0.9982582463914964,
+        "iou_monolayer": 0.8141735620895588,
+        "f1_monolayer": 0.897569647252269,
+        "iou_fewlayer": 0.8048270070807759,
+        "f1_fewlayer": 0.8918605538627731,
+        "iou_multilayer": 0.9802548400785566,
+        "f1_multilayer": 0.9900289803504987,
+        "precision_background": 0.9983640253565669,
+        "recall_background": 0.9981524898391005,
+        "precision_monolayer": 0.8280800908967898,
+        "recall_monolayer": 0.979790178284096,
+        "precision_fewlayer": 0.9628268586174561,
+        "recall_fewlayer": 0.8306374290573689,
+        "precision_multilayer": 0.9885401774682914,
+        "recall_multilayer": 0.9915222744559171,
+        "thin_mean_iou": 0.8095002845851673,
+        "few_to_mono_rate": 0.12895066283293724,
+        "mono_to_background_rate": 0.009033677672652379,
+        "multi_to_few_rate": 0.003335181019012198,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.5818747274842456,
+            "boundary_f1_monolayer": 0.5203903222479764,
+            "boundary_f1_fewlayer": 0.41198372153185375,
+            "boundary_f1_multilayer": 0.5643932679221215,
+            "boundary_f1_foreground": 0.49892243723398394
+          },
+          "2": {
+            "boundary_f1_background": 0.7626972869684453,
+            "boundary_f1_monolayer": 0.6647246677233636,
+            "boundary_f1_fewlayer": 0.5685289976336436,
+            "boundary_f1_multilayer": 0.7464659646200075,
+            "boundary_f1_foreground": 0.6599065433256716
+          },
+          "4": {
+            "boundary_f1_background": 0.8847069718727036,
+            "boundary_f1_monolayer": 0.7507173874941605,
+            "boundary_f1_fewlayer": 0.688422733218994,
+            "boundary_f1_multilayer": 0.8762630164513542,
+            "boundary_f1_foreground": 0.771801045721503
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.45189711416863826,
+              0.11839559778169469,
+              0.09003463992707383,
+              0.17939285084272816
+            ],
+            "foreground": 0.1292743628504989
+          },
+          "2": {
+            "per_class": [
+              0.5583392397275507,
+              0.22756055546466755,
+              0.17380736920501957,
+              0.29638145133448884
+            ],
+            "foreground": 0.23258312533472533
+          },
+          "4": {
+            "per_class": [
+              0.6957153708051375,
+              0.3766438203499387,
+              0.3050395916754661,
+              0.46648549613325646
+            ],
+            "foreground": 0.3827229693862204
+          }
+        }
+      },
+      "4": {
+        "miou_4class": 0.8991949105679575,
+        "miou_foreground": 0.8667444714248393,
+        "iou_background": 0.996546227997312,
+        "f1_background": 0.9982701267046782,
+        "iou_monolayer": 0.814467430859354,
+        "f1_monolayer": 0.8977481954290161,
+        "iou_fewlayer": 0.8053876517291255,
+        "f1_fewlayer": 0.8922046752205917,
+        "iou_multilayer": 0.9803783316860388,
+        "f1_multilayer": 0.9900919597028434,
+        "precision_background": 0.9983688531673867,
+        "recall_background": 0.9981714197657172,
+        "precision_monolayer": 0.8283633838348627,
+        "recall_monolayer": 0.9798191414043895,
+        "precision_fewlayer": 0.9624703320907094,
+        "recall_fewlayer": 0.8315005376316159,
+        "precision_multilayer": 0.988711247214757,
+        "recall_multilayer": 0.9914765338500351,
+        "thin_mean_iou": 0.8099275412942397,
+        "few_to_mono_rate": 0.12884759285115355,
+        "mono_to_background_rate": 0.009019196112505632,
+        "multi_to_few_rate": 0.003354958299739048,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.5814808074304217,
+            "boundary_f1_monolayer": 0.5292656609316458,
+            "boundary_f1_fewlayer": 0.4142411025929291,
+            "boundary_f1_multilayer": 0.5671899638996459,
+            "boundary_f1_foreground": 0.5035655758080736
+          },
+          "2": {
+            "boundary_f1_background": 0.7634063588110164,
+            "boundary_f1_monolayer": 0.6727318769935396,
+            "boundary_f1_fewlayer": 0.5735305309509778,
+            "boundary_f1_multilayer": 0.7511806526277179,
+            "boundary_f1_foreground": 0.6658143535240785
+          },
+          "4": {
+            "boundary_f1_background": 0.8838471454361975,
+            "boundary_f1_monolayer": 0.7580020273507642,
+            "boundary_f1_fewlayer": 0.6933297692635396,
+            "boundary_f1_multilayer": 0.8791369952397221,
+            "boundary_f1_foreground": 0.7768229306180086
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.45403704263133843,
+              0.12272185616150287,
+              0.09066876568695885,
+              0.18061951558531816
+            ],
+            "foreground": 0.13133671247792664
+          },
+          "2": {
+            "per_class": [
+              0.5599220875522855,
+              0.2340892573022452,
+              0.17464479987009823,
+              0.29822991195389037
+            ],
+            "foreground": 0.23565465637541128
+          },
+          "4": {
+            "per_class": [
+              0.6971649960737216,
+              0.3846156028690757,
+              0.3075427301545802,
+              0.4692394334874948
+            ],
+            "foreground": 0.38713258883705026
+          }
+        }
+      }
+    },
+    "N": {
+      "1": {
+        "miou_4class": 0.8842007492921296,
+        "miou_foreground": 0.8467413556156475,
+        "iou_background": 0.9965789303215756,
+        "f1_background": 0.9982865342178717,
+        "iou_monolayer": 0.7717616817149308,
+        "f1_monolayer": 0.8711800121649815,
+        "iou_fewlayer": 0.7843644120635813,
+        "f1_fewlayer": 0.8791527187616119,
+        "iou_multilayer": 0.9840979730684307,
+        "f1_multilayer": 0.9919852612383971,
+        "precision_background": 0.9984718627052374,
+        "recall_background": 0.9981012745161686,
+        "precision_monolayer": 0.7853818634062039,
+        "recall_monolayer": 0.9780230256806334,
+        "precision_fewlayer": 0.9637108840942831,
+        "recall_fewlayer": 0.808236248427636,
+        "precision_multilayer": 0.9916384800568935,
+        "recall_multilayer": 0.9923322850471475,
+        "thin_mean_iou": 0.778063046889256,
+        "few_to_mono_rate": 0.1723507802288263,
+        "mono_to_background_rate": 0.010339431679217352,
+        "multi_to_few_rate": 0.0028952494068621927,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.5912021592621968,
+            "boundary_f1_monolayer": 0.5886979785218311,
+            "boundary_f1_fewlayer": 0.47386147230997167,
+            "boundary_f1_multilayer": 0.5748699700617762,
+            "boundary_f1_foreground": 0.5458098069645264
+          },
+          "2": {
+            "boundary_f1_background": 0.7599076761896972,
+            "boundary_f1_monolayer": 0.737349351399223,
+            "boundary_f1_fewlayer": 0.643796015774533,
+            "boundary_f1_multilayer": 0.7554248040399807,
+            "boundary_f1_foreground": 0.7121900570712455
+          },
+          "4": {
+            "boundary_f1_background": 0.874186533983372,
+            "boundary_f1_monolayer": 0.8349033467622883,
+            "boundary_f1_fewlayer": 0.7794216570326159,
+            "boundary_f1_multilayer": 0.8829445103518241,
+            "boundary_f1_foreground": 0.8324231713822426
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.4641893846861874,
+              0.14066166704946026,
+              0.1005181263518094,
+              0.18721363843583042
+            ],
+            "foreground": 0.1427978106123667
+          },
+          "2": {
+            "per_class": [
+              0.569531559618484,
+              0.2654434763181412,
+              0.1994050653674453,
+              0.3051679713069794
+            ],
+            "foreground": 0.256672170997522
+          },
+          "4": {
+            "per_class": [
+              0.7027305216184941,
+              0.43075807362530166,
+              0.3496750024746004,
+              0.476537740388604
+            ],
+            "foreground": 0.41899027216283535
+          }
+        }
+      },
+      "2": {
+        "miou_4class": 0.8852332390699714,
+        "miou_foreground": 0.8481066753810271,
+        "iou_background": 0.9966129301368044,
+        "f1_background": 0.9983035921424372,
+        "iou_monolayer": 0.7727877715421653,
+        "f1_monolayer": 0.8718333733427208,
+        "iou_fewlayer": 0.7870577184674122,
+        "f1_fewlayer": 0.8808419675917306,
+        "iou_multilayer": 0.9844745361335038,
+        "f1_multilayer": 0.9921765366177258,
+        "precision_background": 0.9985113806501918,
+        "recall_background": 0.9980958900975548,
+        "precision_monolayer": 0.7854521656024042,
+        "recall_monolayer": 0.9795620937117848,
+        "precision_fewlayer": 0.9629455675648675,
+        "recall_fewlayer": 0.8116391981975603,
+        "precision_multilayer": 0.9921811286962465,
+        "recall_multilayer": 0.9921719445817114,
+        "thin_mean_iou": 0.7799227450047888,
+        "few_to_mono_rate": 0.17241256753886108,
+        "mono_to_background_rate": 0.009426288858853061,
+        "multi_to_few_rate": 0.0030461527680245982,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.5921658635135209,
+            "boundary_f1_monolayer": 0.5924252411927738,
+            "boundary_f1_fewlayer": 0.48453232574867805,
+            "boundary_f1_multilayer": 0.5787735168745392,
+            "boundary_f1_foreground": 0.551910361271997
+          },
+          "2": {
+            "boundary_f1_background": 0.7626859212452405,
+            "boundary_f1_monolayer": 0.7469441807697358,
+            "boundary_f1_fewlayer": 0.65894204956842,
+            "boundary_f1_multilayer": 0.7610214550842929,
+            "boundary_f1_foreground": 0.7223025618074829
+          },
+          "4": {
+            "boundary_f1_background": 0.8764936880870862,
+            "boundary_f1_monolayer": 0.8427549740117453,
+            "boundary_f1_fewlayer": 0.7935017275953945,
+            "boundary_f1_multilayer": 0.8875957383747022,
+            "boundary_f1_foreground": 0.8412841466606139
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.464397012651932,
+              0.14225368990792706,
+              0.10260367844328797,
+              0.1884384236128939
+            ],
+            "foreground": 0.14443193065470297
+          },
+          "2": {
+            "per_class": [
+              0.5699541260149276,
+              0.26767685233298133,
+              0.20497381266255746,
+              0.3074384980971284
+            ],
+            "foreground": 0.26002972103088906
+          },
+          "4": {
+            "per_class": [
+              0.7034586383969976,
+              0.43602616227682517,
+              0.361291993772906,
+              0.48037512699611845
+            ],
+            "foreground": 0.4258977610152832
+          }
+        }
+      },
+      "4": {
+        "miou_4class": 0.886189498881489,
+        "miou_foreground": 0.8493738749817314,
+        "iou_background": 0.9966363705807619,
+        "f1_background": 0.9983153520246355,
+        "iou_monolayer": 0.77441548921812,
+        "f1_monolayer": 0.8728682700570418,
+        "iou_fewlayer": 0.7890729477926842,
+        "f1_fewlayer": 0.8821025981821744,
+        "iou_multilayer": 0.98463318793439,
+        "f1_multilayer": 0.9922571021390589,
+        "precision_background": 0.9985254109554432,
+        "recall_background": 0.998105381455072,
+        "precision_monolayer": 0.7862983076929526,
+        "recall_monolayer": 0.9808589978760378,
+        "precision_fewlayer": 0.9624252311741566,
+        "recall_fewlayer": 0.8141544338272946,
+        "precision_multilayer": 0.9925208016911244,
+        "recall_multilayer": 0.991993542672689,
+        "thin_mean_iou": 0.7817442185054021,
+        "few_to_mono_rate": 0.1717692686870388,
+        "mono_to_background_rate": 0.008438324644397246,
+        "multi_to_few_rate": 0.003130183634309229,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.5966621041407472,
+            "boundary_f1_monolayer": 0.6077593934714416,
+            "boundary_f1_fewlayer": 0.5008755644200784,
+            "boundary_f1_multilayer": 0.5833829187716322,
+            "boundary_f1_foreground": 0.5640059588877174
+          },
+          "2": {
+            "boundary_f1_background": 0.7670538919181498,
+            "boundary_f1_monolayer": 0.7630327573372043,
+            "boundary_f1_fewlayer": 0.6791234997336014,
+            "boundary_f1_multilayer": 0.7660329094956584,
+            "boundary_f1_foreground": 0.7360630555221547
+          },
+          "4": {
+            "boundary_f1_background": 0.8788440240624726,
+            "boundary_f1_monolayer": 0.8539594282186818,
+            "boundary_f1_fewlayer": 0.8073863869601988,
+            "boundary_f1_multilayer": 0.8907622585630331,
+            "boundary_f1_foreground": 0.8507026912473047
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.4651097753998233,
+              0.14548900304224227,
+              0.10501692135788873,
+              0.18955093712461535
+            ],
+            "foreground": 0.14668562050824877
+          },
+          "2": {
+            "per_class": [
+              0.5713672389271042,
+              0.27570404606165055,
+              0.21246503022189409,
+              0.3098277944903712
+            ],
+            "foreground": 0.2659989569246386
+          },
+          "4": {
+            "per_class": [
+              0.7053084127803911,
+              0.44767374442755176,
+              0.37508165354209205,
+              0.4839882154601145
+            ],
+            "foreground": 0.4355812044765861
+          }
+        }
+      }
+    },
+    "F": {
+      "1": {
+        "miou_4class": 0.8793473814449111,
+        "miou_foreground": 0.8402627637113843,
+        "iou_background": 0.9966012346454911,
+        "f1_background": 0.9982977245052579,
+        "iou_monolayer": 0.7683554504238124,
+        "f1_monolayer": 0.8690056631314306,
+        "iou_fewlayer": 0.770114433162584,
+        "f1_fewlayer": 0.870129544999704,
+        "iou_multilayer": 0.9823184075477567,
+        "f1_multilayer": 0.9910803469387561,
+        "precision_background": 0.9984537979096432,
+        "recall_background": 0.9981416998865059,
+        "precision_monolayer": 0.7806045874358192,
+        "recall_monolayer": 0.9799860816116367,
+        "precision_fewlayer": 0.9632323314125112,
+        "recall_fewlayer": 0.7934384610694837,
+        "precision_multilayer": 0.9901999193907592,
+        "recall_multilayer": 0.991962341528894,
+        "thin_mean_iou": 0.7692349417931982,
+        "few_to_mono_rate": 0.17697170551293173,
+        "mono_to_background_rate": 0.00995567033532857,
+        "multi_to_few_rate": 0.003058750624925948,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.599446347544682,
+            "boundary_f1_monolayer": 0.5798686989714744,
+            "boundary_f1_fewlayer": 0.47530506947216744,
+            "boundary_f1_multilayer": 0.5816590876462999,
+            "boundary_f1_foreground": 0.5456109520299807
+          },
+          "2": {
+            "boundary_f1_background": 0.7670431896250377,
+            "boundary_f1_monolayer": 0.7261921183861738,
+            "boundary_f1_fewlayer": 0.6440382992587768,
+            "boundary_f1_multilayer": 0.7598034216363684,
+            "boundary_f1_foreground": 0.7100112797604395
+          },
+          "4": {
+            "boundary_f1_background": 0.8780154314102168,
+            "boundary_f1_monolayer": 0.8169429060936596,
+            "boundary_f1_fewlayer": 0.7578915868951629,
+            "boundary_f1_multilayer": 0.8817087546178508,
+            "boundary_f1_foreground": 0.8188477492022245
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.4664695757033522,
+              0.1428864890245334,
+              0.10326702248099628,
+              0.1884861281223628
+            ],
+            "foreground": 0.14487987987596415
+          },
+          "2": {
+            "per_class": [
+              0.5730065457103298,
+              0.26374436706267923,
+              0.20106094677968056,
+              0.3084801914307118
+            ],
+            "foreground": 0.25776183509102385
+          },
+          "4": {
+            "per_class": [
+              0.7058102194881231,
+              0.42548144232917096,
+              0.3488745206479395,
+              0.47967756856345467
+            ],
+            "foreground": 0.4180111771801884
+          }
+        }
+      },
+      "2": {
+        "miou_4class": 0.8807774986385581,
+        "miou_foreground": 0.8421566587315752,
+        "iou_background": 0.996640018359507,
+        "f1_background": 0.9983171820610639,
+        "iou_monolayer": 0.7697975971862542,
+        "f1_monolayer": 0.8699272712429165,
+        "iou_fewlayer": 0.7738792178276364,
+        "f1_fewlayer": 0.8725275205324969,
+        "iou_multilayer": 0.9827931611808347,
+        "f1_multilayer": 0.991321919423548,
+        "precision_background": 0.9984877498315685,
+        "recall_background": 0.998146672555461,
+        "precision_monolayer": 0.7810741195152656,
+        "recall_monolayer": 0.9815907189290082,
+        "precision_fewlayer": 0.9635022845971335,
+        "recall_fewlayer": 0.7972504100244169,
+        "precision_multilayer": 0.990756150614209,
+        "recall_multilayer": 0.9918883347637997,
+        "thin_mean_iou": 0.7718384075069453,
+        "few_to_mono_rate": 0.1767644719686558,
+        "mono_to_background_rate": 0.008881219025551909,
+        "multi_to_few_rate": 0.0031344280735519777,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.6030114921176142,
+            "boundary_f1_monolayer": 0.5920629069334864,
+            "boundary_f1_fewlayer": 0.4848058873215798,
+            "boundary_f1_multilayer": 0.5839811163130703,
+            "boundary_f1_foreground": 0.5536166368560456
+          },
+          "2": {
+            "boundary_f1_background": 0.7707249717156246,
+            "boundary_f1_monolayer": 0.7402735031683367,
+            "boundary_f1_fewlayer": 0.6503571470270222,
+            "boundary_f1_multilayer": 0.7611384552416982,
+            "boundary_f1_foreground": 0.7172563684790191
+          },
+          "4": {
+            "boundary_f1_background": 0.8806711709705894,
+            "boundary_f1_monolayer": 0.8264744624535377,
+            "boundary_f1_fewlayer": 0.7645515817209875,
+            "boundary_f1_multilayer": 0.8838393393391619,
+            "boundary_f1_foreground": 0.8249551278378956
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.4670550441399949,
+              0.14514813808100027,
+              0.10568199261575252,
+              0.1890582081509811
+            ],
+            "foreground": 0.14662944628257799
+          },
+          "2": {
+            "per_class": [
+              0.5743120199615439,
+              0.2702577768109637,
+              0.2059972186554465,
+              0.30953061116802255
+            ],
+            "foreground": 0.26192853554481094
+          },
+          "4": {
+            "per_class": [
+              0.7077022751014791,
+              0.4368280625889762,
+              0.35480121966416,
+              0.48058917026954256
+            ],
+            "foreground": 0.4240728175075596
+          }
+        }
+      },
+      "4": {
+        "miou_4class": 0.8814719698505834,
+        "miou_foreground": 0.8430815894230909,
+        "iou_background": 0.9966431111330613,
+        "f1_background": 0.9983187336543916,
+        "iou_monolayer": 0.7706419007199276,
+        "f1_monolayer": 0.8704661291552982,
+        "iou_fewlayer": 0.7756219397871911,
+        "f1_fewlayer": 0.8736341024037466,
+        "iou_multilayer": 0.9829809277621537,
+        "f1_multilayer": 0.9914174301933137,
+        "precision_background": 0.99848027877672,
+        "recall_background": 0.998157240796701,
+        "precision_monolayer": 0.7814997497302079,
+        "recall_monolayer": 0.9822906610027676,
+        "precision_fewlayer": 0.9634083640285076,
+        "recall_fewlayer": 0.7991647230547865,
+        "precision_multilayer": 0.9910705345915937,
+        "recall_multilayer": 0.9917645687216254,
+        "thin_mean_iou": 0.7731319202535594,
+        "few_to_mono_rate": 0.17617776591850254,
+        "mono_to_background_rate": 0.008324885756581064,
+        "multi_to_few_rate": 0.003163958533815357,
+        "boundary_f1": {
+          "1": {
+            "boundary_f1_background": 0.6041582442228957,
+            "boundary_f1_monolayer": 0.597072771463342,
+            "boundary_f1_fewlayer": 0.48625563566976115,
+            "boundary_f1_multilayer": 0.5844245003988506,
+            "boundary_f1_foreground": 0.5559176358439846
+          },
+          "2": {
+            "boundary_f1_background": 0.7726006581888318,
+            "boundary_f1_monolayer": 0.7469779579084442,
+            "boundary_f1_fewlayer": 0.654018761653583,
+            "boundary_f1_multilayer": 0.7618894621248509,
+            "boundary_f1_foreground": 0.7209620605622927
+          },
+          "4": {
+            "boundary_f1_background": 0.8813477909269268,
+            "boundary_f1_monolayer": 0.829881323052948,
+            "boundary_f1_fewlayer": 0.767911054098936,
+            "boundary_f1_multilayer": 0.8846661292866019,
+            "boundary_f1_foreground": 0.8274861688128287
+          }
+        },
+        "boundary_iou": {
+          "1": {
+            "per_class": [
+              0.46678349220179827,
+              0.14577453898789963,
+              0.10638126789102956,
+              0.1890141520748381
+            ],
+            "foreground": 0.14705665298458911
+          },
+          "2": {
+            "per_class": [
+              0.5744217003588605,
+              0.27262962601308466,
+              0.20712698820134715,
+              0.30965912709894977
+            ],
+            "foreground": 0.26313858043779387
+          },
+          "4": {
+            "per_class": [
+              0.7082482553179587,
+              0.4411854279892371,
+              0.35767066295383415,
+              0.48087121507472386
+            ],
+            "foreground": 0.4265757686725984
+          }
+        }
+      }
+    }
+  },
+  "epoch100": {
+    "R": {
+      "miou_4class": 0.8809160616669175,
+      "miou_foreground": 0.8422664358746165,
+      "iou_background": 0.9968649390438199,
+      "f1_background": 0.9984300085124028,
+      "iou_monolayer": 0.7692535424806661,
+      "f1_monolayer": 0.8695797679761574,
+      "iou_fewlayer": 0.7737021920858471,
+      "f1_fewlayer": 0.87241499225525,
+      "iou_multilayer": 0.9838435730573364,
+      "f1_multilayer": 0.9918559975382713,
+      "precision_background": 0.9985546302416197,
+      "recall_background": 0.9983054178854148,
+      "precision_monolayer": 0.779269450924899,
+      "recall_monolayer": 0.9835662450923601,
+      "precision_fewlayer": 0.964123349766734,
+      "recall_fewlayer": 0.796638004827612,
+      "precision_multilayer": 0.991691956360653,
+      "recall_multilayer": 0.9920200929947607,
+      "thin_mean_iou": 0.7714778672832566,
+      "few_to_mono_rate": 0.18105486248359287,
+      "mono_to_background_rate": 0.006865466306236725,
+      "boundary_f1_background": 0.7901577377691519,
+      "boundary_f1_monolayer": 0.7483204089405323,
+      "boundary_f1_fewlayer": 0.6776357445523793,
+      "boundary_f1_multilayer": 0.7882069474149717,
+      "boundary_f1_foreground": 0.7380543669692944,
+      "seconds": 219.29846123978496,
+      "image_count": 25,
+      "nfe_total": 3500,
+      "peak_reserved_mib": 17194.0
+    },
+    "I": {
+      "miou_4class": 0.8991949105679575,
+      "miou_foreground": 0.8667444714248393,
+      "iou_background": 0.996546227997312,
+      "f1_background": 0.9982701267046782,
+      "iou_monolayer": 0.814467430859354,
+      "f1_monolayer": 0.8977481954290161,
+      "iou_fewlayer": 0.8053876517291255,
+      "f1_fewlayer": 0.8922046752205917,
+      "iou_multilayer": 0.9803783316860388,
+      "f1_multilayer": 0.9900919597028434,
+      "precision_background": 0.9983688531673867,
+      "recall_background": 0.9981714197657172,
+      "precision_monolayer": 0.8283633838348627,
+      "recall_monolayer": 0.9798191414043895,
+      "precision_fewlayer": 0.9624703320907094,
+      "recall_fewlayer": 0.8315005376316159,
+      "precision_multilayer": 0.988711247214757,
+      "recall_multilayer": 0.9914765338500351,
+      "thin_mean_iou": 0.8099275412942397,
+      "few_to_mono_rate": 0.12884759285115355,
+      "mono_to_background_rate": 0.009019196112505632,
+      "boundary_f1_background": 0.7634063588110164,
+      "boundary_f1_monolayer": 0.6727318769935396,
+      "boundary_f1_fewlayer": 0.5735305309509778,
+      "boundary_f1_multilayer": 0.7511806526277179,
+      "boundary_f1_foreground": 0.6658143535240785,
+      "seconds": 289.6361779468134,
+      "image_count": 25,
+      "nfe_total": 3500,
+      "peak_reserved_mib": 17244.0
+    },
+    "N": {
+      "miou_4class": 0.8758048043475295,
+      "miou_foreground": 0.8354583102684977,
+      "iou_background": 0.9968442865846251,
+      "f1_background": 0.9984196497260323,
+      "iou_monolayer": 0.7594318709639335,
+      "f1_monolayer": 0.8632694263380216,
+      "iou_fewlayer": 0.7630629372040929,
+      "f1_fewlayer": 0.8656105475328932,
+      "iou_multilayer": 0.9838801226374667,
+      "f1_multilayer": 0.9918745708580906,
+      "precision_background": 0.9985545371596283,
+      "recall_background": 0.9982847987294292,
+      "precision_monolayer": 0.7693724585299125,
+      "recall_monolayer": 0.98327138443715,
+      "precision_fewlayer": 0.9639619236278243,
+      "recall_fewlayer": 0.7854703586315915,
+      "precision_multilayer": 0.9916119239696405,
+      "recall_multilayer": 0.9921373569172439,
+      "thin_mean_iou": 0.7612474040840131,
+      "few_to_mono_rate": 0.19191329873426236,
+      "mono_to_background_rate": 0.0071068256420158335,
+      "boundary_f1_background": 0.7867880376650991,
+      "boundary_f1_monolayer": 0.7446602438982773,
+      "boundary_f1_fewlayer": 0.6685442220496225,
+      "boundary_f1_multilayer": 0.7835283583426111,
+      "boundary_f1_foreground": 0.7322442747635036,
+      "seconds": 269.03162660542876,
+      "image_count": 25,
+      "nfe_total": 3500,
+      "peak_reserved_mib": 17222.0
+    },
+    "F": {
+      "miou_4class": 0.8758110725114174,
+      "miou_foreground": 0.8354765358476052,
+      "iou_background": 0.9968146825028543,
+      "f1_background": 0.9984048006432159,
+      "iou_monolayer": 0.7663172832829868,
+      "f1_monolayer": 0.8677006000401717,
+      "iou_fewlayer": 0.7585554441413588,
+      "f1_fewlayer": 0.8627029038731673,
+      "iou_multilayer": 0.9815568801184701,
+      "f1_multilayer": 0.9906926114175298,
+      "precision_background": 0.9985746081035669,
+      "recall_background": 0.9982350509245116,
+      "precision_monolayer": 0.7757082782201099,
+      "recall_monolayer": 0.9844476089335136,
+      "precision_fewlayer": 0.9657760031650372,
+      "recall_fewlayer": 0.7795092501891211,
+      "precision_multilayer": 0.9891605060576172,
+      "recall_multilayer": 0.9922294702795333,
+      "thin_mean_iou": 0.7624363637121727,
+      "few_to_mono_rate": 0.18347358961579502,
+      "mono_to_background_rate": 0.006871902555190835,
+      "boundary_f1_background": 0.788649126345783,
+      "boundary_f1_monolayer": 0.7379031924515881,
+      "boundary_f1_fewlayer": 0.657134947934447,
+      "boundary_f1_multilayer": 0.777317293595283,
+      "boundary_f1_foreground": 0.7241184779937727,
+      "seconds": 269.6285301214084,
+      "image_count": 25,
+      "nfe_total": 3500,
+      "peak_reserved_mib": 17222.0
+    }
+  },
+  "benchmark": {
+    "R": {
+      "1": {
+        "arm": "R",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt",
+        "checkpoint_sha256": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+        "epoch": 60,
+        "stop_after": 1,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 40.49714328721166,
+        "window_latency_ms_p95": 40.896169282495975,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 2.551051374990493,
+        "image_network_s_median": 1.0734038492664695,
+        "image_fusion_and_transfer_s_median": 1.4776475257240236,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          2.776509770192206,
+          2.6345914462581277,
+          2.5779157849028707,
+          2.4832293996587396,
+          2.6020654970780015,
+          2.6516796089708805,
+          2.64082173909992,
+          2.663318925537169,
+          2.6244015926495194,
+          2.4569084653630853,
+          2.5627594850957394,
+          2.5393432648852468,
+          2.6860814737156034,
+          2.4491579355672,
+          2.5345720509067178,
+          2.4970997450873256,
+          2.4518979089334607,
+          2.504518368281424,
+          2.4363514613360167,
+          2.639010482467711,
+          2.5763763543218374,
+          2.43310412671417,
+          2.439119318500161,
+          2.393922013230622
+        ],
+        "raw_network_seconds": [
+          1.0730087691918015,
+          1.0721883364021778,
+          1.072948245331645,
+          1.0714232791215181,
+          1.0712983021512628,
+          1.0720724537968636,
+          1.073992352001369,
+          1.072868282906711,
+          1.0719246286898851,
+          1.0731951501220465,
+          1.0736125484108925,
+          1.0748575329780579,
+          1.0774404928088188,
+          1.0727009708061814,
+          1.0746238864958286,
+          1.0719439228996634,
+          1.0749966744333506,
+          1.0744187831878662,
+          1.074937865138054,
+          1.0752455238252878,
+          1.0727958679199219,
+          1.0742904907092452,
+          1.074121793732047,
+          1.0739147327840328
+        ],
+        "infer_peak_allocated_mib": 5144.61083984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "2": {
+        "arm": "R",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt",
+        "checkpoint_sha256": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+        "epoch": 60,
+        "stop_after": 2,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 72.00345490127802,
+        "window_latency_ms_p95": 72.36610311083496,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 3.2657691817730665,
+        "image_network_s_median": 1.921656847000122,
+        "image_fusion_and_transfer_s_median": 1.3441123347729445,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          3.3396671880036592,
+          3.16574231069535,
+          3.242337186820805,
+          3.2827996565029025,
+          3.250998188741505,
+          3.26941775996238,
+          3.338598946109414,
+          3.1886913552880287,
+          3.2289779894053936,
+          3.261033765040338,
+          3.227579261176288,
+          3.262120603583753,
+          3.1926586031913757,
+          3.368006743490696,
+          3.335200577042997,
+          3.428814032115042,
+          3.339212330058217,
+          3.3560761054977775,
+          3.4037885572761297,
+          3.4453665958717465,
+          3.3010867182165384,
+          3.193891480565071,
+          3.2567073674872518,
+          3.21181006077677
+        ],
+        "raw_network_seconds": [
+          1.9230810860171914,
+          1.9224291229620576,
+          1.921584790572524,
+          1.9208387797698379,
+          1.921539249829948,
+          1.9247554745525122,
+          1.9222338004037738,
+          1.9215157963335514,
+          1.9233475774526596,
+          1.919722717255354,
+          1.9202943285927176,
+          1.92172890342772,
+          1.9230021629482508,
+          1.919673791155219,
+          1.9209338147193193,
+          1.9206917639821768,
+          1.9192611407488585,
+          1.9197710426524282,
+          1.9235927956178784,
+          1.9239701395854354,
+          1.9198804320767522,
+          1.921766547486186,
+          1.922337087802589,
+          1.922200482338667
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "4": {
+        "arm": "R",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt",
+        "checkpoint_sha256": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+        "epoch": 60,
+        "stop_after": 4,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 134.9758538417518,
+        "window_latency_ms_p95": 135.4153677355498,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 5.185333664994687,
+        "image_network_s_median": 3.620640756096691,
+        "image_fusion_and_transfer_s_median": 1.564692908897996,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          5.213692858815193,
+          5.164054837077856,
+          5.15097132883966,
+          5.2085900800302625,
+          5.089686275459826,
+          5.217265469022095,
+          5.1879484336823225,
+          5.250484003685415,
+          5.2898801835253835,
+          5.13689077552408,
+          5.10367947909981,
+          5.1930695259943604,
+          5.1586052337661386,
+          5.064810144715011,
+          5.182718896307051,
+          5.025578576140106,
+          5.150870847515762,
+          5.305176271125674,
+          5.274183785542846,
+          5.118115573190153,
+          5.2558752885088325,
+          5.286176805384457,
+          5.188669518567622,
+          5.175146794877946
+        ],
+        "raw_network_seconds": [
+          3.628311263397336,
+          3.622576577588916,
+          3.6255036713555455,
+          3.620455104857683,
+          3.620587238110602,
+          3.626437621191144,
+          3.62069427408278,
+          3.624293482862413,
+          3.6200425662100315,
+          3.6200757874175906,
+          3.619525966234505,
+          3.6221325481310487,
+          3.6214974727481604,
+          3.620961314998567,
+          3.6219618264585733,
+          3.6207738118246198,
+          3.619400355964899,
+          3.618850102648139,
+          3.6213558400049806,
+          3.620186820626259,
+          3.6196359880268574,
+          3.6200167490169406,
+          3.6183284129947424,
+          3.6199274519458413
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      }
+    },
+    "I": {
+      "1": {
+        "arm": "I",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_i/checkpoints/best.pt",
+        "checkpoint_sha256": "f2e26093db1f80840d521a248db1ef8ec95fce6c60019e3753168086b3a799d6",
+        "epoch": 100,
+        "stop_after": 1,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 40.60640465468168,
+        "window_latency_ms_p95": 40.96022145822644,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 2.5272746556438506,
+        "image_network_s_median": 1.0722169484943151,
+        "image_fusion_and_transfer_s_median": 1.4550577071495354,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          2.4951627319678664,
+          2.59276488609612,
+          2.538121573626995,
+          2.4698255006223917,
+          2.5330766048282385,
+          2.4445954086259007,
+          2.504994058981538,
+          2.5844468185678124,
+          2.5263964338228106,
+          2.4500449802726507,
+          2.3915589805692434,
+          2.6361138690263033,
+          2.7597737489268184,
+          2.6984311658889055,
+          2.682930869050324,
+          2.5119680762290955,
+          2.5058980360627174,
+          2.5281528774648905,
+          2.390165460295975,
+          2.464618952013552,
+          2.4308151192963123,
+          2.55131502635777,
+          2.8003893913701177,
+          2.7044862434267998
+        ],
+        "raw_network_seconds": [
+          1.0734673412516713,
+          1.0728140622377396,
+          1.0780430771410465,
+          1.0748033989220858,
+          1.07091873139143,
+          1.0736025776714087,
+          1.072234196588397,
+          1.0711355721578002,
+          1.072071896865964,
+          1.0721832402050495,
+          1.0725386198610067,
+          1.0763862691819668,
+          1.0731609538197517,
+          1.0724405692890286,
+          1.071687951683998,
+          1.0713756093755364,
+          1.0720067201182246,
+          1.0718340203166008,
+          1.0721997004002333,
+          1.071390918456018,
+          1.0733624091371894,
+          1.0728141078725457,
+          1.070992585271597,
+          1.0721830455586314
+        ],
+        "infer_peak_allocated_mib": 5144.61083984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "2": {
+        "arm": "I",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_i/checkpoints/best.pt",
+        "checkpoint_sha256": "f2e26093db1f80840d521a248db1ef8ec95fce6c60019e3753168086b3a799d6",
+        "epoch": 100,
+        "stop_after": 2,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 71.83220749720931,
+        "window_latency_ms_p95": 72.27135729044676,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 3.45727613940835,
+        "image_network_s_median": 1.9205374917946756,
+        "image_fusion_and_transfer_s_median": 1.5367386476136744,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          3.5388711281120777,
+          3.405822820030153,
+          3.5219081146642566,
+          3.5581642035394907,
+          3.3588852742686868,
+          3.4478497048839927,
+          3.5556075628846884,
+          3.4613689249381423,
+          3.6046637585386634,
+          3.356570642441511,
+          3.526054066605866,
+          3.4641180085018277,
+          3.527708973735571,
+          3.402400749735534,
+          3.4795952066779137,
+          3.521594258956611,
+          3.414730317890644,
+          3.3876809990033507,
+          3.546387885697186,
+          3.4531833538785577,
+          3.418805330991745,
+          3.4510975927114487,
+          3.3072758708149195,
+          3.4263101518154144
+        ],
+        "raw_network_seconds": [
+          1.9199485331773758,
+          1.9199585868045688,
+          1.9216096308082342,
+          1.9173601735383272,
+          1.918235250748694,
+          1.9185288306325674,
+          1.9206608468666673,
+          1.9215422663837671,
+          1.9204033836722374,
+          1.9212461737915874,
+          1.9205538155511022,
+          1.9207952246069908,
+          1.922219674102962,
+          1.9192599235102534,
+          1.919105309061706,
+          1.9204497877508402,
+          1.920521168038249,
+          1.9189996672794223,
+          1.9220149405300617,
+          1.923274278640747,
+          1.9209173759445548,
+          1.9213792346417904,
+          1.9197281058877707,
+          1.9215963939204812
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "4": {
+        "arm": "I",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_i/checkpoints/best.pt",
+        "checkpoint_sha256": "f2e26093db1f80840d521a248db1ef8ec95fce6c60019e3753168086b3a799d6",
+        "epoch": 100,
+        "stop_after": 4,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 134.95671888813376,
+        "window_latency_ms_p95": 135.38573626428843,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 4.968743898905814,
+        "image_network_s_median": 3.6245461152866483,
+        "image_fusion_and_transfer_s_median": 1.3441977836191654,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          5.1675728019326925,
+          5.002156337723136,
+          5.048875842243433,
+          4.934080728329718,
+          5.031734796240926,
+          5.048607777804136,
+          5.061694580130279,
+          4.944670040160418,
+          4.911188373342156,
+          4.961403516121209,
+          4.92045350279659,
+          4.997736833058298,
+          4.937233932316303,
+          4.947105368599296,
+          5.101208164356649,
+          5.198155587539077,
+          4.961133991368115,
+          4.976084281690419,
+          4.9997178157791495,
+          4.9789603892713785,
+          4.885539774782956,
+          4.894050400704145,
+          4.903866169042885,
+          4.9522873889654875
+        ],
+        "raw_network_seconds": [
+          3.6288013737648726,
+          3.6231055269017816,
+          3.6238431641831994,
+          3.6245057405903935,
+          3.6231586635112762,
+          3.625066234730184,
+          3.625244462862611,
+          3.6261685751378536,
+          3.624788023531437,
+          3.625978703610599,
+          3.6247442299500108,
+          3.623954606242478,
+          3.6234990945085883,
+          3.627479604445398,
+          3.6224359711632133,
+          3.6226810878142715,
+          3.625890029594302,
+          3.6233896613121033,
+          3.624343443661928,
+          3.625529716722667,
+          3.6239143759012222,
+          3.6284889644011855,
+          3.6239710357040167,
+          3.624586489982903
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      }
+    },
+    "N": {
+      "1": {
+        "arm": "N",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_n/checkpoints/best.pt",
+        "checkpoint_sha256": "11fe3b1ec14094dd6855704b342034c7eff2f159bae949daf3e104e49292c869",
+        "epoch": 50,
+        "stop_after": 1,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 40.74230557307601,
+        "window_latency_ms_p95": 41.139981895685196,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 2.2545737572945654,
+        "image_network_s_median": 1.075131917372346,
+        "image_fusion_and_transfer_s_median": 1.1794418399222195,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          2.7161751175299287,
+          2.6597774932160974,
+          2.378280364908278,
+          2.216557575389743,
+          2.3279240019619465,
+          2.2014984963461757,
+          2.234009573236108,
+          2.121530002914369,
+          2.2044913433492184,
+          2.195641051977873,
+          2.218040476553142,
+          2.145219652913511,
+          2.202190453186631,
+          2.189661156386137,
+          2.2174806287512183,
+          2.314517192542553,
+          2.2865121364593506,
+          2.2974106119945645,
+          2.2236396335065365,
+          2.275137941353023,
+          2.355134366080165,
+          2.3216675221920013,
+          2.371236086823046,
+          2.3030820172280073
+        ],
+        "raw_network_seconds": [
+          1.0743357064202428,
+          1.0736747272312641,
+          1.0737575441598892,
+          1.0744421361014247,
+          1.0734535967931151,
+          1.0787749495357275,
+          1.0758589459583163,
+          1.0769776599481702,
+          1.0752523792907596,
+          1.0764126433059573,
+          1.076999619603157,
+          1.0771746030077338,
+          1.0754291247576475,
+          1.0741831362247467,
+          1.0732061862945557,
+          1.0729287778958678,
+          1.0747804678976536,
+          1.0755865145474672,
+          1.0753485700115561,
+          1.0763337714597583,
+          1.073897640220821,
+          1.0750114554539323,
+          1.0745290201157331,
+          1.0755052855238318
+        ],
+        "infer_peak_allocated_mib": 5144.61083984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "2": {
+        "arm": "N",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_n/checkpoints/best.pt",
+        "checkpoint_sha256": "11fe3b1ec14094dd6855704b342034c7eff2f159bae949daf3e104e49292c869",
+        "epoch": 50,
+        "stop_after": 2,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 72.07618840038776,
+        "window_latency_ms_p95": 72.46777680702507,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 3.3042488866485655,
+        "image_network_s_median": 1.9243604680523276,
+        "image_fusion_and_transfer_s_median": 1.379888418596238,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          3.4806696232408285,
+          3.2955963192507625,
+          3.4875557366758585,
+          3.425285051576793,
+          3.3404225166887045,
+          3.2744569778442383,
+          3.1559369722381234,
+          3.2437214702367783,
+          3.3843859434127808,
+          3.355607634410262,
+          3.494702437892556,
+          3.4044599160552025,
+          3.4434665301814675,
+          3.46739568375051,
+          3.2206887118518353,
+          3.0663522565737367,
+          3.1311749452725053,
+          3.09733266569674,
+          3.222348720766604,
+          3.2887580897659063,
+          3.366316036321223,
+          3.3060611141845584,
+          3.3024366591125727,
+          3.2735826885327697
+        ],
+        "raw_network_seconds": [
+          1.925819612108171,
+          1.9234873792156577,
+          1.9228572146967053,
+          1.9300129748880863,
+          1.9233650220558047,
+          1.924350663088262,
+          1.926000202074647,
+          1.9244379391893744,
+          1.92411782220006,
+          1.9236465161666274,
+          1.9220858151093125,
+          1.923834653571248,
+          1.9228674424812198,
+          1.9219446126371622,
+          1.9196175932884216,
+          1.9253914281725883,
+          1.9275396093726158,
+          1.925810526125133,
+          1.9247244633734226,
+          1.9235671674832702,
+          1.9243710869923234,
+          1.9243728769943118,
+          1.9243702730163932,
+          1.9249896816909313
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "4": {
+        "arm": "N",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_n/checkpoints/best.pt",
+        "checkpoint_sha256": "11fe3b1ec14094dd6855704b342034c7eff2f159bae949daf3e104e49292c869",
+        "epoch": 50,
+        "stop_after": 4,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 135.27883403003216,
+        "window_latency_ms_p95": 135.84950976073742,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 4.9872318846173584,
+        "image_network_s_median": 3.624570588581264,
+        "image_fusion_and_transfer_s_median": 1.3626612960360944,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          5.173134518787265,
+          5.189904694445431,
+          5.082783307880163,
+          5.234483110718429,
+          5.136462373659015,
+          4.976255958899856,
+          4.9961715079844,
+          5.194841118529439,
+          5.095757516101003,
+          5.1958048036322,
+          5.296098567545414,
+          4.923465242609382,
+          5.059071407653391,
+          5.075742449611425,
+          4.978292261250317,
+          4.929599747993052,
+          4.972362595610321,
+          4.894971555098891,
+          4.9105119640007615,
+          4.952793177217245,
+          4.900665814988315,
+          4.845678118057549,
+          4.878968941047788,
+          4.866058205254376
+        ],
+        "raw_network_seconds": [
+          3.620933325961232,
+          3.621854734607041,
+          3.6209167558699846,
+          3.6261135851964355,
+          3.6200404642149806,
+          3.624381131492555,
+          3.625418484210968,
+          3.6247236719354987,
+          3.6209527384489775,
+          3.623420893214643,
+          3.6264793751761317,
+          3.6269787028431892,
+          3.625173296779394,
+          3.6244175052270293,
+          3.624042784795165,
+          3.6207009088248014,
+          3.6258802404627204,
+          3.6249854555353522,
+          3.6201643627136946,
+          3.6253675436601043,
+          3.6263324646279216,
+          3.6238183649256825,
+          3.6256526708602905,
+          3.626650854945183
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      }
+    },
+    "F": {
+      "1": {
+        "arm": "F",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_f/checkpoints/best.pt",
+        "checkpoint_sha256": "12eb32498309c180fbade26310bdc17160273cb93df7e828d63452ae048d3699",
+        "epoch": 50,
+        "stop_after": 1,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 40.693468414247036,
+        "window_latency_ms_p95": 40.97771509550512,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 2.4439425193704665,
+        "image_network_s_median": 1.0744559220038354,
+        "image_fusion_and_transfer_s_median": 1.369486597366631,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          2.635934921912849,
+          2.560177404433489,
+          2.632145364768803,
+          2.490103268995881,
+          2.412893327884376,
+          2.421042710542679,
+          2.506938657723367,
+          2.585063016973436,
+          2.5339066861197352,
+          2.5954331401735544,
+          2.758083239197731,
+          2.436243978329003,
+          2.4793490888550878,
+          2.45164106041193,
+          2.3508484698832035,
+          2.2713413685560226,
+          2.3570271665230393,
+          2.317549280822277,
+          2.2359184455126524,
+          2.2493298584595323,
+          2.3032781491056085,
+          2.3443991793319583,
+          2.406341951340437,
+          2.5366304414346814
+        ],
+        "raw_network_seconds": [
+          1.074420408345759,
+          1.074078956618905,
+          1.074288939125836,
+          1.0784555040299892,
+          1.0727217178791761,
+          1.0760387694463134,
+          1.0793014010414481,
+          1.0738167762756348,
+          1.0752657037228346,
+          1.0755496602505445,
+          1.0713229160755873,
+          1.0755892815068364,
+          1.0743270935490727,
+          1.0744729628786445,
+          1.075484687462449,
+          1.0796919791027904,
+          1.0744388811290264,
+          1.07366544008255,
+          1.073783041909337,
+          1.0755628310143948,
+          1.0750972833484411,
+          1.072453437373042,
+          1.072868151590228,
+          1.0750072691589594
+        ],
+        "infer_peak_allocated_mib": 5144.61083984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "2": {
+        "arm": "F",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_f/checkpoints/best.pt",
+        "checkpoint_sha256": "12eb32498309c180fbade26310bdc17160273cb93df7e828d63452ae048d3699",
+        "epoch": 50,
+        "stop_after": 2,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 71.91943982616067,
+        "window_latency_ms_p95": 72.3602298181504,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 3.325225184671581,
+        "image_network_s_median": 1.916459553875029,
+        "image_fusion_and_transfer_s_median": 1.4087656307965517,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          3.4099101535975933,
+          3.489302273839712,
+          3.515608855523169,
+          3.533961067907512,
+          3.4713523266837,
+          3.31872118730098,
+          3.3540898244827986,
+          3.3627849044278264,
+          3.330202689394355,
+          3.34734099637717,
+          3.3671143455430865,
+          3.3640846982598305,
+          3.4303819509223104,
+          3.286415411159396,
+          3.145092073827982,
+          3.1600354686379433,
+          3.204822300001979,
+          3.2152533438056707,
+          3.2872528228908777,
+          3.3202476799488068,
+          3.12374937068671,
+          3.2424237774685025,
+          3.196773551404476,
+          3.239031333476305
+        ],
+        "raw_network_seconds": [
+          1.9181414935737848,
+          1.9192550713196397,
+          1.9171975683420897,
+          1.916373809799552,
+          1.9152418375015259,
+          1.9168178522959352,
+          1.9153673285618424,
+          1.916447508148849,
+          1.917898179963231,
+          1.9149750918149948,
+          1.9164715996012092,
+          1.918733960017562,
+          1.9148571835830808,
+          1.9166641598567367,
+          1.9153032414615154,
+          1.9159990306943655,
+          1.9167614607140422,
+          1.9170410251244903,
+          1.9159921305254102,
+          1.9173060124740005,
+          1.915067795664072,
+          1.9159661065787077,
+          1.9160233763977885,
+          1.918698100373149
+        ],
+        "infer_peak_allocated_mib": 5174.17333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      },
+      "4": {
+        "arm": "F",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_f/checkpoints/best.pt",
+        "checkpoint_sha256": "12eb32498309c180fbade26310bdc17160273cb93df7e828d63452ae048d3699",
+        "epoch": 50,
+        "stop_after": 4,
+        "grid_K": 4,
+        "level": 1,
+        "params": 18197460,
+        "environment": {
+          "host": "autodl-container-1814459b44-551381f5",
+          "gpu": "NVIDIA GeForce RTX 3090",
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "cpu_threads": 20,
+          "precision": "FP32 TF32 disabled",
+          "deterministic": false,
+          "cudnn_benchmark": true
+        },
+        "window_warmup": 50,
+        "window_iterations": 200,
+        "window_latency_ms_median": 134.9951713345945,
+        "window_latency_ms_p95": 135.52376287989318,
+        "agreement_with_as_evaluated": 1.0,
+        "image_predict_s_median": 4.876091900281608,
+        "image_network_s_median": 3.6165249166078866,
+        "image_fusion_and_transfer_s_median": 1.2595669836737216,
+        "images_timed": 24,
+        "image_ids": [
+          "m109",
+          "m120",
+          "m127",
+          "m132",
+          "m134",
+          "m135",
+          "m16",
+          "m170",
+          "m171",
+          "m21",
+          "m22",
+          "m23",
+          "m26",
+          "m30",
+          "m31",
+          "m4",
+          "m46",
+          "m5",
+          "m76",
+          "m85",
+          "m86",
+          "m89",
+          "m92",
+          "m96"
+        ],
+        "raw_total_seconds": [
+          5.0886172549799085,
+          5.093343750573695,
+          5.095250997692347,
+          4.988137687556446,
+          4.704682270996273,
+          4.75630410015583,
+          4.859758290462196,
+          4.891884767450392,
+          4.982990197837353,
+          5.023904171772301,
+          5.079974301159382,
+          5.008372197858989,
+          4.885448792017996,
+          4.850795387290418,
+          4.8025760389864445,
+          4.7983956430107355,
+          4.826739580370486,
+          4.861733504571021,
+          4.868099798448384,
+          4.884084002114832,
+          4.856134505942464,
+          4.846058118157089,
+          4.798259004019201,
+          4.932227065786719
+        ],
+        "raw_network_seconds": [
+          3.6171487430110574,
+          3.619139322079718,
+          3.616436902433634,
+          3.6184145072475076,
+          3.617047314532101,
+          3.617798063904047,
+          3.6161557966843247,
+          3.618421438150108,
+          3.615016931667924,
+          3.6190449595451355,
+          3.614273900166154,
+          3.6179704181849957,
+          3.614176720380783,
+          3.6159104090183973,
+          3.61383041087538,
+          3.612599794752896,
+          3.613514111377299,
+          3.6166129307821393,
+          3.615401745773852,
+          3.616966380737722,
+          3.6139507768675685,
+          3.616982201114297,
+          3.6162283923476934,
+          3.6180086536332965
+        ],
+        "infer_peak_allocated_mib": 5174.67333984375,
+        "infer_peak_reserved_mib": 6400.0,
+        "timing_scope": "Total: separate uninstrumented complete prediction. Network: second pass synchronized global/window calls, excludes tensor assembly/transfer/fusion. Difference of medians is an estimate.",
+        "method_scope": "Early return along fixed K4 trajectory, not independent K1/K2 models"
+      }
+    }
+  }
+}

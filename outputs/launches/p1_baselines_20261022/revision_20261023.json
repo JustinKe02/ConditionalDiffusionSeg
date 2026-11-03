@@ -1,0 +1,33 @@
+{
+ "applied_bjt": "2026-10-23T09:51:21+08:00",
+ "files": {
+  "outputs/launches/p1_baselines_20261022/plan_v1_20261022.json": {
+   "copied_from": "plan.json",
+   "sha256": "510c61b74d6608c149014c5fbd368ba31aa54c33614316fbc7c2dfce003c5556"
+  },
+  "outputs/launches/p1_baselines_20261022/engineering_verification_v1_20261022.json": {
+   "copied_from": "engineering_verification.json",
+   "sha256": "6c8c6fd1d9b157414584a9a52bb5588096e7225278bd9c284e505bd46ea8be8a"
+  },
+  "work/baselines_20261022/models.py": {
+   "before": "cd3f50a55d782e1411a04adb568bfdbf7b810c612835d8e66c5da313ce93e9ff",
+   "after": "077388319ae5ae25d9e5ac5bf872f2d499a382094e91f7a4d54867fdb98a378b"
+  },
+  "work/baselines_20261022/core.py": {
+   "before": "d829fde334956f979737f41c44a1c1f1e766df50dcb7cef8c5537d531f5453b2",
+   "after": "919c3311d385a8e2c7d7d94a9dfde223fc359106e92c4070b05a57aaf57744e5"
+  },
+  "work/baselines_20261022/verify.py": {
+   "before": "b44632f3136a12d5ab1f5a773abd69b0b96ffced47bfddcca37fee33559c8ca7",
+   "after": "6b9c7fccd678303d240736f734fd7ec50f96f6c5d05b0efb1064b63906b1c6a5"
+  },
+  "work/launch_baselines_20261022.py": {
+   "before": "aad0bc8426d875366365c2d2462e4cee2f92f7d9ef07be23f192898e5a198f0e",
+   "after": "b091ab6dd76f808dcd45222110f1116595748c9c10a8e47abe4bbc205f5b4117"
+  },
+  "outputs/launches/p1_baselines_20261022/sources.json": {
+   "before": "9e8a1a7029cc31fc61ef6c988a91b7ad7c958dfd08ad78540daf6503196b42bf",
+   "after": "5951fb4b3835a77670e28ceb2f4f3a2f4269ca3083e0ad19d2601832e7f34b9b"
+  }
+ }
+}

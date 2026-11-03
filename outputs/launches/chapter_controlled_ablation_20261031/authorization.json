@@ -1,0 +1,7 @@
+{
+  "approved": true,
+  "approved_date_bjt": "2026-10-31",
+  "user_instruction": "Start continuing according to the approved plan, proceed continuously without pausing.",
+  "scope": "I,N,F each100ep seed42; all approved preflight and train/val analyses; no new test inference; preserve frozen history",
+  "proposal_sha256": "420f98927c9e2df23062f349b0cbe0661c95e9bc8fd1460b2b29e477ab0bd048"
+}

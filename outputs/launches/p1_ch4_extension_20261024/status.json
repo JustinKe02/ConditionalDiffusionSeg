@@ -1,0 +1,9 @@
+{
+  "stage": "completed",
+  "pid": 456752,
+  "updated_bjt": "2026-10-24T12:05:42+08:00",
+  "plan_sha256": "0a27cda85c7a68abf2d6c22a3c8308bb130ce3574d0bbc835a6dc1410b0cbb3d",
+  "returncode": 0,
+  "revision": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/launches/p1_ch4_extension_20261024/completion_revision_20261024",
+  "finished_bjt": "2026-10-24T12:05:42+08:00"
+}

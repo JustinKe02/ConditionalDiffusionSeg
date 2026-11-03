@@ -1,0 +1,11 @@
+{
+  "stage": "completed",
+  "coordinator_pid": 7595,
+  "completed": true,
+  "started_bjt": "2026-10-31T09:53:39+08:00",
+  "updated_bjt": "2026-10-31T19:15:41+08:00",
+  "stage_started_bjt": "2026-10-31T19:15:38+08:00",
+  "error": null,
+  "child_pid": null,
+  "finished_bjt": "2026-10-31T19:15:41+08:00"
+}

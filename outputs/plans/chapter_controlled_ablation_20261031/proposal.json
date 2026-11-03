@@ -1,0 +1,382 @@
+{
+  "schema": "chapter_mechanism_proposal_v1",
+  "title": "GLP-Flow / E3R controlled training ablations",
+  "created_date_bjt": "2026-10-31",
+  "version": "1.0",
+  "status": "proposal_only",
+  "user_approval_received": false,
+  "automatic_execution": false,
+  "training_started": false,
+  "implementation_complete": false,
+  "approval_scope": "Prepare reviewable plan only. User approval is required before implementation/preflight/training under this proposal.",
+  "project": "/root/autodl-tmp/ConditionalDiffusionSeg",
+  "recommended_scope": {
+    "reuse": [
+      "R",
+      "historical E0/E1/E2/E3/SegFormer for context"
+    ],
+    "new_training_arms": [
+      "I",
+      "N",
+      "F"
+    ],
+    "training_seeds": [
+      42
+    ],
+    "total_new_epochs": 300,
+    "total_new_optimizer_updates": 9000,
+    "total_new_crop_exposures": 72000,
+    "wall_clock_estimate_hours": [
+      8,
+      12
+    ],
+    "new_disk_budget_gib": 4,
+    "new_test_inference": false
+  },
+  "data": {
+    "train_images": 120,
+    "val_images": 25,
+    "test_images": 27,
+    "keep_original_splits": true,
+    "keep_m109_m31": true,
+    "physicalnet_readonly": true,
+    "external_pretraining": false,
+    "dino": false,
+    "sample_parent_independence": "unverified",
+    "historical_test_exposure": true
+  },
+  "common_config": {
+    "global_stream": true,
+    "flow": true,
+    "source": "prior_uncertainty",
+    "seed": 42,
+    "sampling_seed": 3407,
+    "crop_size": 512,
+    "stride": 384,
+    "crops_per_image": 2,
+    "thin_crop_fraction": 0.5,
+    "batch_size": 8,
+    "gradient_accumulation": 1,
+    "workers": 12,
+    "epochs": 100,
+    "updates_per_epoch": 30,
+    "updates_per_arm": 3000,
+    "crop_exposures_per_arm": 24000,
+    "local_endpoint_supervised_crops_per_update": 8,
+    "warmup_epochs": 5,
+    "lr": 0.00028,
+    "min_lr": 0.000001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1,
+    "val_every": 10,
+    "window_batch_size": 8,
+    "sampling_steps": 4,
+    "fixed_level": 1,
+    "t_grid": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "k_sampling": "uniform integer in [0,3]",
+    "shortcut_fraction": 0,
+    "prior_loss_weight": 0.5,
+    "endpoint_ce_weight": 0.5,
+    "endpoint_foreground_dice_weight": 0.5,
+    "source_noise_scale": 1,
+    "self_condition": "previous prefix endpoint probability; zero initially",
+    "prefix_gradients": false,
+    "supervised_image_feature_gradients": true,
+    "ema_sigma_rel": 0.1,
+    "photometric": {
+      "gain": 0.1,
+      "gamma": 0.1,
+      "vignette": 0.15
+    },
+    "precision": "FP32",
+    "tf32": false,
+    "deterministic_training": true,
+    "widths": {
+      "local": [
+        32,
+        64,
+        128,
+        192
+      ],
+      "token": 256,
+      "global_": [
+        32,
+        64,
+        128,
+        256,
+        256
+      ]
+    },
+    "heads": 4,
+    "na_kernel": 7,
+    "parameters": 18197460,
+    "optimizer": "AdamW",
+    "scheduler": "reuse frozen glpflow_core.lr_lambda",
+    "ema": "reuse frozen PowerEMA",
+    "best_selection": "EMA, global val four-class mIoU, seed3407, evaluated every 10 epochs; strict greater; retain earlier on tie"
+  },
+  "arms": [
+    {
+      "id": "R",
+      "description": "Historical E3R reference; reuse after equivalence verification",
+      "new_training": false,
+      "epochs_added": 0,
+      "supervised_state": "own no-grad prefix state",
+      "initial_state": "2*P-1+U*epsilon",
+      "noise_scale": 1,
+      "update": "x+(dt/(1-t))*(2*q-1-x)",
+      "self_condition": "previous own-prefix q",
+      "best_checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt"
+    },
+    {
+      "id": "I",
+      "description": "Matched supervised interpolation control",
+      "new_training": true,
+      "epochs_added": 100,
+      "initialize_from": "scratch seed42; never from R",
+      "supervised_state": "(1-k/4)*x0+(k/4)*(2*onehot(y)-1)",
+      "prefix_state": "own no-GT Euler rollout retained to produce self-conditioning",
+      "initial_state": "2*P-1+U*epsilon",
+      "noise_scale": 1,
+      "update": "x+(dt/(1-t))*(2*q-1-x)",
+      "inference_state": "own rollout only; no GT",
+      "comparison": "R-I"
+    },
+    {
+      "id": "N",
+      "description": "No initial noise; Euler control",
+      "new_training": true,
+      "epochs_added": 100,
+      "initialize_from": "scratch seed42",
+      "supervised_state": "own no-grad prefix state",
+      "initial_state": "2*P-1+0*U*epsilon",
+      "noise_scale": 0,
+      "consume_epsilon_rng": true,
+      "retain_entropy_input": true,
+      "update": "x+(dt/(1-t))*(2*q-1-x)",
+      "comparison": "R-N"
+    },
+    {
+      "id": "F",
+      "description": "Deterministic endpoint feedback; matched update-rule control",
+      "new_training": true,
+      "epochs_added": 100,
+      "initialize_from": "scratch seed42",
+      "supervised_state": "own no-grad prefix state",
+      "initial_state": "2*P-1+0*U*epsilon",
+      "noise_scale": 0,
+      "consume_epsilon_rng": true,
+      "retain_entropy_input": true,
+      "retain_timestep_conditioning": true,
+      "update": "2*q-1",
+      "comparison": "N-F"
+    }
+  ],
+  "execution_order": [
+    "preflight and frozen manifest",
+    "I train100",
+    "N train100",
+    "F train100",
+    "best and epoch100 evaluation plus diagnostics",
+    "report then stop"
+  ],
+  "primary_comparisons": [
+    {
+      "contrast": "R-I",
+      "question": "Effect of supervised input state source with matched supervision and conditioning rules"
+    },
+    {
+      "contrast": "R-N",
+      "question": "Effect of entropy-scaled initial noise; entropy feature retained"
+    },
+    {
+      "contrast": "N-F",
+      "question": "Effect of Euler mixing versus direct endpoint feedback"
+    }
+  ],
+  "reporting": {
+    "primary_metric": "foreground boundary F1, native pixels, Chebyshev tolerance2",
+    "paired_secondary_metrics": [
+      "global four-class mIoU",
+      "monolayer IoU",
+      "fewlayer IoU",
+      "thin mean IoU",
+      "few-to-mono",
+      "multi-to-few"
+    ],
+    "checkpoints": [
+      "val-mIoU-selected EMA best",
+      "epoch100 EMA as secondary fixed-budget view"
+    ],
+    "sampling_seeds": {
+      "primary": 3407,
+      "secondary": 3408,
+      "secondary_scope": "I only; R existing3408 reused; N/F noise-free outputs invariant checked without a full redundant second evaluation"
+    },
+    "do_not_select_on_test": true,
+    "do_not_select_on_secondary_sampling_seed": true,
+    "all_arms_complete_regardless_of_effect_gates": true
+  },
+  "practical_value_gates": {
+    "scope": "Proposed engineering effect-size rules for a single training seed on historically developed val; not significance/equivalence tests",
+    "positive_contribution": {
+      "contrasts": [
+        "R-I",
+        "N-F"
+      ],
+      "boundary_f1_gain_pp_min": 1,
+      "miou_gain_pp_min": -0.3,
+      "thin_mean_iou_gain_pp_min": -0.5
+    },
+    "noise_free_simplification_candidate": {
+      "contrast": "N-R",
+      "boundary_f1_gain_pp_min": -0.5,
+      "miou_gain_pp_min": -0.3,
+      "thin_mean_iou_gain_pp_min": -0.5
+    },
+    "no_automatic_method_replacement": true,
+    "no_adaptive_extra_training": true
+  },
+  "analyses": {
+    "boundary_f1_tolerances_px": [
+      1,
+      2,
+      4
+    ],
+    "boundary_iou": {
+      "required": true,
+      "band_widths_px": [
+        1,
+        2,
+        4
+      ],
+      "primary_band_width_px": 2,
+      "definition": "B_d(M)=M-erode_d(M); d iterations of a 3x3 all-one structuring element; outside-image zeros; intersection/union of prediction and GT bands",
+      "aggregation": "sum per-image intersections/unions per class; mean over foreground classes; zero union NaN ignored",
+      "author_reference": "https://github.com/bowenc0221/boundary-iou-api/blob/master/boundary_iou/utils/boundary_utils.py",
+      "difference_from_author_default": "fixed pixel width, not 0.02 times image diagonal",
+      "boundary_f1_edge_policy": "retain legacy BF1 replicate-edge treatment; do not silently change old BF1"
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "seed": 20261031,
+      "unit": "image paired; descriptive only because sample grouping unverified",
+      "aggregate": "sum sampled confusion/boundary counts before metric calculation",
+      "multiplicity_adjustment": false,
+      "confirmatory_significance": false,
+      "training_seed_variation": false
+    },
+    "same_k4_trajectory_endpoints": [
+      1,
+      2,
+      4
+    ],
+    "fixed_level_for_early_return": 1,
+    "independent_K_sweep": false,
+    "frozen_R_interventions": [
+      {
+        "at_t": 0.25,
+        "change": "current state set to zero at this step only"
+      },
+      {
+        "at_t": 0.25,
+        "change": "self-conditioning set to zero at this step only"
+      }
+    ],
+    "intervention_scope": "descriptive input dependence; out-of-distribution caveat; not a replacement for retraining controls",
+    "benchmark": {
+      "gpu": "RTX3090",
+      "precision": "FP32 TF32 off",
+      "native_operator_path": true,
+      "warmup": 50,
+      "timed_iterations": 200,
+      "whole_images": 24,
+      "whole_image_ids": "freeze before execution",
+      "agreement_with_evaluation_required": true,
+      "include": [
+        "network",
+        "fusion and transfer",
+        "total",
+        "allocated and reserved peak",
+        "training compute and wall time"
+      ]
+    },
+    "artifacts": "PNG masks, per-image counts, streaming trajectory aggregates, fixed small ROIs; no full-image float32 probability trajectories"
+  },
+  "preflight": {
+    "current_status": "not run",
+    "reuse_R_requires": [
+      "fresh old/new R short training with identical batches, initialization, restored RNG",
+      "compare loss, model, optimizer, scheduler, EMA, Python/NumPy/CPU/CUDA RNG",
+      "25-image val confusion and boundary-count equality with historical R"
+    ],
+    "arm_checks": [
+      "I/R same actual inputs except supervised state for identical model and RNG",
+      "I k0 state identical to R",
+      "no GT at prediction or prefix",
+      "R/N only source noise term; consume RNG even when zero",
+      "N/F only update rule",
+      "8/8 endpoint supervision; all calls level1; shortcut off",
+      "prefix detached; image features receive gradients at supervised call",
+      "real512 B8 finite gradients and memory for I/N/F",
+      "next update identical after full-state checkpoint restore"
+    ],
+    "failure_policy": "Stop before formal training and report; do not silently retrain R or change batch/accumulation/precision",
+    "engineering_weights_discarded": true
+  },
+  "resource_basis": {
+    "historical_R_training_seconds": 5962.6667522462085,
+    "historical_R_mean_epoch_seconds": 59.626667522462085,
+    "historical_R_batch_elapsed_seconds": 8416,
+    "observed_gpu_memory_mib": 24576,
+    "observed_free_disk_gib_approx": 22,
+    "observed_project_gib_approx": 20.3,
+    "timing_not_new_benchmark": true,
+    "serial_execution": true,
+    "min_free_disk_gib": 8,
+    "project_cap_gib": 26,
+    "per_new_run_cap_gib": 1,
+    "analysis_and_preflight_budget_gib": 1
+  },
+  "freeze_policy": {
+    "old_source_and_results_immutable": true,
+    "new_implementation_only": true,
+    "manifest_before_training": true,
+    "train_val_data_file_hashes": true,
+    "resume_same_config_only": true,
+    "engineering_failure_stop": true,
+    "keep_failed_logs": true
+  },
+  "excluded": [
+    "new test inference",
+    "multiple training seeds",
+    "new train/val/test split",
+    "retraining old baselines",
+    "extra materials",
+    "new boundary loss",
+    "higher prior resolution",
+    "mixed-K training",
+    "distillation",
+    "deployment",
+    "automatic rescue experiments"
+  ],
+  "review_options": {
+    "recommended": "I,N,F each100ep seed42; reuseR; train/val; 8-12h and4GiB",
+    "minimal": "I only100ep seed42; reuseR; about3-4h; answers state-source question only"
+  },
+  "source_sha256": {
+    "work/glpflow_core.py": "bc96192e00cde8673fa9c2defddc2fdfe2de5668962c10d15689f3df0bee1852",
+    "work/glpflow_rollout_20261022.py": "ee644054608367134aca0a3080e566c8e9e32746f12c9b6460e633c34a3f33bd",
+    "outputs/launches/p1_glpflow_rollout_20261022/plan.json": "8c8b5b637aefa8c78fbebcabaf485a9be438636236b573508f0072dd43f771ab",
+    "outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+    "data_manifests/source_dataset.json": "632ae9cd6ebb53cb0306c3ee1eb4bf6c872bf748ef449554557ee3118d37dc8c",
+    "data_manifests/splits/train.txt": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+    "data_manifests/splits/val.txt": "55ee8360ac48c2150cd60ee451f42059b3fe9463d23b5e5697a938131319db27",
+    "data_manifests/splits/test.txt": "29bbc16b5c902b58ca5030377bbe2b4bc3c28f24a71899d35538b57c1b5b0408"
+  }
+}

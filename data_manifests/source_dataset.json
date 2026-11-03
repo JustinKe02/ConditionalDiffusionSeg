@@ -1,0 +1,55 @@
+{
+  "status": "reference_only_no_images_copied",
+  "recorded_at_utc": "2026-10-17T03:28:19.660044+00:00",
+  "source_project": "/root/autodl-tmp/PhysicalNet",
+  "dataset_root": "/root/autodl-tmp/PhysicalNet/Mos2_data",
+  "image_pattern": "ori/MoS2/{id}.jpg",
+  "mask_pattern": "mask/{id}.png",
+  "class_mapping": {
+    "0": "background",
+    "1": "monolayer",
+    "2": "fewlayer",
+    "3": "multilayer"
+  },
+  "splits": {
+    "train": {
+      "count": 120,
+      "source_path": "/root/autodl-tmp/PhysicalNet/splits/train.txt",
+      "snapshot_path": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/splits/train.txt",
+      "sha256": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+      "missing_image_or_mask_files": [],
+      "duplicate_ids": []
+    },
+    "val": {
+      "count": 25,
+      "source_path": "/root/autodl-tmp/PhysicalNet/splits/val.txt",
+      "snapshot_path": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/splits/val.txt",
+      "sha256": "55ee8360ac48c2150cd60ee451f42059b3fe9463d23b5e5697a938131319db27",
+      "missing_image_or_mask_files": [],
+      "duplicate_ids": []
+    },
+    "test": {
+      "count": 27,
+      "source_path": "/root/autodl-tmp/PhysicalNet/splits/test.txt",
+      "snapshot_path": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/splits/test.txt",
+      "sha256": "29bbc16b5c902b58ca5030377bbe2b4bc3c28f24a71899d35538b57c1b5b0408",
+      "missing_image_or_mask_files": [],
+      "duplicate_ids": []
+    }
+  },
+  "provenance_independence": "pending_sample_and_parent_image_source_audit",
+  "full_mask_value_and_dimension_scan": "passed; see data_manifests/full_audit.json",
+  "cross_split_id_intersections": {
+    "train__val": [],
+    "train__test": [],
+    "val__test": []
+  },
+  "current_dimension_spot_check": {
+    "split": "train",
+    "id": "m1",
+    "width": 2560,
+    "height": 1922,
+    "mode": "RGB",
+    "scope": "one_image_only"
+  }
+}

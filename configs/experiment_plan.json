@@ -1,0 +1,653 @@
+{
+  "schema_version": 1,
+  "status": "first_runnable_implementation_debug_verified_formal_protocol_pending",
+  "training_started": true,
+  "implementation_complete": false,
+  "project_root": "/root/autodl-tmp/ConditionalDiffusionSeg",
+  "dataset_manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+  "task": "image_conditioned_four_class_pixelwise_segmentation",
+  "thesis_chapter": 3,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "common_candidates": {
+    "initialization": "scratch",
+    "train_crop_hw": [
+      512,
+      512
+    ],
+    "batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "precision": "fp32",
+    "num_workers": 4,
+    "optimizer": {
+      "name": "AdamW",
+      "lr": 0.0002,
+      "weight_decay": 0.0001
+    },
+    "scheduler": {
+      "name": "cosine_with_linear_warmup",
+      "min_lr": 1e-06
+    },
+    "gradient_clip_norm": 1.0,
+    "ema": false,
+    "early_stopping": false,
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "augmentation": [
+      "aligned_random_crop",
+      "horizontal_flip",
+      "vertical_flip",
+      "rot90"
+    ],
+    "color_augmentation": false,
+    "validation": {
+      "every_epochs": 10,
+      "include_final_epoch": true,
+      "checkpoint_selection": "global_4class_mIoU",
+      "window_hw": [
+        512,
+        512
+      ],
+      "stride_hw": [
+        384,
+        384
+      ],
+      "merge": "class_probabilities_before_argmax"
+    },
+    "semantic_loss": {
+      "cross_entropy_weight": 0.5,
+      "foreground_dice_weight": 0.5
+    }
+  },
+  "architecture_candidate": {
+    "backbone": "UNet_style",
+    "base_channels": 32,
+    "channel_multipliers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "normalization": "GroupNorm",
+    "activation": "SiLU",
+    "attention": false,
+    "diffusion_input_channels": 7,
+    "output_channels": 4,
+    "time_embedding": "sinusoidal_plus_MLP",
+    "exact_blocks_and_group_count": "2 residual blocks per scale, 4 scales; GroupNorm gcd(8, channels); full details in source"
+  },
+  "diffusion": {
+    "representation": "2*one_hot(mask)-1",
+    "prediction_type": "x0",
+    "training_timesteps": 1000,
+    "schedule": "cosine",
+    "sample_one_t_per_training_sample": true,
+    "x0_mse_weight": 1.0,
+    "sampler": "DDIM",
+    "sampling_steps": 20,
+    "eta": 0.0,
+    "samples_per_image": 1,
+    "inference_initialization": "gaussian_noise_only_no_ground_truth",
+    "overlap_noise": "shared_full_image_noise_field_per_image_id_and_sampling_seed",
+    "sampling_seed_list": [
+      3407
+    ],
+    "x0_clipping_policy": "clamp_to_minus1_plus1_each_DDIM_step_including_final"
+  },
+  "iterative_baseline": {
+    "shared_weights": true,
+    "iterations": 5,
+    "initialization": "uniform_class_probabilities",
+    "supervision": "final_iteration",
+    "diffusion_process": false
+  },
+  "extensions": {
+    "class_balance": {
+      "candidate": "inverse_sqrt_training_class_frequency",
+      "normalization_and_clipping": "divide inverse-sqrt frequencies by their 4-class mean; clip [0.25, 4]"
+    },
+    "boundary": {
+      "candidate": "extra_CE_on_3x3_morphological_GT_boundary",
+      "weight": 0.1,
+      "training_only": true
+    }
+  },
+  "counts": {
+    "pilot_training_runs": 3,
+    "formal_basic_runs": 9,
+    "formal_extension_runs": 9,
+    "formal_total_before_extra_controls": 18,
+    "conditional_combined_direct_control_runs": 3
+  },
+  "planned_jobs": [
+    {
+      "id": "P1-DIRECT",
+      "phase": "P1",
+      "method": "direct",
+      "seed": 42,
+      "epochs": 40,
+      "warmup_epochs": 5,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P0_passed",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/direct/seed_42"
+    },
+    {
+      "id": "P1-ITERATIVE",
+      "phase": "P1",
+      "method": "iterative",
+      "seed": 42,
+      "epochs": 40,
+      "warmup_epochs": 5,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P0_passed",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/iterative/seed_42"
+    },
+    {
+      "id": "P1-DIFFUSION",
+      "phase": "P1",
+      "method": "diffusion",
+      "seed": 42,
+      "epochs": 40,
+      "warmup_epochs": 5,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P0_passed",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/diffusion/seed_42"
+    },
+    {
+      "id": "E01_s42",
+      "phase": "P2",
+      "experiment": "E01",
+      "method": "direct",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E01/seed_42"
+    },
+    {
+      "id": "E01_s123",
+      "phase": "P2",
+      "experiment": "E01",
+      "method": "direct",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E01/seed_123"
+    },
+    {
+      "id": "E01_s2026",
+      "phase": "P2",
+      "experiment": "E01",
+      "method": "direct",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E01/seed_2026"
+    },
+    {
+      "id": "E02_s42",
+      "phase": "P2",
+      "experiment": "E02",
+      "method": "iterative",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E02/seed_42"
+    },
+    {
+      "id": "E02_s123",
+      "phase": "P2",
+      "experiment": "E02",
+      "method": "iterative",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E02/seed_123"
+    },
+    {
+      "id": "E02_s2026",
+      "phase": "P2",
+      "experiment": "E02",
+      "method": "iterative",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E02/seed_2026"
+    },
+    {
+      "id": "E03_s42",
+      "phase": "P2",
+      "experiment": "E03",
+      "method": "diffusion",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E03/seed_42"
+    },
+    {
+      "id": "E03_s123",
+      "phase": "P2",
+      "experiment": "E03",
+      "method": "diffusion",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E03/seed_123"
+    },
+    {
+      "id": "E03_s2026",
+      "phase": "P2",
+      "experiment": "E03",
+      "method": "diffusion",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "P1_review_and_protocol_frozen",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E03/seed_2026"
+    },
+    {
+      "id": "E04_s42",
+      "phase": "P2",
+      "experiment": "E04",
+      "method": "diffusion",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E04/seed_42"
+    },
+    {
+      "id": "E04_s123",
+      "phase": "P2",
+      "experiment": "E04",
+      "method": "diffusion",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E04/seed_123"
+    },
+    {
+      "id": "E04_s2026",
+      "phase": "P2",
+      "experiment": "E04",
+      "method": "diffusion",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": false,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E04/seed_2026"
+    },
+    {
+      "id": "E05_s42",
+      "phase": "P2",
+      "experiment": "E05",
+      "method": "diffusion",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E05/seed_42"
+    },
+    {
+      "id": "E05_s123",
+      "phase": "P2",
+      "experiment": "E05",
+      "method": "diffusion",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E05/seed_123"
+    },
+    {
+      "id": "E05_s2026",
+      "phase": "P2",
+      "experiment": "E05",
+      "method": "diffusion",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": false,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E05/seed_2026"
+    },
+    {
+      "id": "E06_s42",
+      "phase": "P2",
+      "experiment": "E06",
+      "method": "diffusion",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E06/seed_42"
+    },
+    {
+      "id": "E06_s123",
+      "phase": "P2",
+      "experiment": "E06",
+      "method": "diffusion",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E06/seed_123"
+    },
+    {
+      "id": "E06_s2026",
+      "phase": "P2",
+      "experiment": "E06",
+      "method": "diffusion",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "planned",
+      "run_condition": "basic_comparison_complete_and_extension_justified",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2/E06/seed_2026"
+    }
+  ],
+  "conditional_control_jobs": [
+    {
+      "id": "E07_s42",
+      "phase": "P2_control",
+      "experiment": "E07",
+      "method": "direct",
+      "seed": 42,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "conditional_plan",
+      "run_condition": "required_if_claiming_diffusion_specific_benefit_of_combined_constraints",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2_control/E07/seed_42"
+    },
+    {
+      "id": "E07_s123",
+      "phase": "P2_control",
+      "experiment": "E07",
+      "method": "direct",
+      "seed": 123,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "conditional_plan",
+      "run_condition": "required_if_claiming_diffusion_specific_benefit_of_combined_constraints",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2_control/E07/seed_123"
+    },
+    {
+      "id": "E07_s2026",
+      "phase": "P2_control",
+      "experiment": "E07",
+      "method": "direct",
+      "seed": 2026,
+      "epochs": 200,
+      "warmup_epochs": 10,
+      "class_balance": true,
+      "boundary_supervision": true,
+      "status": "conditional_plan",
+      "run_condition": "required_if_claiming_diffusion_specific_benefit_of_combined_constraints",
+      "output_directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P2_control/E07/seed_2026"
+    }
+  ],
+  "inference_studies": {
+    "sampling_steps": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "repeat_samples": [
+      1,
+      2,
+      4
+    ],
+    "aggregation": "mean_class_probabilities",
+    "selection_split": "val",
+    "requires_retraining": false,
+    "full_cartesian_grid_required": false
+  },
+  "test_policy": "Only after protocol and sampling settings are frozen; no test-based tuning or best-of-ground-truth sampling",
+  "execution_order": [
+    "P0_checks_and_overfit",
+    "P1_three_pilots",
+    "review_and_freeze",
+    "P2_E01_to_E03",
+    "conditional_P2_extensions_and_matching_controls",
+    "P3_validation_sampling_studies",
+    "final_test_and_thesis_figures"
+  ],
+  "resource_plan": {
+    "gpu": "single_RTX_3090_24GiB",
+    "concurrent_training_processes": 1,
+    "runtime_hours": null,
+    "runtime_estimation": "measure_training_epoch_and_full_validation_cost_before_scheduling",
+    "measured_parameter_counts": {
+      "direct": 4929156,
+      "iterative": 4930308,
+      "diffusion": 5132676
+    }
+  },
+  "unresolved_before_formal_runs": [
+    "sample_provenance_and_independence",
+    "fixed_crop_all_class_overfit_and_independent_noise_sampling",
+    "full_25_image_validation_runtime_measurement",
+    "boundary_tolerance_sensitivity",
+    "validation_of_candidate_hyperparameters_and_losses",
+    "selection_of_final_fixed_preview_samples"
+  ],
+  "logging": {
+    "status": "implemented_and_smoke_tested",
+    "tensorboard": {
+      "enabled": true,
+      "directory": "<output_directory>/<run_id>/tensorboard",
+      "step_scalar_interval": 10,
+      "epoch_scalar_interval": 1,
+      "flush_seconds": 30,
+      "images_each_validation": true,
+      "fixed_validation_image_count": 4,
+      "max_display_long_side": 512,
+      "parameter_histograms": false,
+      "full_sampling_trajectories": false
+    },
+    "step_axis": "global_optimizer_step",
+    "epoch_axis": "completed_epoch_1_based",
+    "step_scalars": [
+      "loss_total",
+      "loss_ce",
+      "loss_dice_fg",
+      "loss_x0_mse_if_applicable",
+      "loss_boundary_if_enabled",
+      "lr_per_parameter_group",
+      "gradient_norm_before_clipping"
+    ],
+    "epoch_scalars": [
+      "sample_weighted_mean_of_each_training_loss",
+      "train_seconds",
+      "train_samples_per_second",
+      "train_peak_cuda_allocated_mib",
+      "train_peak_cuda_reserved_mib"
+    ],
+    "validation_scalars": [
+      "global_miou_4class",
+      "foreground_miou",
+      "iou_per_class",
+      "f1_per_class",
+      "boundary_metric_once_definition_frozen",
+      "full_validation_seconds",
+      "validation_peak_cuda_allocated_mib",
+      "validation_peak_cuda_reserved_mib",
+      "sampling_steps_if_applicable",
+      "samples_per_image_if_applicable"
+    ],
+    "images": [
+      "fixed_rgb",
+      "ground_truth_color_mask",
+      "sampled_prediction_color_mask",
+      "error_map"
+    ],
+    "metadata": [
+      "effective_config",
+      "class_mapping_and_palette",
+      "split_hashes",
+      "training_seed",
+      "sampling_seeds",
+      "model_parameter_count",
+      "code_revision_or_source_hashes",
+      "software_and_gpu_versions",
+      "resume_checkpoint_identity"
+    ],
+    "exports": [
+      "metrics_steps.csv",
+      "metrics_epochs.csv",
+      "metrics_val.csv",
+      "config.json",
+      "run_metadata.json",
+      "final_test_metrics.json",
+      "final_test_confusion_matrices.npz"
+    ],
+    "resume_policy": "restore_checkpoint_global_step_and_epoch; reconcile_or_purge_records_after_checkpoint; retain_prior_log_backup; fresh_training_uses_new_run_id",
+    "validation_policy": "log_only_actual_validation_epochs; no_interpolation_or_test_monitoring",
+    "plot_policy": "preserve_raw_unsmoothed_values; aggregate_training_seeds_separately_from_sampling_seeds"
+  },
+  "storage": {
+    "status": "budget_preflight_and_runtime_checks_implemented",
+    "project_target_gib": 20,
+    "project_cap_gib": 26,
+    "free_disk_warning_gib": 12,
+    "minimum_free_disk_gib": 8,
+    "planned_runs_including_controls": 24,
+    "per_run_review_limit_gib": 1,
+    "per_run_budgets_gib": {
+      "tensorboard": 0.25,
+      "predictions": 0.25,
+      "csv_json_metadata": 0.03125
+    },
+    "checkpoint_policy": {
+      "best": "weights_and_model_config_only",
+      "last": "full_resume_state",
+      "max_best_files": 1,
+      "max_last_files": 1,
+      "save_every_epoch_last": true,
+      "epoch_archives": false,
+      "milestones": false,
+      "atomic_replace": true,
+      "reserve_temp_space": true
+    },
+    "prediction_policy": "uint8_class_PNG; one_best_val_set_replaced_on_improvement_and_one_final_test_set; other_sampler_settings_metrics_only_except_fixed_examples",
+    "prohibited_default_outputs": [
+      "full_float_probability_maps",
+      "full_dataset_diffusion_trajectories",
+      "per_epoch_prediction_archives",
+      "dataset_copies",
+      "per_run_environment_copies"
+    ],
+    "runtime_checks_required": [
+      "startup_projected_budget",
+      "each_epoch",
+      "each_validation",
+      "before_checkpoint_or_bulk_export",
+      "log_disk_free_and_run_size"
+    ],
+    "low_space_action": "stop_new_work_and_report; preserve_last_successful_checkpoint; only_write_checkpoint_if_atomic_write_budget_fits; no_automatic_deletion_of_other_runs_or_projects",
+    "resume_backups": "count_against_per_run_and_project_budget; manual_review_if_repeated_resumes_exceed_limits",
+    "calibration_required": "measure_model_parameters_actual_best_last_sizes_and_one_validation_log_growth_before_formal_queue"
+  },
+  "configuration_changes": [
+    {
+      "reason": "5-step unrolled iterative model OOM at batch4 on RTX3090; all methods switched together",
+      "crop_size": 512,
+      "old_batch_size": 4,
+      "new_batch_size": 2,
+      "gradient_accumulation": false,
+      "evidence": "docs/resource_smoke_batch4.json"
+    }
+  ],
+  "training_scope": "debug_smoke_only_no_P1_or_P2",
+  "implementation_status": {
+    "core_training_and_evaluation": "implemented",
+    "tensorboard_csv": "implemented",
+    "runtime_storage_guard": "implemented",
+    "formal_experiments": "not_started",
+    "research_validation": "pending_overfit_and_full_validation_timing"
+  }
+}

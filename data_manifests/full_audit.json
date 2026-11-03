@@ -1,0 +1,50 @@
+{
+  "splits": {
+    "train": {
+      "count": 120,
+      "pixel_counts": [
+        438566398,
+        19726885,
+        14619253,
+        117525864
+      ],
+      "sizes_wh": [
+        [
+          2560,
+          1922
+        ]
+      ]
+    },
+    "val": {
+      "count": 25,
+      "pixel_counts": [
+        94717747,
+        2485920,
+        3657709,
+        22146624
+      ],
+      "sizes_wh": [
+        [
+          2560,
+          1922
+        ]
+      ]
+    },
+    "test": {
+      "count": 27,
+      "pixel_counts": [
+        100243288,
+        4224819,
+        2501406,
+        25879127
+      ],
+      "sizes_wh": [
+        [
+          2560,
+          1922
+        ]
+      ]
+    }
+  },
+  "provenance_independence": "not_verified_by_file_audit"
+}

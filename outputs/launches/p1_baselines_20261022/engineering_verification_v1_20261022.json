@@ -1,0 +1,655 @@
+{
+  "started_utc": "2026-10-22T14:33:32Z",
+  "checks": {
+    "1_cpu_models_and_shapes": {
+      "passed": true,
+      "seconds": 105.75,
+      "detail": {
+        "unet": {
+          "parameters": 31037828,
+          "parameters_m": 31.038,
+          "expected_range_m": [
+            29.0,
+            33.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "unetpp": {
+          "parameters": 9163428,
+          "parameters_m": 9.163,
+          "expected_range_m": [
+            8.0,
+            10.5
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "deeplabv3p": {
+          "parameters": 40347812,
+          "parameters_m": 40.348,
+          "expected_range_m": [
+            38.0,
+            42.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "pspnet": {
+          "parameters": 49068488,
+          "parameters_m": 49.068,
+          "expected_range_m": [
+            47.0,
+            51.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "segformer_b1": {
+          "parameters": 13678276,
+          "parameters_m": 13.678,
+          "expected_range_m": [
+            12.5,
+            15.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "hrnet_w48": {
+          "parameters": 65847844,
+          "parameters_m": 65.848,
+          "expected_range_m": [
+            63.0,
+            68.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "mask2former": {
+          "parameters": 44003845,
+          "parameters_m": 44.004,
+          "expected_range_m": [
+            41.0,
+            47.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "ddp": {
+          "parameters": 36156048,
+          "parameters_m": 36.156,
+          "expected_range_m": [
+            34.0,
+            38.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "ccdm": {
+          "parameters": 30284644,
+          "parameters_m": 30.285,
+          "expected_range_m": [
+            28.0,
+            32.0
+          ],
+          "output_shape": [
+            1,
+            4,
+            512,
+            512
+          ],
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    "2_deterministic_operators": {
+      "passed": true,
+      "seconds": 1.55,
+      "detail": {
+        "interp_fwd_max_err_128x128": 4.76837158203125e-07,
+        "interp_fwd_max_err_512x512": 7.152557373046875e-07,
+        "interp_fwd_max_err_32x32": 1.7881393432617188e-07,
+        "pool_fwd_max_err_bin1": 0.0,
+        "pool_fwd_max_err_bin2": 6.705522537231445e-08,
+        "pool_fwd_max_err_bin3": 1.043081283569336e-07,
+        "pool_fwd_max_err_bin6": 1.043081283569336e-07,
+        "grid_sample_fwd_max_err": 2.384185791015625e-07,
+        "interp_gradcheck": true,
+        "pool_bin2_gradcheck": true,
+        "pool_bin3_gradcheck": true,
+        "grid_sample_gradcheck": true
+      }
+    },
+    "3_throughput_and_vram": {
+      "passed": true,
+      "seconds": 201.21,
+      "detail": {
+        "unet": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 14.243,
+          "sec_per_step": 0.562,
+          "peak_reserved_mib": 14524.0,
+          "peak_allocated_mib": 12086.9,
+          "losses": [
+            1.0729,
+            1.0297,
+            0.9877,
+            0.9187,
+            0.8785,
+            0.8373,
+            0.8028,
+            0.8734,
+            0.7473,
+            0.7669
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "unetpp": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 13.664,
+          "sec_per_step": 0.585,
+          "peak_reserved_mib": 22376.0,
+          "peak_allocated_mib": 20384.4,
+          "losses": [
+            1.1682,
+            1.0677,
+            1.0548,
+            0.961,
+            0.9552,
+            0.9401,
+            0.8397,
+            0.9405,
+            0.8506,
+            0.8863
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "deeplabv3p": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 25.341,
+          "sec_per_step": 0.316,
+          "peak_reserved_mib": 7404.0,
+          "peak_allocated_mib": 6742.5,
+          "losses": [
+            1.0655,
+            1.004,
+            1.0064,
+            0.9238,
+            0.9151,
+            0.8857,
+            0.8319,
+            0.9094,
+            0.8336,
+            0.7614
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "pspnet": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 13.392,
+          "sec_per_step": 0.597,
+          "peak_reserved_mib": 12702.0,
+          "peak_allocated_mib": 12193.0,
+          "losses": [
+            1.6534,
+            1.7832,
+            1.7885,
+            1.511,
+            1.3725,
+            1.1879,
+            1.1884,
+            1.4541,
+            1.0748,
+            0.9011
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "segformer_b1": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 62.234,
+          "sec_per_step": 0.129,
+          "peak_reserved_mib": 5846.0,
+          "peak_allocated_mib": 4800.8,
+          "losses": [
+            1.169,
+            1.0074,
+            0.9943,
+            0.8549,
+            0.7901,
+            0.8842,
+            0.6463,
+            0.6509,
+            0.6582,
+            0.6467
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "hrnet_w48": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 15.125,
+          "sec_per_step": 0.529,
+          "peak_reserved_mib": 11652.0,
+          "peak_allocated_mib": 11262.0,
+          "losses": [
+            1.1558,
+            1.0256,
+            0.9505,
+            0.8069,
+            0.7434,
+            0.7649,
+            0.6189,
+            0.8408,
+            0.529,
+            0.5476
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "mask2former": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 1,
+          "bn_micro_batch_size": 8,
+          "samples_per_second": 1.693,
+          "sec_per_step": 4.725,
+          "peak_reserved_mib": 14756.0,
+          "peak_allocated_mib": 11727.8,
+          "losses": [
+            2.3892,
+            3.0616,
+            2.2799,
+            2.3076,
+            2.3292,
+            2.1641,
+            2.174,
+            2.1994,
+            2.239,
+            2.1236
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "ddp": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 2,
+          "bn_micro_batch_size": 4,
+          "samples_per_second": 1.987,
+          "sec_per_step": 4.026,
+          "peak_reserved_mib": 13322.0,
+          "peak_allocated_mib": 10293.5,
+          "losses": [
+            1.7155,
+            1.6348,
+            1.2545,
+            1.3447,
+            1.1799,
+            1.1902,
+            1.4661,
+            1.5784,
+            1.1691,
+            0.922
+          ],
+          "finite": true,
+          "passed": true
+        },
+        "ccdm": {
+          "effective_batch_size": 8,
+          "grad_accum_steps": 2,
+          "bn_micro_batch_size": 4,
+          "samples_per_second": 10.899,
+          "sec_per_step": 0.734,
+          "peak_reserved_mib": 12488.0,
+          "peak_allocated_mib": 11289.0,
+          "losses": [
+            1.4401,
+            1.1812,
+            1.1612,
+            1.1065,
+            1.1075,
+            1.1,
+            1.1124,
+            1.0287,
+            0.9985,
+            0.9775
+          ],
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    "4_resume_bitwise": {
+      "passed": true,
+      "seconds": 377.66,
+      "detail": {
+        "unet": {
+          "epoch": [
+            2,
+            2
+          ],
+          "step": [
+            6,
+            6
+          ],
+          "model": true,
+          "optimizer": true,
+          "scheduler": true,
+          "ema": true,
+          "cuda_rng": true,
+          "torch_rng": true,
+          "passed": true
+        },
+        "mask2former": {
+          "epoch": [
+            2,
+            2
+          ],
+          "step": [
+            6,
+            6
+          ],
+          "model": true,
+          "optimizer": true,
+          "scheduler": true,
+          "ema": true,
+          "cuda_rng": true,
+          "torch_rng": true,
+          "passed": true
+        },
+        "ddp": {
+          "epoch": [
+            2,
+            2
+          ],
+          "step": [
+            6,
+            6
+          ],
+          "model": true,
+          "optimizer": true,
+          "scheduler": true,
+          "ema": true,
+          "cuda_rng": true,
+          "torch_rng": true,
+          "passed": true
+        },
+        "ccdm": {
+          "epoch": [
+            2,
+            2
+          ],
+          "step": [
+            6,
+            6
+          ],
+          "model": true,
+          "optimizer": true,
+          "scheduler": true,
+          "ema": true,
+          "cuda_rng": true,
+          "torch_rng": true,
+          "passed": true
+        }
+      }
+    },
+    "5_p0_overfit_gate": {
+      "passed": true,
+      "seconds": 940.1,
+      "detail": {
+        "unet": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 26.4,
+          "final_loss": 0.02392,
+          "miou": 0.99971,
+          "ious": [
+            0.99937,
+            0.99959,
+            0.99989,
+            0.99997
+          ],
+          "passed": true
+        },
+        "unetpp": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 24.91,
+          "final_loss": 0.10019,
+          "miou": 0.99854,
+          "ious": [
+            0.99717,
+            0.99871,
+            0.99865,
+            0.99965
+          ],
+          "passed": true
+        },
+        "deeplabv3p": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 25.56,
+          "final_loss": 0.00399,
+          "miou": 0.99707,
+          "ious": [
+            0.99431,
+            0.99686,
+            0.99802,
+            0.99909
+          ],
+          "passed": true
+        },
+        "pspnet": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 34.27,
+          "final_loss": 0.0057,
+          "miou": 0.99748,
+          "ious": [
+            0.99558,
+            0.99747,
+            0.99779,
+            0.99908
+          ],
+          "passed": true
+        },
+        "segformer_b1": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 27.31,
+          "final_loss": 0.00724,
+          "miou": 0.99155,
+          "ious": [
+            0.98427,
+            0.99297,
+            0.99154,
+            0.99741
+          ],
+          "passed": true
+        },
+        "hrnet_w48": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 56.75,
+          "final_loss": 0.00093,
+          "miou": 0.9996,
+          "ious": [
+            0.99931,
+            0.99942,
+            0.99972,
+            0.99996
+          ],
+          "passed": true
+        },
+        "mask2former": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 523.5,
+          "final_loss": 0.16344,
+          "miou": 0.99044,
+          "ious": [
+            0.97996,
+            0.9929,
+            0.99366,
+            0.99524
+          ],
+          "passed": true
+        },
+        "ddp": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 170.26,
+          "final_loss": 0.00612,
+          "seed3407": {
+            "miou": 0.99615,
+            "ious": [
+              0.99239,
+              0.99639,
+              0.99747,
+              0.99834
+            ]
+          },
+          "seed3408": {
+            "miou": 0.99615,
+            "ious": [
+              0.99239,
+              0.99639,
+              0.99747,
+              0.99834
+            ]
+          },
+          "passed": true
+        },
+        "ccdm": {
+          "updates": 300,
+          "lr": 0.0002,
+          "train_seconds": 51.14,
+          "final_loss": 0.01682,
+          "seed3407": {
+            "miou": 0.99095,
+            "ious": [
+              0.98182,
+              0.99269,
+              0.99408,
+              0.9952
+            ]
+          },
+          "seed3408": {
+            "miou": 0.99066,
+            "ious": [
+              0.98127,
+              0.9916,
+              0.99465,
+              0.99511
+            ]
+          },
+          "passed": true
+        }
+      }
+    },
+    "6_inference_no_gt_and_repeatability": {
+      "passed": true,
+      "seconds": 45.16,
+      "detail": {
+        "predict_signature": [
+          "model",
+          "c",
+          "image",
+          "ident",
+          "steps",
+          "sampling_seed",
+          "return_prob"
+        ],
+        "no_gt_in_signature": true,
+        "diffusion_repeatability": {
+          "ddp": {
+            "id": "m108",
+            "nfe": 105,
+            "identical": true
+          },
+          "ccdm": {
+            "id": "m108",
+            "nfe": 350,
+            "identical": true
+          }
+        }
+      }
+    }
+  },
+  "passed": true,
+  "grad_accum_selected": {
+    "unet": 1,
+    "unetpp": 1,
+    "deeplabv3p": 1,
+    "pspnet": 1,
+    "segformer_b1": 1,
+    "hrnet_w48": 1,
+    "mask2former": 1,
+    "ddp": 1,
+    "ccdm": 1
+  },
+  "finished_utc": "2026-10-22T15:07:50Z"
+}

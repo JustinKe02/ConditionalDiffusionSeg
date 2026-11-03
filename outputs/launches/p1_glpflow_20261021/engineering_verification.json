@@ -1,0 +1,155 @@
+{
+  "started_utc": "2026-10-21T14:19:23Z",
+  "checks": {
+    "unit": {
+      "passed": true,
+      "seconds": 0.024438371881842613,
+      "detail": {
+        "shortcut_constant_endpoint_max_error": 2.384185791015625e-07,
+        "path_t0_error": 0.0,
+        "path_t1_error": 0.0,
+        "final_step_error": 0.0,
+        "level_mapping": {
+          "1": 3,
+          "2": 2,
+          "4": 1,
+          "8": 0
+        },
+        "ema_gamma_sigma0.10": 6.937203937601806,
+        "uniform_entropy_is_one": 1.0,
+        "confident_source_ignores_noise": 6.949901580810547e-05,
+        "predict_signature": [
+          "model",
+          "c",
+          "image",
+          "thumb",
+          "ident",
+          "steps",
+          "sampling_seed",
+          "return_prob"
+        ]
+      }
+    },
+    "prediction_repeatability_no_gt": {
+      "passed": true,
+      "seconds": 12.82138279825449,
+      "detail": {
+        "id": "m108",
+        "nfe": 140,
+        "identical": true
+      }
+    },
+    "resume_bitwise": {
+      "passed": true,
+      "seconds": 71.170334815979,
+      "detail": {
+        "directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/integration/glpflow_resume_1792592376765816079",
+        "epoch": [
+          2,
+          2
+        ],
+        "step": [
+          6,
+          6
+        ],
+        "model": true,
+        "optimizer": true,
+        "scheduler": true,
+        "ema": true,
+        "cuda_rng": true,
+        "torch_rng": true
+      }
+    },
+    "p0_gate_E3": {
+      "passed": true,
+      "seconds": 123.3862366322428,
+      "detail": {
+        "arm": "E3",
+        "updates": 300,
+        "lr": 0.0002,
+        "final_terms": {
+          "loss_ce": 0.09283552318811417,
+          "loss_dice_fg": 0.1011284589767456,
+          "loss_shortcut": 0.0003293638292234391,
+          "loss_prior": 0.06438816338777542,
+          "loss_total": 0.12950542569160461
+        },
+        "train_seconds": 121.65288353245705,
+        "seed3407": {
+          "miou": 0.9844737247289026,
+          "ious": [
+            0.9729903399233192,
+            0.9831651207453111,
+            0.986608921611087,
+            0.995130516635893
+          ]
+        },
+        "seed3408": {
+          "miou": 0.9849951672614464,
+          "ious": [
+            0.9739728374962512,
+            0.9837700829892482,
+            0.9868995633187773,
+            0.9953381852415092
+          ]
+        },
+        "passed": true
+      }
+    },
+    "p0_informational_E2": {
+      "passed": true,
+      "seconds": 123.38675753120333,
+      "detail": {
+        "arm": "E2",
+        "updates": 300,
+        "lr": 0.0002,
+        "final_terms": {
+          "loss_ce": 0.09375426918268204,
+          "loss_dice_fg": 0.10175710916519165,
+          "loss_shortcut": 0.0002499611000530422,
+          "loss_prior": 0.06028323620557785,
+          "loss_total": 0.12814725935459137
+        },
+        "train_seconds": 121.50491302926093,
+        "seed3407": {
+          "miou": 0.9834451411977113,
+          "ious": [
+            0.9691826425144259,
+            0.9769324903120539,
+            0.9916435027359661,
+            0.9960219292283993
+          ]
+        },
+        "seed3408": {
+          "miou": 0.9834759591824687,
+          "ious": [
+            0.9688081542886144,
+            0.9774233679358799,
+            0.9917496941094214,
+            0.9959226203959589
+          ]
+        },
+        "passed": true
+      }
+    }
+  },
+  "benchmark_batch_selection": {
+    "arm": "E3",
+    "note": "interactive 2026-10-21 end-to-end loop incl. loader (12 workers), 10 timed steps after 4 warmup",
+    "samples_per_second": {
+      "4": 4.45,
+      "8": 4.94,
+      "12": 5.12
+    },
+    "peak_reserved_mib": {
+      "4": 8798,
+      "8": 17108,
+      "12": 23716
+    },
+    "selected": 8,
+    "reason": "batch 12 leaves <1 GiB headroom on 24 GiB; batch 8 is 11% faster than 4 with ~7 GiB headroom",
+    "lr_rule": "2e-4 at batch 4 scaled by sqrt(2) to 2.8e-4 for batch 8"
+  },
+  "passed": true,
+  "finished_utc": "2026-10-21T14:24:54Z"
+}

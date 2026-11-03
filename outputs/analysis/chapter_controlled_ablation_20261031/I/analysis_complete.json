@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "arm": "I",
+    "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/chapter_controlled_20261031_i/checkpoints/best.pt",
+    "checkpoint_sha256": "f2e26093db1f80840d521a248db1ef8ec95fce6c60019e3753168086b3a799d6",
+    "epoch": 100
+  },
+  "finished_unix": 1793441545.7901766,
+  "seconds": 845.6468226909637,
+  "images": 25,
+  "all_final_counts_match": true
+}

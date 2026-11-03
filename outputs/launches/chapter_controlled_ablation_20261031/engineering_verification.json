@@ -1,0 +1,283 @@
+{
+  "started_unix": 1793411621.9668493,
+  "checks": {
+    "old_new_R_full_state_exact": {
+      "fields": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "ema",
+        "rng",
+        "config",
+        "epoch",
+        "global_step",
+        "best_miou",
+        "plan_sha256"
+      ],
+      "epoch": 2,
+      "global_step": 4,
+      "sha256": [
+        "74d440601a8c48003974370c094709e2b3a3be3476be6918b478dd95f573e4f6",
+        "2532a763f920258601cabe8e37172dce48efbcf06ebd8ecdc3326b669eaf1d93"
+      ]
+    },
+    "control_isolation": {
+      "passed": true,
+      "actual_batch_shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "k": [
+        3,
+        1,
+        2,
+        2,
+        1,
+        3,
+        2,
+        0
+      ],
+      "checks": {
+        "R": {
+          "terms": {
+            "loss_ce": 1.8137948513031006,
+            "loss_dice_fg": 0.8615550994873047,
+            "loss_prior": 1.133489727973938,
+            "loss_total": 1.9044198989868164,
+            "mean_k": 1.75,
+            "endpoint_forward_samples": 22,
+            "endpoint_batch_calls": 4
+          },
+          "grad": 2.169512987136841,
+          "supervised_samples": 8,
+          "level": 1
+        },
+        "I": {
+          "terms": {
+            "loss_ce": 1.7937467098236084,
+            "loss_dice_fg": 0.8595444560050964,
+            "loss_prior": 1.133489727973938,
+            "loss_total": 1.893390417098999,
+            "mean_k": 1.75,
+            "endpoint_forward_samples": 22,
+            "endpoint_batch_calls": 4
+          },
+          "grad": 2.284104824066162,
+          "supervised_samples": 8,
+          "level": 1
+        },
+        "N": {
+          "terms": {
+            "loss_ce": 1.858978271484375,
+            "loss_dice_fg": 0.8656077980995178,
+            "loss_prior": 1.133489727973938,
+            "loss_total": 1.9290378093719482,
+            "mean_k": 1.75,
+            "endpoint_forward_samples": 22,
+            "endpoint_batch_calls": 4
+          },
+          "grad": 2.3066344261169434,
+          "supervised_samples": 8,
+          "level": 1
+        },
+        "F": {
+          "terms": {
+            "loss_ce": 1.8623442649841309,
+            "loss_dice_fg": 0.8674571514129639,
+            "loss_prior": 1.133489727973938,
+            "loss_total": 1.9316456317901611,
+            "mean_k": 1.75,
+            "endpoint_forward_samples": 22,
+            "endpoint_batch_calls": 4
+          },
+          "grad": 2.3008949756622314,
+          "supervised_samples": 8,
+          "level": 1
+        }
+      },
+      "verified": [
+        "I/R identical actual conditioning except selected input state",
+        "I k0 and GT interpolation formula",
+        "noise draw retained",
+        "N/F update-only difference",
+        "8/8 endpoint supervision",
+        "level1",
+        "prefix detached",
+        "local/global feature gradients",
+        "predict no GT parameter"
+      ]
+    },
+    "resume_I": {
+      "fields": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "ema",
+        "rng",
+        "config",
+        "epoch",
+        "global_step",
+        "best_miou",
+        "plan_sha256"
+      ],
+      "epoch": 2,
+      "global_step": 4,
+      "sha256": [
+        "00eb5a7d4fd073ab646efc17ab17d0b5cdb33a326ee52864122a988c8417cb18",
+        "00eb5a7d4fd073ab646efc17ab17d0b5cdb33a326ee52864122a988c8417cb18"
+      ]
+    },
+    "smoke_I": {
+      "passed": true,
+      "shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "warmup": 2,
+      "timed_updates": 3,
+      "samples_per_second": 4.853302777334152,
+      "peak_reserved_mib": 17240.0,
+      "terms": {
+        "loss_ce": 1.5174505710601807,
+        "loss_dice_fg": 0.8253427147865295,
+        "loss_prior": 0.7539879679679871,
+        "loss_total": 1.5483906269073486,
+        "mean_k": 1.25,
+        "endpoint_forward_samples": 18,
+        "endpoint_batch_calls": 4
+      }
+    },
+    "resume_N": {
+      "fields": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "ema",
+        "rng",
+        "config",
+        "epoch",
+        "global_step",
+        "best_miou",
+        "plan_sha256"
+      ],
+      "epoch": 2,
+      "global_step": 4,
+      "sha256": [
+        "f127d5acc99ca744646475d4611c1a15cf33a24eb0a3c3cd856fc4a7aaede6c2",
+        "f127d5acc99ca744646475d4611c1a15cf33a24eb0a3c3cd856fc4a7aaede6c2"
+      ]
+    },
+    "smoke_N": {
+      "passed": true,
+      "shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "warmup": 2,
+      "timed_updates": 3,
+      "samples_per_second": 4.88485102566817,
+      "peak_reserved_mib": 17218.0,
+      "terms": {
+        "loss_ce": 1.6175099611282349,
+        "loss_dice_fg": 0.8348643779754639,
+        "loss_prior": 0.7543330788612366,
+        "loss_total": 1.60335373878479,
+        "mean_k": 1.25,
+        "endpoint_forward_samples": 18,
+        "endpoint_batch_calls": 4
+      }
+    },
+    "resume_F": {
+      "fields": [
+        "model",
+        "optimizer",
+        "scheduler",
+        "ema",
+        "rng",
+        "config",
+        "epoch",
+        "global_step",
+        "best_miou",
+        "plan_sha256"
+      ],
+      "epoch": 2,
+      "global_step": 4,
+      "sha256": [
+        "b22c9c0e5fbb134c80b22a266f9bfd7dbec44ffd1d44fd6da5d7ec689101aaa5",
+        "b22c9c0e5fbb134c80b22a266f9bfd7dbec44ffd1d44fd6da5d7ec689101aaa5"
+      ]
+    },
+    "smoke_F": {
+      "passed": true,
+      "shape": [
+        8,
+        3,
+        512,
+        512
+      ],
+      "warmup": 2,
+      "timed_updates": 3,
+      "samples_per_second": 4.8694505375443535,
+      "peak_reserved_mib": 17218.0,
+      "terms": {
+        "loss_ce": 1.6221885681152344,
+        "loss_dice_fg": 0.8362782597541809,
+        "loss_prior": 0.7544613480567932,
+        "loss_total": 1.6064640283584595,
+        "mean_k": 1.25,
+        "endpoint_forward_samples": 18,
+        "endpoint_batch_calls": 4
+      }
+    },
+    "reference_R": {
+      "passed": true,
+      "metrics": {
+        "miou_4class": 0.8855659394175421,
+        "miou_foreground": 0.8484950378836978,
+        "iou_background": 0.9967786440190749,
+        "f1_background": 0.9983867235406518,
+        "iou_monolayer": 0.7720856946889648,
+        "f1_monolayer": 0.8713864086854792,
+        "iou_fewlayer": 0.7880758102619914,
+        "f1_fewlayer": 0.8814791920332744,
+        "iou_multilayer": 0.9853236087001377,
+        "f1_multilayer": 0.9926075571581645,
+        "precision_background": 0.9985070477168776,
+        "recall_background": 0.9982664283600411,
+        "precision_monolayer": 0.7827748433227466,
+        "recall_monolayer": 0.9826209210272253,
+        "precision_fewlayer": 0.9644012734736198,
+        "recall_fewlayer": 0.8116878625390921,
+        "precision_multilayer": 0.9933401410926355,
+        "recall_multilayer": 0.9918760529821611,
+        "thin_mean_iou": 0.780080752475478,
+        "few_to_mono_rate": 0.17643585096572745,
+        "mono_to_background_rate": 0.007064185492694858,
+        "boundary_f1_background": 0.7799839733982904,
+        "boundary_f1_monolayer": 0.7497859105472785,
+        "boundary_f1_fewlayer": 0.6891514555838837,
+        "boundary_f1_multilayer": 0.7836323563149561,
+        "boundary_f1_foreground": 0.740856574148706,
+        "seconds": 305.58049062266946,
+        "image_count": 25,
+        "nfe_total": 3500,
+        "peak_reserved_mib": 6380.0
+      },
+      "meta": {
+        "arm": "R",
+        "checkpoint": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r/checkpoints/best.pt",
+        "checkpoint_sha256": "fd478350873c38f9f265bd174e0a8ab86ffda09ce9294546cadd5763cc05d905",
+        "epoch": 60
+      },
+      "all25_counts_exact": true
+    }
+  },
+  "passed": true,
+  "finished_unix": 1793412403.330318
+}

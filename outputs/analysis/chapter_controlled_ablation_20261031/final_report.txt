@@ -1,0 +1,21 @@
+GLP-Flow受控消融批次完成（seed42，原val25）
+
+本批完成I/N/F各100轮；R复用历史E3R。无新增test推理。以下差值单位为百分点。
+
+方法  best轮次  mIoU%  前景边界F1%  薄层均值%  整图四步秒
+R       60 88.5566 74.0857 78.0081 5.1853
+I      100 89.9195 66.5814 80.9928 4.9687
+N       50 88.6189 73.6063 78.1744 4.9872
+F       50 88.1472 72.0962 77.3132 4.8761
+
+预先指定的主要比较：
+R-I: {"differences": {"miou": {"point_pp": -1.3628971150415392, "image_bootstrap_95_interval_pp": [-3.1187857986976106, 1.0386042510042734]}, "boundary_f1": {"point_pp": 7.504222062462751, "image_bootstrap_95_interval_pp": [1.8123681427317104, 13.512978013819977]}, "thin_mean_iou": {"point_pp": -2.9846788818761683, "image_bootstrap_95_interval_pp": [-6.893908445661194, 1.9664554201600102]}}, "practical_gate_met": false}
+R-N: {"differences": {"miou": {"point_pp": -0.06235594639468767, "image_bootstrap_95_interval_pp": [-0.26010167422286984, 0.16683185808831824]}, "boundary_f1": {"point_pp": 0.47935186265513074, "image_bootstrap_95_interval_pp": [-1.763510349199273, 2.2346448649136494]}, "thin_mean_iou": {"point_pp": -0.16634660299240656, "image_bootstrap_95_interval_pp": [-0.5497339658500094, 0.2924295502715933]}}, "practical_gate_met": null}
+N-F: {"differences": {"miou": {"point_pp": 0.47175290309056095, "image_bootstrap_95_interval_pp": [0.057317539585961266, 0.8502423831248034]}, "boundary_f1": {"point_pp": 1.5100994959861946, "image_bootstrap_95_interval_pp": [0.05978033076701474, 2.980457440161976]}, "thin_mean_iou": {"point_pp": 0.8612298251842732, "image_bootstrap_95_interval_pp": [0.10377838252591035, 1.4885716945701033]}}, "practical_gate_met": true}
+N-R: {"differences": {"miou": {"point_pp": 0.06235594639468767, "image_bootstrap_95_interval_pp": [-0.16683185808831824, 0.26010167422286984]}, "boundary_f1": {"point_pp": -0.47935186265513074, "image_bootstrap_95_interval_pp": [-2.23464486491365, 1.7635103491992716]}, "thin_mean_iou": {"point_pp": 0.16634660299240656, "image_bootstrap_95_interval_pp": [-0.29242955027159345, 0.5497339658500093]}}, "practical_gate_met": true}
+
+R-I衡量监督状态来源；R-N衡量初态噪声；N-F衡量当前Euler混合相对端点回馈。
+实际收益门槛不等于统计显著性；N-R通过容忍门槛也不证明统计等效。
+所有结果均保留，不按结果追加轮数、改变数据或替换原方法。
+过程、边界容差、Boundary IoU、epoch100、原始计数和固定K4提前结束测速见comparison_summary.json及各组目录。
+图像级bootstrap仅是固定权重/旧划分内的描述；样品独立性未核验，也未进行多训练seed复现。

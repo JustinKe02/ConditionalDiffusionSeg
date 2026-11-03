@@ -1,0 +1,24 @@
+{
+  "started_unix": 1793412407.6040475,
+  "checks": {
+    "cpu_metric_identities": true,
+    "fixed_K4_early_return_matches_captured_endpoints": {
+      "id": "m108",
+      "steps": [
+        1,
+        2,
+        4
+      ],
+      "exact": true
+    },
+    "native_image_boundary_metrics": true,
+    "both_intervention_paths": true,
+    "native_benchmark_path": {
+      "agreement": 1.0,
+      "network_seconds": 1.91616250295192
+    },
+    "synthetic_report_and_bootstrap": true
+  },
+  "passed": true,
+  "finished_unix": 1793412486.9536312
+}

@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-17",
+  "scope": "First implementation and debug/resource validation only; no P1/P2/test performance run",
+  "unit_tests": {
+    "count": 7,
+    "status": "passed"
+  },
+  "all_172_pairs_audited": true,
+  "parameter_counts": {
+    "direct": 4929156,
+    "iterative": 4930308,
+    "diffusion": 5132676
+  },
+  "resource_smoke": {
+    "results": [
+      {
+        "method": "direct",
+        "parameter_count": 4929156,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 1.1062167882919312,
+        "grad_norm": 0.9654257893562317,
+        "seconds_including_first_step_startup": 0.6227228892967105,
+        "peak_allocated_mib": 3756.857421875,
+        "peak_reserved_mib": 4396.0,
+        "status": "passed_one_synthetic_training_step"
+      },
+      {
+        "method": "iterative",
+        "parameter_count": 4930308,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 1.0837597846984863,
+        "grad_norm": 0.35062074661254883,
+        "seconds_including_first_step_startup": 0.535119540989399,
+        "peak_allocated_mib": 18450.97509765625,
+        "peak_reserved_mib": 19344.0,
+        "status": "passed_one_synthetic_training_step"
+      },
+      {
+        "method": "diffusion",
+        "parameter_count": 5132676,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 2.028221368789673,
+        "grad_norm": 3.82418155670166,
+        "seconds_including_first_step_startup": 0.17391598969697952,
+        "peak_allocated_mib": 3819.6533203125,
+        "peak_reserved_mib": 4470.0,
+        "status": "passed_one_synthetic_training_step"
+      }
+    ],
+    "limitations": "Synthetic single step, not convergence or full validation throughput"
+  },
+  "pipeline": {
+    "status": "passed",
+    "continuous_run": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/diffusion/seed_42/verify_full_1792208797701253973",
+    "resumed_run": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/diffusion/seed_42/verify_resume_1792208797701253973",
+    "model_weights_bitwise_equal": true,
+    "optimizer_state_bitwise_equal": true,
+    "scheduler_state_equal": true,
+    "tensorboard_csv_values_match": true,
+    "stale_log_tail_reconciled": true,
+    "evaluation_cli": "passed_debug_val_only",
+    "figures": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/figures_1792208797701253973",
+    "scope": "2 training batches at 32x32; no research performance claims"
+  },
+  "storage": {
+    "checked_at_utc": "2026-10-17T03:49:44.953040+00:00",
+    "project_root": "/root/autodl-tmp/ConditionalDiffusionSeg",
+    "measurement": {
+      "disk_total_gib": 50.0,
+      "disk_used_gib": 11.285171508789062,
+      "disk_free_gib": 38.71482849121094,
+      "project_allocated_gib": 0.025909423828125
+    },
+    "assumptions": {
+      "additional_runs": 24,
+      "parameters_per_model": 5132676,
+      "parameter_count_measured": false,
+      "tensorboard_gib_per_run": 0.25,
+      "prediction_gib_per_run": 0.25,
+      "metadata_gib_per_run": 0.03125,
+      "shared_debug_reports_and_misc_gib": 2,
+      "reserve_gib": 8.0,
+      "project_cap_gib": 26
+    },
+    "estimate": {
+      "per_run_gib": 0.6077328324317932,
+      "additional_persistent_gib": 16.585587978363037,
+      "atomic_write_extra_gib": 0.05736212432384491,
+      "required_free_including_reserve_gib": 24.642950102686882
+    },
+    "capacity_ok_under_assumptions": true,
+    "disk_budget_ok": true,
+    "project_cap_ok": true,
+    "limitations": [
+      "Estimate uses a configurable parameter assumption and size formulas, not measured sizes of all future artifacts.",
+      "Single-run runtime checks are implemented in trainer; this script only estimates total planned capacity.",
+      "Concurrent disk writers and extra reruns can invalidate this snapshot."
+    ]
+  },
+  "remaining": [
+    "fixed_train_crop_overfit",
+    "full_validation_sampling_runtime",
+    "checkpoint_and_log_size_calibration",
+    "sample_provenance_audit",
+    "P1_and_formal_experiments"
+  ],
+  "python": "3.12.3"
+}

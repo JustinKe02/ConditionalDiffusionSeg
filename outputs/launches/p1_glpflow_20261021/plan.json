@@ -1,0 +1,312 @@
+{
+  "batch_id": "p1_glpflow_20261021",
+  "created": "2026-10-21T22:25:58+0800",
+  "order": [
+    "E0",
+    "E1",
+    "E2",
+    "E3"
+  ],
+  "gates": {
+    "miou_E3_minus_E1": 0.005,
+    "thin_mean_E3_minus_E1": 0.01,
+    "few_to_mono_E3_below_E1": true,
+    "miou_E3_minus_E0": 0.015,
+    "miou_E3_minus_E2": 0.008,
+    "boundary_E3_minus_E1_min": -0.005,
+    "seed3408_E3_above_E1_and_E2": true,
+    "statistical_significance_claim": false
+  },
+  "configs": {
+    "E0": {
+      "arm": "E0",
+      "global_stream": false,
+      "flow": false,
+      "source": "none",
+      "schema": "glpflow_v1",
+      "seed": 42,
+      "sampling_seed": 3407,
+      "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+      "device": "cuda",
+      "crop_size": 512,
+      "stride": 384,
+      "crops_per_image": 2,
+      "thin_crop_fraction": 0.5,
+      "batch_size": 8,
+      "workers": 12,
+      "epochs": 100,
+      "warmup_epochs": 5,
+      "lr": 0.00028,
+      "min_lr": 1e-06,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "val_every": 10,
+      "window_batch_size": 8,
+      "sampling_steps": 4,
+      "self_condition_prob": 0.5,
+      "shortcut_fraction": 0.25,
+      "prior_loss_weight": 0.5,
+      "source_noise_scale": 1.0,
+      "t_logit_mean": -0.5,
+      "t_logit_std": 1.0,
+      "ema_sigma_rel": 0.1,
+      "photometric": {
+        "gain": 0.1,
+        "gamma": 0.1,
+        "vignette": 0.15
+      },
+      "widths": {
+        "local": [
+          32,
+          64,
+          128,
+          192
+        ],
+        "token": 256,
+        "global_": [
+          32,
+          64,
+          128,
+          256,
+          256
+        ]
+      },
+      "heads": 4,
+      "na_kernel": 7,
+      "boundary_tolerance": 2,
+      "preview_count": 4,
+      "log_every": 20,
+      "precision": "FP32, TF32 disabled",
+      "data_scope": "original train120/val25 (m109/m31 kept); test untouched",
+      "storage": {
+        "min_free_gib": 8,
+        "warning_free_gib": 12,
+        "project_cap_gib": 26,
+        "run_cap_gib": 1,
+        "tensorboard_cap_mib": 256
+      }
+    },
+    "E1": {
+      "arm": "E1",
+      "global_stream": true,
+      "flow": false,
+      "source": "prior_deterministic",
+      "schema": "glpflow_v1",
+      "seed": 42,
+      "sampling_seed": 3407,
+      "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+      "device": "cuda",
+      "crop_size": 512,
+      "stride": 384,
+      "crops_per_image": 2,
+      "thin_crop_fraction": 0.5,
+      "batch_size": 8,
+      "workers": 12,
+      "epochs": 100,
+      "warmup_epochs": 5,
+      "lr": 0.00028,
+      "min_lr": 1e-06,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "val_every": 10,
+      "window_batch_size": 8,
+      "sampling_steps": 4,
+      "self_condition_prob": 0.5,
+      "shortcut_fraction": 0.25,
+      "prior_loss_weight": 0.5,
+      "source_noise_scale": 1.0,
+      "t_logit_mean": -0.5,
+      "t_logit_std": 1.0,
+      "ema_sigma_rel": 0.1,
+      "photometric": {
+        "gain": 0.1,
+        "gamma": 0.1,
+        "vignette": 0.15
+      },
+      "widths": {
+        "local": [
+          32,
+          64,
+          128,
+          192
+        ],
+        "token": 256,
+        "global_": [
+          32,
+          64,
+          128,
+          256,
+          256
+        ]
+      },
+      "heads": 4,
+      "na_kernel": 7,
+      "boundary_tolerance": 2,
+      "preview_count": 4,
+      "log_every": 20,
+      "precision": "FP32, TF32 disabled",
+      "data_scope": "original train120/val25 (m109/m31 kept); test untouched",
+      "storage": {
+        "min_free_gib": 8,
+        "warning_free_gib": 12,
+        "project_cap_gib": 26,
+        "run_cap_gib": 1,
+        "tensorboard_cap_mib": 256
+      }
+    },
+    "E2": {
+      "arm": "E2",
+      "global_stream": true,
+      "flow": true,
+      "source": "gaussian_noise",
+      "schema": "glpflow_v1",
+      "seed": 42,
+      "sampling_seed": 3407,
+      "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+      "device": "cuda",
+      "crop_size": 512,
+      "stride": 384,
+      "crops_per_image": 2,
+      "thin_crop_fraction": 0.5,
+      "batch_size": 8,
+      "workers": 12,
+      "epochs": 100,
+      "warmup_epochs": 5,
+      "lr": 0.00028,
+      "min_lr": 1e-06,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "val_every": 10,
+      "window_batch_size": 8,
+      "sampling_steps": 4,
+      "self_condition_prob": 0.5,
+      "shortcut_fraction": 0.25,
+      "prior_loss_weight": 0.5,
+      "source_noise_scale": 1.0,
+      "t_logit_mean": -0.5,
+      "t_logit_std": 1.0,
+      "ema_sigma_rel": 0.1,
+      "photometric": {
+        "gain": 0.1,
+        "gamma": 0.1,
+        "vignette": 0.15
+      },
+      "widths": {
+        "local": [
+          32,
+          64,
+          128,
+          192
+        ],
+        "token": 256,
+        "global_": [
+          32,
+          64,
+          128,
+          256,
+          256
+        ]
+      },
+      "heads": 4,
+      "na_kernel": 7,
+      "boundary_tolerance": 2,
+      "preview_count": 4,
+      "log_every": 20,
+      "precision": "FP32, TF32 disabled",
+      "data_scope": "original train120/val25 (m109/m31 kept); test untouched",
+      "storage": {
+        "min_free_gib": 8,
+        "warning_free_gib": 12,
+        "project_cap_gib": 26,
+        "run_cap_gib": 1,
+        "tensorboard_cap_mib": 256
+      }
+    },
+    "E3": {
+      "arm": "E3",
+      "global_stream": true,
+      "flow": true,
+      "source": "prior_uncertainty",
+      "schema": "glpflow_v1",
+      "seed": 42,
+      "sampling_seed": 3407,
+      "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+      "device": "cuda",
+      "crop_size": 512,
+      "stride": 384,
+      "crops_per_image": 2,
+      "thin_crop_fraction": 0.5,
+      "batch_size": 8,
+      "workers": 12,
+      "epochs": 100,
+      "warmup_epochs": 5,
+      "lr": 0.00028,
+      "min_lr": 1e-06,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "val_every": 10,
+      "window_batch_size": 8,
+      "sampling_steps": 4,
+      "self_condition_prob": 0.5,
+      "shortcut_fraction": 0.25,
+      "prior_loss_weight": 0.5,
+      "source_noise_scale": 1.0,
+      "t_logit_mean": -0.5,
+      "t_logit_std": 1.0,
+      "ema_sigma_rel": 0.1,
+      "photometric": {
+        "gain": 0.1,
+        "gamma": 0.1,
+        "vignette": 0.15
+      },
+      "widths": {
+        "local": [
+          32,
+          64,
+          128,
+          192
+        ],
+        "token": 256,
+        "global_": [
+          32,
+          64,
+          128,
+          256,
+          256
+        ]
+      },
+      "heads": 4,
+      "na_kernel": 7,
+      "boundary_tolerance": 2,
+      "preview_count": 4,
+      "log_every": 20,
+      "precision": "FP32, TF32 disabled",
+      "data_scope": "original train120/val25 (m109/m31 kept); test untouched",
+      "storage": {
+        "min_free_gib": 8,
+        "warning_free_gib": 12,
+        "project_cap_gib": 26,
+        "run_cap_gib": 1,
+        "tensorboard_cap_mib": 256
+      }
+    }
+  },
+  "runs": {
+    "E0": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_20261021_e0",
+    "E1": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_20261021_e1",
+    "E2": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_20261021_e2",
+    "E3": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_20261021_e3"
+  },
+  "frozen_sha256": {
+    "work/glpflow_core.py": "bc96192e00cde8673fa9c2defddc2fdfe2de5668962c10d15689f3df0bee1852",
+    "work/verify_glpflow_20261021.py": "7a04be805a36ce8e96a2063e20cd87289db46406ffdadbec7c38f183249e6f86",
+    "work/launch_glpflow_20261021.py": "7ec62224fe530a1bccff9a93067faddb98e88fc197378502b49a61e59b6c8ad5",
+    "outputs/launches/p1_glpflow_20261021/engineering_verification.json": "dd1ed9de9959824fff0614eb703fdde7c3cc67d751803d8f196a2edf145344f5",
+    "data_manifests/source_dataset.json": "632ae9cd6ebb53cb0306c3ee1eb4bf6c872bf748ef449554557ee3118d37dc8c",
+    "data_manifests/splits/train.txt": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+    "data_manifests/splits/val.txt": "55ee8360ac48c2150cd60ee451f42059b3fe9463d23b5e5697a938131319db27"
+  },
+  "scope": "seed42 single training run per arm; original train120/val25 incl. m109/m31; no test; report and stop",
+  "budget": "100 epochs x 240 crops = 24000 crops, batch 8, 3000 updates per arm; validation every 10 epochs (EMA weights)",
+  "selection": "best by global 4-class val mIoU (EMA sigma_rel 0.10), sampling seed 3407; 3408 same-best check for E2/E3"
+}

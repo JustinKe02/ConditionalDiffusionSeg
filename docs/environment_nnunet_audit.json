@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-17T03:53:10.547190+00:00",
+  "environment": "nnunet",
+  "prefix": "/root/autodl-tmp/conda/envs/nnunet",
+  "python_executable": "/root/autodl-tmp/conda/envs/nnunet/bin/python",
+  "python_version": "3.10.19",
+  "packages": {
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "numpy": "2.2.6",
+    "Pillow": "12.1.0",
+    "tensorboard": "2.20.0",
+    "matplotlib": "3.10.8"
+  },
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "nnunetv2_installed": false,
+  "unit_tests_passed": 7,
+  "resource_smoke": {
+    "results": [
+      {
+        "method": "direct",
+        "parameter_count": 4929156,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 1.1062167882919312,
+        "grad_norm": 0.9654502272605896,
+        "seconds_including_first_step_startup": 0.9323350545018911,
+        "peak_allocated_mib": 3758.47998046875,
+        "peak_reserved_mib": 4200.0,
+        "status": "passed_one_synthetic_training_step"
+      },
+      {
+        "method": "iterative",
+        "parameter_count": 4930308,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 1.0837597846984863,
+        "grad_norm": 0.3506763279438019,
+        "seconds_including_first_step_startup": 0.5332153821364045,
+        "peak_allocated_mib": 18452.59765625,
+        "peak_reserved_mib": 19140.0,
+        "status": "passed_one_synthetic_training_step"
+      },
+      {
+        "method": "diffusion",
+        "parameter_count": 5132676,
+        "batch_size": 2,
+        "crop_size": 512,
+        "loss": 2.028221845626831,
+        "grad_norm": 3.824719190597534,
+        "seconds_including_first_step_startup": 0.19474348705261946,
+        "peak_allocated_mib": 3821.27587890625,
+        "peak_reserved_mib": 4274.0,
+        "status": "passed_one_synthetic_training_step"
+      }
+    ],
+    "limitations": "Synthetic single step, not convergence or full validation throughput"
+  },
+  "conclusion": "Meets dependencies and passes core tests plus 512/batch2 single-step checks for all three methods",
+  "scope_limit": "Full trainer/TensorBoard/checkpoint resume integration was previously verified in base, not repeated in nnunet; no P1/P2 training performed",
+  "environment_modified": false
+}

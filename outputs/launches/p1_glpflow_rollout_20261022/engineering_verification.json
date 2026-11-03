@@ -1,0 +1,58 @@
+{
+  "started": "2026-10-22T08:49:13+0800",
+  "checks": {
+    "smoke_b8": {
+      "passed": true,
+      "samples_per_second": 4.727842837108791,
+      "peak_reserved_mib": 17192.0,
+      "terms": {
+        "loss_ce": 1.3333369493484497,
+        "loss_dice_fg": 0.8409227132797241,
+        "loss_prior": 0.582209050655365,
+        "loss_total": 1.3782343864440918,
+        "mean_k": 1.375
+      }
+    },
+    "resume_bitwise": {
+      "passed": true,
+      "directory": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/integration/glpflow_rollout_resume_1792630181683890524"
+    },
+    "p0_gate_E3R": {
+      "passed": true,
+      "detail": {
+        "arm": "E3R",
+        "updates": 300,
+        "lr": 0.0002,
+        "final_terms": {
+          "loss_ce": 0.0917334035038948,
+          "loss_dice_fg": 0.08269953727722168,
+          "loss_prior": 0.06020693853497505,
+          "loss_total": 0.11731993407011032,
+          "mean_k": 1.0
+        },
+        "train_seconds": 128.15139711182564,
+        "seed3407": {
+          "miou": 0.9958412569647115,
+          "ious": [
+            0.9914769058585511,
+            0.9961583499393964,
+            0.9974050566328857,
+            0.9983247154280126
+          ]
+        },
+        "seed3408": {
+          "miou": 0.9958211373148157,
+          "ious": [
+            0.9914986117986355,
+            0.9961171032357473,
+            0.9973350632045865,
+            0.9983337710202936
+          ]
+        },
+        "passed": true
+      }
+    }
+  },
+  "passed": true,
+  "finished": "2026-10-22T08:52:58+0800"
+}

@@ -1,0 +1,230 @@
+{
+  "1": {
+    "miou_4class": 0.8793473814449111,
+    "miou_foreground": 0.8402627637113843,
+    "iou_background": 0.9966012346454911,
+    "f1_background": 0.9982977245052579,
+    "iou_monolayer": 0.7683554504238124,
+    "f1_monolayer": 0.8690056631314306,
+    "iou_fewlayer": 0.770114433162584,
+    "f1_fewlayer": 0.870129544999704,
+    "iou_multilayer": 0.9823184075477567,
+    "f1_multilayer": 0.9910803469387561,
+    "precision_background": 0.9984537979096432,
+    "recall_background": 0.9981416998865059,
+    "precision_monolayer": 0.7806045874358192,
+    "recall_monolayer": 0.9799860816116367,
+    "precision_fewlayer": 0.9632323314125112,
+    "recall_fewlayer": 0.7934384610694837,
+    "precision_multilayer": 0.9901999193907592,
+    "recall_multilayer": 0.991962341528894,
+    "thin_mean_iou": 0.7692349417931982,
+    "few_to_mono_rate": 0.17697170551293173,
+    "mono_to_background_rate": 0.00995567033532857,
+    "multi_to_few_rate": 0.003058750624925948,
+    "boundary_f1": {
+      "1": {
+        "boundary_f1_background": 0.599446347544682,
+        "boundary_f1_monolayer": 0.5798686989714744,
+        "boundary_f1_fewlayer": 0.47530506947216744,
+        "boundary_f1_multilayer": 0.5816590876462999,
+        "boundary_f1_foreground": 0.5456109520299807
+      },
+      "2": {
+        "boundary_f1_background": 0.7670431896250377,
+        "boundary_f1_monolayer": 0.7261921183861738,
+        "boundary_f1_fewlayer": 0.6440382992587768,
+        "boundary_f1_multilayer": 0.7598034216363684,
+        "boundary_f1_foreground": 0.7100112797604395
+      },
+      "4": {
+        "boundary_f1_background": 0.8780154314102168,
+        "boundary_f1_monolayer": 0.8169429060936596,
+        "boundary_f1_fewlayer": 0.7578915868951629,
+        "boundary_f1_multilayer": 0.8817087546178508,
+        "boundary_f1_foreground": 0.8188477492022245
+      }
+    },
+    "boundary_iou": {
+      "1": {
+        "per_class": [
+          0.4664695757033522,
+          0.1428864890245334,
+          0.10326702248099628,
+          0.1884861281223628
+        ],
+        "foreground": 0.14487987987596415
+      },
+      "2": {
+        "per_class": [
+          0.5730065457103298,
+          0.26374436706267923,
+          0.20106094677968056,
+          0.3084801914307118
+        ],
+        "foreground": 0.25776183509102385
+      },
+      "4": {
+        "per_class": [
+          0.7058102194881231,
+          0.42548144232917096,
+          0.3488745206479395,
+          0.47967756856345467
+        ],
+        "foreground": 0.4180111771801884
+      }
+    }
+  },
+  "2": {
+    "miou_4class": 0.8807774986385581,
+    "miou_foreground": 0.8421566587315752,
+    "iou_background": 0.996640018359507,
+    "f1_background": 0.9983171820610639,
+    "iou_monolayer": 0.7697975971862542,
+    "f1_monolayer": 0.8699272712429165,
+    "iou_fewlayer": 0.7738792178276364,
+    "f1_fewlayer": 0.8725275205324969,
+    "iou_multilayer": 0.9827931611808347,
+    "f1_multilayer": 0.991321919423548,
+    "precision_background": 0.9984877498315685,
+    "recall_background": 0.998146672555461,
+    "precision_monolayer": 0.7810741195152656,
+    "recall_monolayer": 0.9815907189290082,
+    "precision_fewlayer": 0.9635022845971335,
+    "recall_fewlayer": 0.7972504100244169,
+    "precision_multilayer": 0.990756150614209,
+    "recall_multilayer": 0.9918883347637997,
+    "thin_mean_iou": 0.7718384075069453,
+    "few_to_mono_rate": 0.1767644719686558,
+    "mono_to_background_rate": 0.008881219025551909,
+    "multi_to_few_rate": 0.0031344280735519777,
+    "boundary_f1": {
+      "1": {
+        "boundary_f1_background": 0.6030114921176142,
+        "boundary_f1_monolayer": 0.5920629069334864,
+        "boundary_f1_fewlayer": 0.4848058873215798,
+        "boundary_f1_multilayer": 0.5839811163130703,
+        "boundary_f1_foreground": 0.5536166368560456
+      },
+      "2": {
+        "boundary_f1_background": 0.7707249717156246,
+        "boundary_f1_monolayer": 0.7402735031683367,
+        "boundary_f1_fewlayer": 0.6503571470270222,
+        "boundary_f1_multilayer": 0.7611384552416982,
+        "boundary_f1_foreground": 0.7172563684790191
+      },
+      "4": {
+        "boundary_f1_background": 0.8806711709705894,
+        "boundary_f1_monolayer": 0.8264744624535377,
+        "boundary_f1_fewlayer": 0.7645515817209875,
+        "boundary_f1_multilayer": 0.8838393393391619,
+        "boundary_f1_foreground": 0.8249551278378956
+      }
+    },
+    "boundary_iou": {
+      "1": {
+        "per_class": [
+          0.4670550441399949,
+          0.14514813808100027,
+          0.10568199261575252,
+          0.1890582081509811
+        ],
+        "foreground": 0.14662944628257799
+      },
+      "2": {
+        "per_class": [
+          0.5743120199615439,
+          0.2702577768109637,
+          0.2059972186554465,
+          0.30953061116802255
+        ],
+        "foreground": 0.26192853554481094
+      },
+      "4": {
+        "per_class": [
+          0.7077022751014791,
+          0.4368280625889762,
+          0.35480121966416,
+          0.48058917026954256
+        ],
+        "foreground": 0.4240728175075596
+      }
+    }
+  },
+  "4": {
+    "miou_4class": 0.8814719698505834,
+    "miou_foreground": 0.8430815894230909,
+    "iou_background": 0.9966431111330613,
+    "f1_background": 0.9983187336543916,
+    "iou_monolayer": 0.7706419007199276,
+    "f1_monolayer": 0.8704661291552982,
+    "iou_fewlayer": 0.7756219397871911,
+    "f1_fewlayer": 0.8736341024037466,
+    "iou_multilayer": 0.9829809277621537,
+    "f1_multilayer": 0.9914174301933137,
+    "precision_background": 0.99848027877672,
+    "recall_background": 0.998157240796701,
+    "precision_monolayer": 0.7814997497302079,
+    "recall_monolayer": 0.9822906610027676,
+    "precision_fewlayer": 0.9634083640285076,
+    "recall_fewlayer": 0.7991647230547865,
+    "precision_multilayer": 0.9910705345915937,
+    "recall_multilayer": 0.9917645687216254,
+    "thin_mean_iou": 0.7731319202535594,
+    "few_to_mono_rate": 0.17617776591850254,
+    "mono_to_background_rate": 0.008324885756581064,
+    "multi_to_few_rate": 0.003163958533815357,
+    "boundary_f1": {
+      "1": {
+        "boundary_f1_background": 0.6041582442228957,
+        "boundary_f1_monolayer": 0.597072771463342,
+        "boundary_f1_fewlayer": 0.48625563566976115,
+        "boundary_f1_multilayer": 0.5844245003988506,
+        "boundary_f1_foreground": 0.5559176358439846
+      },
+      "2": {
+        "boundary_f1_background": 0.7726006581888318,
+        "boundary_f1_monolayer": 0.7469779579084442,
+        "boundary_f1_fewlayer": 0.654018761653583,
+        "boundary_f1_multilayer": 0.7618894621248509,
+        "boundary_f1_foreground": 0.7209620605622927
+      },
+      "4": {
+        "boundary_f1_background": 0.8813477909269268,
+        "boundary_f1_monolayer": 0.829881323052948,
+        "boundary_f1_fewlayer": 0.767911054098936,
+        "boundary_f1_multilayer": 0.8846661292866019,
+        "boundary_f1_foreground": 0.8274861688128287
+      }
+    },
+    "boundary_iou": {
+      "1": {
+        "per_class": [
+          0.46678349220179827,
+          0.14577453898789963,
+          0.10638126789102956,
+          0.1890141520748381
+        ],
+        "foreground": 0.14705665298458911
+      },
+      "2": {
+        "per_class": [
+          0.5744217003588605,
+          0.27262962601308466,
+          0.20712698820134715,
+          0.30965912709894977
+        ],
+        "foreground": 0.26313858043779387
+      },
+      "4": {
+        "per_class": [
+          0.7082482553179587,
+          0.4411854279892371,
+          0.35767066295383415,
+          0.48087121507472386
+        ],
+        "foreground": 0.4265757686725984
+      }
+    }
+  }
+}

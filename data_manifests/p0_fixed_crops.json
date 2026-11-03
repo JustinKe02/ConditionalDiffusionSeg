@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "split": "train",
+  "crop_size": 256,
+  "train_split_sha256": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+  "augmentation": "none",
+  "selection": "deterministic label-only grid; one distinct image per target class; maximize p*(1-p)",
+  "crops": [
+    {
+      "id": "m136",
+      "top": 1152,
+      "left": 1024,
+      "pixel_counts": [
+        11097,
+        32770,
+        0,
+        21669
+      ],
+      "target_class": 1,
+      "selection_score": 0.24999999906867743
+    },
+    {
+      "id": "m35",
+      "top": 1024,
+      "left": 1152,
+      "pixel_counts": [
+        70,
+        9639,
+        32752,
+        23075
+      ],
+      "target_class": 2,
+      "selection_score": 0.24999994039535522
+    },
+    {
+      "id": "m131",
+      "top": 256,
+      "left": 1664,
+      "pixel_counts": [
+        2355,
+        6213,
+        24200,
+        32768
+      ],
+      "target_class": 3,
+      "selection_score": 0.25
+    },
+    {
+      "id": "m37",
+      "top": 128,
+      "left": 1536,
+      "pixel_counts": [
+        32775,
+        0,
+        0,
+        32761
+      ],
+      "target_class": 0,
+      "selection_score": 0.24999998859129846
+    }
+  ],
+  "total_pixel_counts": [
+    46297,
+    48622,
+    56952,
+    110273
+  ],
+  "scope": "memorization diagnostic only; not validation or thesis performance"
+}

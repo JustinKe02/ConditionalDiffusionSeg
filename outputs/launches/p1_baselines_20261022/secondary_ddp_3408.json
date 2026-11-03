@@ -1,0 +1,73 @@
+{
+  "epoch": 100,
+  "metrics": {
+    "miou_4class": 0.8385722082367703,
+    "miou_foreground": 0.7877049924084792,
+    "iou_background": 0.9911738557216431,
+    "f1_background": 0.9955673663286634,
+    "iou_monolayer": 0.6572665771246416,
+    "f1_monolayer": 0.7931935467678345,
+    "iou_fewlayer": 0.72518274754865,
+    "f1_fewlayer": 0.8407025268239878,
+    "iou_multilayer": 0.9806656525521463,
+    "f1_multilayer": 0.990238459770865,
+    "precision_background": 0.9967178815960531,
+    "recall_background": 0.994419504087233,
+    "precision_monolayer": 0.697970367866048,
+    "recall_monolayer": 0.9185038134775053,
+    "precision_fewlayer": 0.927073882202812,
+    "recall_fewlayer": 0.7690532516392091,
+    "precision_multilayer": 0.9889804714553239,
+    "recall_multilayer": 0.9914996524978255,
+    "thin_mean_iou": 0.6912246623366458,
+    "few_to_mono_rate": 0.17484551122027478,
+    "mono_to_background_rate": 0.043097927527836775,
+    "boundary_f1_background": 0.6807268582376995,
+    "boundary_f1_monolayer": 0.5393838976838223,
+    "boundary_f1_fewlayer": 0.5871407273334829,
+    "boundary_f1_multilayer": 0.7195982400413697,
+    "boundary_f1_foreground": 0.6153742883528918,
+    "distance_accuracy": {
+      "0-2": {
+        "all": 0.7164770289824469,
+        "thin": 0.7201617529768984,
+        "pixels": 1349679,
+        "thin_pixels": 357335
+      },
+      "2-4": {
+        "all": 0.9032276618604898,
+        "thin": 0.8498013049023064,
+        "pixels": 869298,
+        "thin_pixels": 229749
+      },
+      "4-8": {
+        "all": 0.9489527104863498,
+        "thin": 0.8909452888170536,
+        "pixels": 1679717,
+        "thin_pixels": 432471
+      },
+      "8-16": {
+        "all": 0.9648895397887769,
+        "thin": 0.9085485452762341,
+        "pixels": 3173043,
+        "thin_pixels": 758632
+      },
+      ">16": {
+        "all": 0.9905101823059451,
+        "thin": 0.8175937281952206,
+        "pixels": 115936263,
+        "thin_pixels": 4365442
+      }
+    },
+    "acc_0_2px_all": 0.7164770289824469,
+    "acc_0_2px_thin": 0.7201617529768984,
+    "seconds": 579.0161937456578,
+    "predict_seconds_per_image": 6.039182877093554,
+    "predict_seconds_per_image_excl_first": 6.020153148371416,
+    "image_count": 25,
+    "nfe_total": 2625,
+    "nfe_per_image": 105.0,
+    "peak_reserved_mib": 6434.0,
+    "peak_allocated_mib": 5959.39453125
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "batch_id": "p1_glpflow_rollout_20261022",
+  "created": "2026-10-22T08:53:00+0800",
+  "config": {
+    "arm": "E3R",
+    "global_stream": true,
+    "flow": true,
+    "source": "prior_uncertainty",
+    "schema": "glpflow_v1",
+    "seed": 42,
+    "sampling_seed": 3407,
+    "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+    "device": "cuda",
+    "crop_size": 512,
+    "stride": 384,
+    "crops_per_image": 2,
+    "thin_crop_fraction": 0.5,
+    "batch_size": 8,
+    "workers": 12,
+    "epochs": 100,
+    "warmup_epochs": 5,
+    "lr": 0.00028,
+    "min_lr": 1e-06,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "val_every": 10,
+    "window_batch_size": 8,
+    "sampling_steps": 4,
+    "self_condition_prob": null,
+    "shortcut_fraction": 0.0,
+    "prior_loss_weight": 0.5,
+    "source_noise_scale": 1.0,
+    "t_logit_mean": -0.5,
+    "t_logit_std": 1.0,
+    "ema_sigma_rel": 0.1,
+    "photometric": {
+      "gain": 0.1,
+      "gamma": 0.1,
+      "vignette": 0.15
+    },
+    "widths": {
+      "local": [
+        32,
+        64,
+        128,
+        192
+      ],
+      "token": 256,
+      "global_": [
+        32,
+        64,
+        128,
+        256,
+        256
+      ]
+    },
+    "heads": 4,
+    "na_kernel": 7,
+    "boundary_tolerance": 2,
+    "preview_count": 4,
+    "log_every": 20,
+    "precision": "FP32, TF32 disabled",
+    "data_scope": "original train120/val25 (m109/m31 kept); test untouched",
+    "storage": {
+      "min_free_gib": 8,
+      "warning_free_gib": 12,
+      "project_cap_gib": 26,
+      "run_cap_gib": 1,
+      "tensorboard_cap_mib": 256
+    },
+    "training_state": "sampler_rollout_k4_no_grad",
+    "self_condition": "inference-matched (previous rollout step)"
+  },
+  "gates": {
+    "miou_E3R_minus_E1": 0.005,
+    "thin_mean_E3R_minus_E1": 0.01,
+    "boundary_E3R_minus_E1_min": -0.005,
+    "few_to_mono_E3R_below_E1": true,
+    "miou_E3R_minus_E3": 0.008,
+    "seed3408_E3R_above_E1": true,
+    "statistical_significance_claim": false
+  },
+  "run": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/P1/glpflow/seed_42/p1_glpflow_rollout_20261022_e3r",
+  "diagnosis_decision": {
+    "reproduces_recorded_E3_k4": true,
+    "oracle_minus_self_miou_at_t025_pp": 12.269455660067575,
+    "self_final_boundary_below_E1_pp": 16.98759766383877,
+    "multi_step_gain_pp": -0.019212871168405865,
+    "confirmed": true
+  },
+  "frozen_sha256": {
+    "work/glpflow_core.py": "bc96192e00cde8673fa9c2defddc2fdfe2de5668962c10d15689f3df0bee1852",
+    "work/glpflow_rollout_20261022.py": "ee644054608367134aca0a3080e566c8e9e32746f12c9b6460e633c34a3f33bd",
+    "work/diagnose_glpflow_20261022.py": "af010c115a8f6d8f286db0711173c2af2a066dc7645c89c17cc20c7d33e125b9",
+    "outputs/analysis/glpflow_diagnosis_20261022/diagnosis.json": "32a28de9c49ad5d7ccec770537fa83aba5e96d35fdb67772cd054e75c879c066",
+    "outputs/launches/p1_glpflow_rollout_20261022/engineering_verification.json": "de228bd778b31f140d74e5879d9cef6937d90349c7f8a1951dde6dca6f8dd7cb",
+    "data_manifests/source_dataset.json": "632ae9cd6ebb53cb0306c3ee1eb4bf6c872bf748ef449554557ee3118d37dc8c",
+    "data_manifests/splits/train.txt": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+    "data_manifests/splits/val.txt": "55ee8360ac48c2150cd60ee451f42059b3fe9463d23b5e5697a938131319db27"
+  },
+  "scope": "seed42 single run; train120/val25 incl. m109/m31; same budget as E3 (100 ep, b8, 3000 updates); E1/E3 reused; no test; report and stop"
+}

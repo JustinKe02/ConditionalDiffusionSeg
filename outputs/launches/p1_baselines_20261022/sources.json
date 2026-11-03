@@ -1,0 +1,297 @@
+{
+ "verified_date": "2026-10-22",
+ "protocol_note": "All 9 comparison methods are reproduced in pure PyTorch within the unified training framework from scratch (no pretrained weights, no DINO features), following docs/TRAINING_PLAN_BASELINES_20261022.md.",
+ "methods": {
+  "unet": {
+   "name": "U-Net",
+   "authors": "Olaf Ronneberger, Philipp Fischer, Thomas Brox",
+   "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+   "venue": "MICCAI",
+   "year": 2015,
+   "architecture": {
+    "levels": 5,
+    "channels": [
+     64,
+     128,
+     256,
+     512,
+     1024
+    ],
+    "conv_padding": 1,
+    "upsampling": "ConvTranspose2d(kernel_size=2, stride=2)",
+    "normalization": "BatchNorm2d (modern standard reproduction; original paper had no normalization, noted in report)"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice",
+   "verified_parameters": 31037828,
+   "verified_parameters_m": 31.04
+  },
+  "unetpp": {
+   "name": "UNet++",
+   "authors": "Zongwei Zhou, Md Mahfuzur Rahman Siddiquee, Nima Tajbakhsh, Jianming Liang",
+   "title": "UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation",
+   "venue": "IEEE Transactions on Medical Imaging (IEEE TMI)",
+   "year": 2020,
+   "architecture": {
+    "backbone": "VGG-style 5-stage encoder",
+    "channels": [
+     32,
+     64,
+     128,
+     256,
+     512
+    ],
+    "skip_connections": "Nested dense skip pathways X^{i,j} (i+j<=4)",
+    "upsampling": "Deterministic bilinear upsampling (scale_factor=2, align_corners=False)",
+    "deep_supervision": false,
+    "normalization": "BatchNorm2d"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice",
+   "verified_parameters": 9163428,
+   "verified_parameters_m": 9.16
+  },
+  "pspnet": {
+   "name": "PSPNet",
+   "authors": "Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, Jiaya Jia",
+   "title": "Pyramid Scene Parsing Network",
+   "venue": "CVPR",
+   "year": 2017,
+   "architecture": {
+    "backbone": "ResNet-50 dilated (ResNetV1c deep 3x3 stem, output_stride=8, stage3 dilation=2, stage4 dilation=4)",
+    "ppm_bins": [
+     1,
+     2,
+     3,
+     6
+    ],
+    "ppm_channels": 512,
+    "head_channels": 512,
+    "auxiliary_head": "Stage-3 FCN auxiliary head (1024 -> 256 -> 4), loss_weight=0.4",
+    "normalization": "BatchNorm2d"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice + 0.4 * aux_CE",
+   "verified_parameters": 49068488,
+   "verified_parameters_m": 49.07
+  },
+  "deeplabv3p": {
+   "name": "DeepLabv3+",
+   "authors": "Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, Hartwig Adam",
+   "title": "Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation",
+   "venue": "ECCV",
+   "year": 2018,
+   "architecture": {
+    "backbone": "ResNet-50 dilated (output_stride=16, stage4 dilation=2)",
+    "aspp_dilations": [
+     1,
+     6,
+     12,
+     18
+    ],
+    "aspp_image_pooling": true,
+    "aspp_channels": 256,
+    "low_level_channels": 48,
+    "decoder_channels": 256,
+    "normalization": "BatchNorm2d"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice",
+   "verified_parameters": 40347812,
+   "verified_parameters_m": 40.35
+  },
+  "hrnet_w48": {
+   "name": "HRNet-W48",
+   "authors": "Jingdong Wang, Ke Sun, Tianheng Cheng, Borui Jiang, Chaorui Deng, Yang Zhao, Dong Liu, Yadong Mu, Mingkui Tan, Xinggang Wang, Wenyu Liu, Bin Xiao",
+   "title": "Deep High-Resolution Representation Learning for Visual Recognition",
+   "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+   "year": 2021,
+   "architecture": {
+    "variant": "HRNetV2-W48 (seg_hrnet_w48)",
+    "stage1": {
+     "num_modules": 1,
+     "num_branches": 1,
+     "block": "BOTTLENECK",
+     "num_blocks": [
+      4
+     ],
+     "num_channels": [
+      64
+     ]
+    },
+    "stage2": {
+     "num_modules": 1,
+     "num_branches": 2,
+     "block": "BASIC",
+     "num_blocks": [
+      4,
+      4
+     ],
+     "num_channels": [
+      48,
+      96
+     ]
+    },
+    "stage3": {
+     "num_modules": 4,
+     "num_branches": 3,
+     "block": "BASIC",
+     "num_blocks": [
+      4,
+      4,
+      4
+     ],
+     "num_channels": [
+      48,
+      96,
+      192
+     ]
+    },
+    "stage4": {
+     "num_modules": 3,
+     "num_branches": 4,
+     "block": "BASIC",
+     "num_blocks": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "num_channels": [
+      48,
+      96,
+      192,
+      384
+     ]
+    },
+    "head": "Concatenate 4 branches at 1/4 scale (720 ch) -> Conv3x3(720, 720) + BN + ReLU -> Conv1x1(720, 4)",
+    "normalization": "BatchNorm2d"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice",
+   "verified_parameters": 65847844,
+   "verified_parameters_m": 65.85
+  },
+  "segformer_b1": {
+   "name": "SegFormer-B1",
+   "authors": "Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M. Alvarez, Ping Luo",
+   "title": "SegFormer: Simple and Efficient Design for Semantic Segmentation with Transformers",
+   "venue": "NeurIPS",
+   "year": 2021,
+   "architecture": {
+    "encoder": "MiT-B1",
+    "embed_dims": [
+     64,
+     128,
+     320,
+     512
+    ],
+    "depths": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "num_heads": [
+     1,
+     2,
+     5,
+     8
+    ],
+    "sr_ratios": [
+     8,
+     4,
+     2,
+     1
+    ],
+    "mlp_ratios": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "patch_sizes": [
+     7,
+     3,
+     3,
+     3
+    ],
+    "strides": [
+     4,
+     2,
+     2,
+     2
+    ],
+    "decoder": "All-MLP decoder (decoder_dim=256, 4 levels upsampled to 1/4 scale -> Conv1x1(1024, 256) + BN + ReLU -> Conv1x1(256, 4))",
+    "normalization": "LayerNorm (encoder) / BatchNorm2d (decoder)"
+   },
+   "loss": "0.5 * CE + 0.5 * foreground_Dice",
+   "verified_parameters": 13678276,
+   "verified_parameters_m": 13.68
+  },
+  "mask2former": {
+   "name": "Mask2Former",
+   "authors": "Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexander Kirillov, Rohit Girdhar",
+   "title": "Masked-attention Mask Transformer for Universal Image Segmentation",
+   "venue": "CVPR",
+   "year": 2022,
+   "official_repo": "https://github.com/facebookresearch/Mask2Former",
+   "architecture": {
+    "backbone": "ResNet-50 (channels [256, 512, 1024, 2048] at strides [4, 8, 16, 32])",
+    "pixel_decoder": "MSDeformAttnPixelDecoder: 6-layer multi-scale deformable attention encoder over 1/8, 1/16, 1/32 features (embed_dims=256, num_heads=8, ffn_dim=1024, n_levels=3, n_points=4) + FPN lateral fusion with 1/4 feature to produce mask_features (256 ch)",
+    "transformer_decoder": "9-layer Masked-Attention Transformer decoder (100 learnable queries, embed_dims=256, num_heads=8, ffn_dim=2048, order: Masked Cross-Attn -> Self-Attn -> FFN, deep supervision across initial + 9 layers)",
+    "matcher_and_loss": {
+     "num_queries": 100,
+     "cost_class": 2.0,
+     "cost_mask": 5.0,
+     "cost_dice": 5.0,
+     "no_object_weight": 0.1,
+     "num_points": 12544,
+     "oversample_ratio": 3.0,
+     "importance_sample_ratio": 0.75
+    },
+    "semantic_inference": "einsum('bqc,bqhw->bchw', softmax(class_logits)[..., :-1], sigmoid(mask_logits))"
+   },
+   "verified_parameters": 44003845,
+   "verified_parameters_m": 44.0,
+   "loss": "Original Mask2Former objective: 2.0*CE (weighted mean, no-object weight 0.1) + 5.0*point BCE + 5.0*point Dice (12544 importance-sampled points, oversample 3.0, importance 0.75, full-resolution GT masks), summed over the initial prediction and all 9 decoder layers; no extra per-pixel semantic loss.",
+   "protocol_deviation": "Unified protocol optimizer (AdamW lr 2.8e-4, wd 1e-4, grad clip 1.0, 3000 updates, batch 8, no pretraining) instead of the original recipe (AdamW lr 1e-4, wd 0.05, clip 0.01, 160k iterations, ImageNet backbone).",
+   "revision_20261023": "v1 (plan_v1_20261022.json) trained nothing with this method; its loss was 0.5*CE+0.5*Dice on semantic logits + 0.2 * layer-mean Mask2Former loss with 1/4-resolution GT, which did not match this entry."
+  },
+  "ddp": {
+   "name": "DDP",
+   "authors": "Yuanfeng Ji, Zhe Chen, Enze Xie, Lanqing Hong, Xihui Liu, Zhaoqiang Liu, Tong Lu, Zhenguo Li, Ping Luo",
+   "title": "DDP: Diffusion Model for Dense Visual Prediction",
+   "venue": "ICCV",
+   "year": 2023,
+   "official_repo": "https://github.com/JiYuanFeng/DDP",
+   "verified_details": {
+    "backbone_and_neck": "ResNet-50 ([256, 512, 1024, 2048]) + FPN (out_channels=256, GN 32 groups, 4 outs) + MultiStageMerging (upsample 4 levels to 1/4 scale, concat 1024 -> Conv1x1(1024, 256) + GN 32). Chosen to match the ResNet-50 family used by PSPNet/DeepLabv3+/Mask2Former under the no-pretraining protocol.",
+    "label_encoding": "Class Embedding table nn.Embedding(num_classes + 1, 256) at 1/4 resolution, scaled via (sigmoid(emb) * 2 - 1) * bit_scale with official semantic segmentation bit_scale = 0.01 (segmentation/mmseg/models/segmentors/ddp.py lines 825, 900-901).",
+    "noise_schedule": "Continuous-time cosine log-SNR schedule alpha_cosine_log_snr(t, ns=0.0002, ds=0.00025), alpha = sqrt(sigmoid(log_snr)), sigma = sqrt(sigmoid(-log_snr)) (ddp.py lines 769-775).",
+    "training_timestep_distribution": "Uniform continuous sampling t ~ U(0, 0.999) (sample_range=(0, 0.999), ddp.py lines 810, 904-905).",
+    "decode_head": "transform Conv1x1(512, 256) on cat([x, noised_gt], dim=1); time_mlp LearnedSinusoidalPosEmb(16) -> Linear(17, 1024) -> GELU -> Linear(1024, 1024); DeformableHeadWithTime with 6-layer DetrTransformerEncoder (embed_dims=256, num_heads=8, feedforward_channels=1024, num_levels=1, n_points=4, SinePositionalEncoding(128), per-layer time scale-shift MLP) -> Conv1x1(256, 4).",
+    "auxiliary_head": "FCNHead on neck feature x (256 -> 256 -> 4) with loss_weight = 0.4 (ddp_convnext_t_4x4_512x1024_160k_cityscapes.py lines 44-56).",
+    "inference_sampler_and_steps": "DDIM sampler with timesteps = 3, randsteps = 1, time_difference = 1, sample_range = (0, 0.999) (official main benchmark default in configs/cityscapes/ and configs/ade/).",
+    "self_aligned_denoising": "Not used (in official repo, self-aligned denoising is only a separate 5k post-finetuning config; main 160k benchmark uses standard training)."
+   },
+   "verified_parameters": 36156048,
+   "verified_parameters_m": 36.16,
+   "training_note": "grad_accum_steps=2 (2x4, effective batch 8, 3000 updates); BN micro-batch 4 in the ResNet-50 backbone and auxiliary head (neck uses GroupNorm). Selected by verification check 3 (batch-8 micro-batches exceeded 22.5 GiB or OOM); revision 2026-10-23."
+  },
+  "ccdm": {
+   "name": "CCDM",
+   "authors": "Lukas Zbinden, Lars Doorenbos, Theodoros Pissas, Adrian Thomas Huber, Raphael Sznitman, Pablo Marquez-Neila",
+   "title": "Stochastic Segmentation with Conditional Categorical Diffusion Models",
+   "venue": "ICCV",
+   "year": 2023,
+   "official_repo": "https://github.com/LarsDoorenbos/ccdm-stochastic-segmentation",
+   "verified_details": {
+    "diffusion_timesteps_T": "T = 250 discrete timesteps with Hoogeboom et al. (2021) cosine schedule (s = 0.008), beta_t = min(1 - cumalpha_t / cumalpha_{t-1}, 0.999), alpha_t = 1 - beta_t (params.yml line 48, ddpm/models/diffusion_denoising.py lines 341-355).",
+    "forward_and_posterior": "Forward q(x_t | x_0) = cumalpha_t * x_0 + (1 - cumalpha_t) / K; exact categorical reverse posterior theta_post(x_t, x_0, t) proportional to (alpha_t * x_t + (1 - alpha_t) / K) * (cumalpha_{t-1} * x_0 + (1 - cumalpha_{t-1}) / K) (diffusion_denoising.py lines 396-444).",
+    "denoising_network": "OpenAI ADM U-Net (create_unet_openai in ddpm/models/unet_openai/): in_channels = num_classes + 3 = 7, out_channels = 4 with Softmax output x0_pred; base_channels = 64, channel_mult = (0.5, 1, 1, 2, 2, 4, 4) for 512x512 (stage channels [32, 64, 64, 128, 128, 256, 256]), num_res_blocks = 2, GroupNorm, attention at the 3 innermost resolutions (32x32, 16x16, 8x8) with num_head_channels = 32.",
+    "conditioning_mode": "Direct pixel concatenation th.cat([x_t, image], dim=1) at U-Net input with feature_cond_encoder.type = 'none' (params.yml line 50, unet.py line 588), strictly complying with no-pretraining and no-DINO rules.",
+    "loss_composition": "Categorical posterior KL divergence D_KL(q(x_{t-1} | x_t, x_0) || p_theta(x_{t-1} | x_t)) (trainer.py lines 266-280) combined with the unified protocol direct supervision 0.5 * CE + 0.5 * foreground_Dice on logits.",
+    "inference_steps": "K = 10 evenly spaced reverse timesteps from T=250 down to 1 (stride sampling supported in diffusion_denoising.py lines 494-502 via np.linspace(T, 1, K).round(), using exact multi-step transition alpha_{t|s} = cumalpha_t / cumalpha_s)."
+   },
+   "verified_parameters": 30284644,
+   "verified_parameters_m": 30.28,
+   "training_note": "grad_accum_steps=2 (2x4, effective batch 8, 3000 updates); the ADM U-Net uses GroupNorm only, so accumulation does not change normalization statistics. Selected by verification check 3 (batch-8 micro-batches exceeded 22.5 GiB or OOM); revision 2026-10-23."
+  }
+ }
+}

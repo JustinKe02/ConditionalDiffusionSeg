@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "continuous_run": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/diffusion/seed_42/verify_full_1792208797701253973",
+  "resumed_run": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/diffusion/seed_42/verify_resume_1792208797701253973",
+  "model_weights_bitwise_equal": true,
+  "optimizer_state_bitwise_equal": true,
+  "scheduler_state_equal": true,
+  "tensorboard_csv_values_match": true,
+  "stale_log_tail_reconciled": true,
+  "evaluation_cli": "passed_debug_val_only",
+  "figures": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/debug/figures_1792208797701253973",
+  "scope": "2 training batches at 32x32; no research performance claims"
+}

@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-10-17T03:36:29.413484+00:00",
+  "project_root": "/root/autodl-tmp/ConditionalDiffusionSeg",
+  "measurement": {
+    "disk_total_gib": 50.0,
+    "disk_used_gib": 11.259342193603516,
+    "disk_free_gib": 38.740657806396484,
+    "project_allocated_gib": 8.0108642578125e-05
+  },
+  "assumptions": {
+    "additional_runs": 24,
+    "parameters_per_model": 20000000,
+    "parameter_count_measured": false,
+    "tensorboard_gib_per_run": 0.25,
+    "prediction_gib_per_run": 0.25,
+    "metadata_gib_per_run": 0.03125,
+    "shared_debug_reports_and_misc_gib": 2,
+    "reserve_gib": 8.0,
+    "project_cap_gib": 26
+  },
+  "estimate": {
+    "per_run_gib": 0.8292732238769531,
+    "additional_persistent_gib": 21.902557373046875,
+    "atomic_write_extra_gib": 0.22351741790771484,
+    "required_free_including_reserve_gib": 30.12607479095459
+  },
+  "capacity_ok_under_assumptions": true,
+  "disk_budget_ok": true,
+  "project_cap_ok": true,
+  "limitations": [
+    "Estimate only: no model/checkpoint has been implemented or measured.",
+    "Runtime monitoring and retention enforcement are not implemented.",
+    "Concurrent disk writers and extra reruns can invalidate this snapshot."
+  ]
+}

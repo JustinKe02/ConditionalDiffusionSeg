@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "method": "direct",
+      "parameter_count": 4929156,
+      "batch_size": 2,
+      "crop_size": 512,
+      "loss": 1.1062167882919312,
+      "grad_norm": 0.9654257893562317,
+      "seconds_including_first_step_startup": 0.6227228892967105,
+      "peak_allocated_mib": 3756.857421875,
+      "peak_reserved_mib": 4396.0,
+      "status": "passed_one_synthetic_training_step"
+    },
+    {
+      "method": "iterative",
+      "parameter_count": 4930308,
+      "batch_size": 2,
+      "crop_size": 512,
+      "loss": 1.0837597846984863,
+      "grad_norm": 0.35062074661254883,
+      "seconds_including_first_step_startup": 0.535119540989399,
+      "peak_allocated_mib": 18450.97509765625,
+      "peak_reserved_mib": 19344.0,
+      "status": "passed_one_synthetic_training_step"
+    },
+    {
+      "method": "diffusion",
+      "parameter_count": 5132676,
+      "batch_size": 2,
+      "crop_size": 512,
+      "loss": 2.028221368789673,
+      "grad_norm": 3.82418155670166,
+      "seconds_including_first_step_startup": 0.17391598969697952,
+      "peak_allocated_mib": 3819.6533203125,
+      "peak_reserved_mib": 4470.0,
+      "status": "passed_one_synthetic_training_step"
+    }
+  ],
+  "limitations": "Synthetic single step, not convergence or full validation throughput"
+}

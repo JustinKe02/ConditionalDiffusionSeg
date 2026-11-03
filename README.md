@@ -2,6 +2,16 @@
 
 # ConditionalDiffusionSeg
 
+## feat/diffusion-seg 开发入口（2026-11-03）
+
+本分支实现RGB条件下的掩码高斯扩散，并研究层数累计阈值表示。正式对照为ordinal、onehot、permuted和direct，共用全局—局部图像骨干。
+
+- [方法设计与文献依据](docs/DIFFUSION_SEG_DESIGN_20261103.md)
+- [固定训练计划与资源实测](docs/DIFFUSION_SEG_TRAINING_PLAN_20261103.md)
+- 单组入口为 `scripts/diffusion_seg.py`，串行后台队列为 `scripts/run_diffusion_seg.sh`。
+- 本批训练参数和进度以固定计划、队列plan/status及各run的history为准。下方保留各日期的历史研究记录。
+
+
 <!-- RESEARCH_RESET_20261021 -->
 **GLP-Flow四组已完成（2026-10-22 06:15:56，北京时间）：** E0/E1/E2/E3 val25 mIoU 85.26/88.32/86.70/86.96%，前景边界F1 67.86/71.06/55.95/54.07%。主门槛未通过：收益来自全局上下文（E1−E0 +3.06pp），流匹配采样（E3）在25/25张图上低于E1、边界F1低17pp，E3−E2仅+0.26pp。前向诊断已确认训练/推理状态不一致（GT插值状态下t=0.25端点mIoU高12.3pp，多步采样无增益）；采样对齐的E3R一组于10-22 08:53开训，预计约11:55完成，见[状态](outputs/launches/p1_glpflow_rollout_20261022/status.json)。见[结果](outputs/launches/p1_glpflow_20261021/final_analysis.md)、HANDOFF第59–60节。
 

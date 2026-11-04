@@ -1,0 +1,28 @@
+dup [['m56', '17012c6908e5082ead3c5d6e097cd5fea7bbac7e80021b59e09e38cf84d20663'], ['m169', '17012c6908e5082ead3c5d6e097cd5fea7bbac7e80021b59e09e38cf84d20663']]
+Exclude None n 120
+qualifying idx 0 image n1,n2,both,multi,thin 115 96 91 93 120 distinct-pair 252
+qualifying idx 1 image n1,n2,both,multi,thin 115 96 91 93 120 distinct-pair 242
+qualifying idx 2 image n1,n2,both,multi,thin 114 95 90 92 119 distinct-pair 227
+class 1 valid relative nums/pix 163/174 (93.7%) 19719304/19726885 (100.0%)
+any ref query comps/pix 151/174 (86.8%) 17394156/19726885 (88.2%)
+opp ref query comps/pix 145/174 (83.3%) 17164018/19726885 (87.0%)
+class 2 valid relative nums/pix 152/156 (97.4%) 14616006/14619253 (100.0%)
+any ref query comps/pix 151/156 (96.8%) 13742330/14619253 (94.0%)
+opp ref query comps/pix 151/156 (96.8%) 13742330/14619253 (94.0%)
+qualifying idx 3 image n1,n2,both,multi,thin 114 88 83 85 119 distinct-pair 171
+Exclude m169 n 119
+qualifying idx 0 image n1,n2,both,multi,thin 114 96 91 93 119 distinct-pair 252
+qualifying idx 1 image n1,n2,both,multi,thin 114 96 91 93 119 distinct-pair 242
+qualifying idx 2 image n1,n2,both,multi,thin 113 95 90 92 118 distinct-pair 227
+class 1 valid relative nums/pix 162/173 (93.6%) 19708173/19715754 (100.0%)
+any ref query comps/pix 151/173 (87.3%) 17394156/19715754 (88.2%)
+opp ref query comps/pix 145/173 (83.8%) 17164018/19715754 (87.1%)
+class 2 valid relative nums/pix 152/156 (97.4%) 14616006/14619253 (100.0%)
+any ref query comps/pix 151/156 (96.8%) 13742330/14619253 (94.0%)
+opp ref query comps/pix 151/156 (96.8%) 13742330/14619253 (94.0%)
+qualifying idx 3 image n1,n2,both,multi,thin 113 88 83 85 118 distinct-pair 171
+Exclude m56 n 119
+qualifying idx 0 image n1,n2,both,multi,thin 114 96 91 93 119 distinct-pair 252
+qualifying idx 1 image n1,n2,both,multi,thin 114 96 91 93 119 distinct-pair 242
+qualifying idx 2 image n1,n2,both,multi,thin 113 95 90 92 118 distinct-pair 227
+qualifying idx 3 image n1,n2,both,multi,thin 113 88 83 85 118 distinct-pair 171

@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "arms": {
+    "ordinal": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Complete checkpoint and matching best evaluation already exist"
+    },
+    "onehot": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Complete checkpoint and matching best evaluation already exist"
+    },
+    "permuted": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Complete checkpoint and matching best evaluation already exist"
+    },
+    "direct": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Training and full best-checkpoint validation completed"
+    }
+  },
+  "current_arm": null,
+  "message": "All four experiments and best-checkpoint evaluations completed",
+  "expected_commit": "7f8ca3e30ac0b13b18de847a63b522dac1ccadd4",
+  "pid": 69397,
+  "updated_at_utc": "2026-11-04T07:21:03.781120+00:00",
+  "completed_arms": [
+    "ordinal",
+    "onehot",
+    "permuted",
+    "direct"
+  ]
+}

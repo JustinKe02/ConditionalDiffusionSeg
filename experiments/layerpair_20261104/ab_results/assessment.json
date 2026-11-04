@@ -1,0 +1,5514 @@
+{
+  "n_images": 25,
+  "primary": "few_to_mono_given_few = confusion[2,1] / sum(confusion[2,:]); lower is better",
+  "units": "Metrics are fractions. Paired contrasts are percentage points; all deltas are signed.",
+  "boundary": "Three foreground classes; inner 3x3 erosion with replicated image edges, Chebyshev tolerance 2 native pixels.",
+  "bootstrap": "10000 matched image resamples, seed 3407, pooled confusion/boundary counts, percentile intervals. Not training-seed or specimen uncertainty.",
+  "absent": "Undefined field-wise ratios are null and excluded only from that metric\u2019s image mean.",
+  "pooled": {
+    "direct": {
+      "confusion": [
+        [
+          94561614,
+          34588,
+          26584,
+          94961
+        ],
+        [
+          18976,
+          2425585,
+          37984,
+          3375
+        ],
+        [
+          33581,
+          624953,
+          2932949,
+          66226
+        ],
+        [
+          163278,
+          3244,
+          70641,
+          21909461
+        ]
+      ],
+      "boundaries": [
+        [
+          138072,
+          179023,
+          138622,
+          187358
+        ],
+        [
+          42839,
+          61799,
+          42735,
+          54525
+        ],
+        [
+          44109,
+          72429,
+          43989,
+          65942
+        ],
+        [
+          121374,
+          166293,
+          121411,
+          156793
+        ]
+      ],
+      "true_few_pixels": 3657709,
+      "true_mono_pixels": 2485920,
+      "few_to_mono_pixels": 624953,
+      "mono_to_few_pixels": 37984,
+      "metrics": {
+        "few_to_mono_given_few": 0.17085913614232298,
+        "mono_to_few_given_mono": 0.01527965501705606,
+        "recall_monolayer": 0.9757293074596125,
+        "recall_fewlayer": 0.8018541114123622,
+        "thin_mean_recall": 0.8887917094359874,
+        "miou_4class": 0.88042244044802,
+        "miou_foreground": 0.841869317925343,
+        "thin_mean_iou": 0.7718067479643707,
+        "boundary_f1_foreground": 0.7079596606519528,
+        "monolayer_fewlayer_error_rate": 0.005389381178459937,
+        "iou_background": 0.9960818080160506,
+        "boundary_f1_background": 0.7552395443516174,
+        "iou_monolayer": 0.7703436809736066,
+        "boundary_f1_monolayer": 0.7357069688442565,
+        "iou_fewlayer": 0.7732698149551348,
+        "boundary_f1_fewlayer": 0.6367191292957068,
+        "iou_multilayer": 0.9819944578472879,
+        "boundary_f1_multilayer": 0.7514528838158949
+      }
+    },
+    "A": {
+      "confusion": [
+        [
+          94560932,
+          36137,
+          25640,
+          95038
+        ],
+        [
+          18592,
+          2437556,
+          26546,
+          3226
+        ],
+        [
+          32496,
+          633467,
+          2927546,
+          64200
+        ],
+        [
+          163103,
+          3627,
+          71627,
+          21908267
+        ]
+      ],
+      "boundaries": [
+        [
+          137899,
+          178562,
+          138473,
+          187358
+        ],
+        [
+          43901,
+          62687,
+          43577,
+          54525
+        ],
+        [
+          45071,
+          73184,
+          44773,
+          65942
+        ],
+        [
+          121295,
+          166037,
+          121332,
+          156793
+        ]
+      ],
+      "true_few_pixels": 3657709,
+      "true_mono_pixels": 2485920,
+      "few_to_mono_pixels": 633467,
+      "mono_to_few_pixels": 26546,
+      "metrics": {
+        "few_to_mono_given_few": 0.1731868226805358,
+        "mono_to_few_given_mono": 0.010678541545986998,
+        "recall_monolayer": 0.9805448284739654,
+        "recall_fewlayer": 0.8003769572702476,
+        "thin_mean_recall": 0.8904608928721065,
+        "miou_4class": 0.8809705739305972,
+        "miou_foreground": 0.8425968073281284,
+        "thin_mean_iou": 0.7728785679093377,
+        "boundary_f1_foreground": 0.7146477940861682,
+        "monolayer_fewlayer_error_rate": 0.005365610366805411,
+        "iou_background": 0.9960918737380038,
+        "boundary_f1_background": 0.7553142936110205,
+        "iou_monolayer": 0.7715857836488348,
+        "boundary_f1_monolayer": 0.7465051962606324,
+        "iou_fewlayer": 0.7741713521698406,
+        "boundary_f1_fewlayer": 0.6458787432744147,
+        "iou_multilayer": 0.9820332861657097,
+        "boundary_f1_multilayer": 0.7515594427234573
+      }
+    },
+    "B": {
+      "confusion": [
+        [
+          94561011,
+          35615,
+          26276,
+          94845
+        ],
+        [
+          18760,
+          2430692,
+          33198,
+          3270
+        ],
+        [
+          32777,
+          629148,
+          2931148,
+          64636
+        ],
+        [
+          163124,
+          3420,
+          71639,
+          21908441
+        ]
+      ],
+      "boundaries": [
+        [
+          137899,
+          178775,
+          138448,
+          187358
+        ],
+        [
+          43882,
+          63560,
+          43602,
+          54525
+        ],
+        [
+          45117,
+          73959,
+          44874,
+          65942
+        ],
+        [
+          121296,
+          166010,
+          121335,
+          156793
+        ]
+      ],
+      "true_few_pixels": 3657709,
+      "true_mono_pixels": 2485920,
+      "few_to_mono_pixels": 629148,
+      "mono_to_few_pixels": 33198,
+      "metrics": {
+        "few_to_mono_given_few": 0.1720060289104464,
+        "mono_to_few_given_mono": 0.013354412048658042,
+        "recall_monolayer": 0.9777836776726524,
+        "recall_fewlayer": 0.801361726698324,
+        "thin_mean_recall": 0.8895727021854882,
+        "miou_4class": 0.8805977793359232,
+        "miou_foreground": 0.8421011143256343,
+        "thin_mean_iou": 0.7721374454063671,
+        "boundary_f1_foreground": 0.7120023842815889,
+        "monolayer_fewlayer_error_rate": 0.005384576612903226,
+        "iou_background": 0.9960877743667895,
+        "boundary_f1_background": 0.7548043462634563,
+        "iou_monolayer": 0.7706444589793041,
+        "boundary_f1_monolayer": 0.7410300411995588,
+        "iou_fewlayer": 0.77363043183343,
+        "boundary_f1_fewlayer": 0.643342584801767,
+        "iou_multilayer": 0.9820284521641687,
+        "boundary_f1_multilayer": 0.7516345268434409
+      }
+    }
+  },
+  "paired": {
+    "B_minus_A": {
+      "few_to_mono_given_few": {
+        "estimate_pp": -0.11807937700894222,
+        "percentile95_pp": [
+          -0.2223918089059338,
+          -0.0600893920016326
+        ],
+        "defined_draws": 10000
+      },
+      "mono_to_few_given_mono": {
+        "estimate_pp": 0.2675870502671044,
+        "percentile95_pp": [
+          0.06441075364101835,
+          0.719230699056647
+        ],
+        "defined_draws": 10000
+      },
+      "recall_monolayer": {
+        "estimate_pp": -0.2761150801313006,
+        "percentile95_pp": [
+          -0.7292762702535829,
+          -0.07009523705405558
+        ],
+        "defined_draws": 10000
+      },
+      "recall_fewlayer": {
+        "estimate_pp": 0.09847694280763486,
+        "percentile95_pp": [
+          0.032042094692007195,
+          0.21766962426774059
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_recall": {
+        "estimate_pp": -0.08881906866182732,
+        "percentile95_pp": [
+          -0.3166732664937802,
+          0.03551430754800152
+        ],
+        "defined_draws": 10000
+      },
+      "miou_4class": {
+        "estimate_pp": -0.037279459467398635,
+        "percentile95_pp": [
+          -0.18536730695708104,
+          0.04556096499688689
+        ],
+        "defined_draws": 10000
+      },
+      "miou_foreground": {
+        "estimate_pp": -0.04956930024940798,
+        "percentile95_pp": [
+          -0.24696729813902918,
+          0.06078365957081805
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_iou": {
+        "estimate_pp": -0.07411225029706481,
+        "percentile95_pp": [
+          -0.37026693601841687,
+          0.09138746058619464
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_foreground": {
+        "estimate_pp": -0.26454098045792795,
+        "percentile95_pp": [
+          -0.973998889611517,
+          0.3435636667361996
+        ],
+        "defined_draws": 10000
+      },
+      "monolayer_fewlayer_error_rate": {
+        "estimate_pp": 0.001896624609781447,
+        "percentile95_pp": [
+          -0.0030991683467742085,
+          0.009091664769771074
+        ],
+        "defined_draws": 10000
+      },
+      "iou_background": {
+        "estimate_pp": -0.00040993712142611827,
+        "percentile95_pp": [
+          -0.0010166747633055806,
+          1.8613882828144572e-05
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_background": {
+        "estimate_pp": -0.050994734756426574,
+        "percentile95_pp": [
+          -0.09439233296611255,
+          -0.008404139602820326
+        ],
+        "defined_draws": 10000
+      },
+      "iou_monolayer": {
+        "estimate_pp": -0.09413246695306743,
+        "percentile95_pp": [
+          -0.46188050655167734,
+          0.10253613812183168
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_monolayer": {
+        "estimate_pp": -0.5475155061073544,
+        "percentile95_pp": [
+          -2.01753653750762,
+          0.5759322861095061
+        ],
+        "defined_draws": 10000
+      },
+      "iou_fewlayer": {
+        "estimate_pp": -0.054092033641051085,
+        "percentile95_pp": [
+          -0.29781248074028627,
+          0.08846609980757562
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_fewlayer": {
+        "estimate_pp": -0.2536158472647765,
+        "percentile95_pp": [
+          -1.0054764633114488,
+          0.5021903233241666
+        ],
+        "defined_draws": 10000
+      },
+      "iou_multilayer": {
+        "estimate_pp": -0.0004834001541054178,
+        "percentile95_pp": [
+          -0.004045959488648276,
+          0.0019011872066843057
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_multilayer": {
+        "estimate_pp": 0.0075084119983581665,
+        "percentile95_pp": [
+          -0.0379781148741995,
+          0.0572397084452833
+        ],
+        "defined_draws": 10000
+      }
+    },
+    "B_minus_direct": {
+      "few_to_mono_given_few": {
+        "estimate_pp": 0.11468927681234087,
+        "percentile95_pp": [
+          -0.038995295543987236,
+          0.24702110748299835
+        ],
+        "defined_draws": 10000
+      },
+      "mono_to_few_given_mono": {
+        "estimate_pp": -0.19252429683980168,
+        "percentile95_pp": [
+          -0.3583689966593842,
+          -0.07248779080093662
+        ],
+        "defined_draws": 10000
+      },
+      "recall_monolayer": {
+        "estimate_pp": 0.2054370213039891,
+        "percentile95_pp": [
+          0.08315000716504928,
+          0.3725737442084265
+        ],
+        "defined_draws": 10000
+      },
+      "recall_fewlayer": {
+        "estimate_pp": -0.04923847140382298,
+        "percentile95_pp": [
+          -0.19435103851880242,
+          0.0828553452052488
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_recall": {
+        "estimate_pp": 0.07809927495008306,
+        "percentile95_pp": [
+          0.00661484529306644,
+          0.1666557312951336
+        ],
+        "defined_draws": 10000
+      },
+      "miou_4class": {
+        "estimate_pp": 0.017533888790322028,
+        "percentile95_pp": [
+          -0.035946800027721604,
+          0.10476174151941099
+        ],
+        "defined_draws": 10000
+      },
+      "miou_foreground": {
+        "estimate_pp": 0.023179640029125093,
+        "percentile95_pp": [
+          -0.04822739102200713,
+          0.13960978010256547
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_iou": {
+        "estimate_pp": 0.033069744199643036,
+        "percentile95_pp": [
+          -0.07430338782465656,
+          0.21011819549371363
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_foreground": {
+        "estimate_pp": 0.40427236296360913,
+        "percentile95_pp": [
+          -0.26161472302103306,
+          1.2388400634600478
+        ],
+        "defined_draws": 10000
+      },
+      "monolayer_fewlayer_error_rate": {
+        "estimate_pp": -0.00048045655567114515,
+        "percentile95_pp": [
+          -0.00473965107960456,
+          0.004224928459937477
+        ],
+        "defined_draws": 10000
+      },
+      "iou_background": {
+        "estimate_pp": 0.0005966350738906279,
+        "percentile95_pp": [
+          -0.00020044403102020825,
+          0.0019877667982989844
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_background": {
+        "estimate_pp": -0.043519808816117056,
+        "percentile95_pp": [
+          -0.08855558125571844,
+          -0.0017607024616725626
+        ],
+        "defined_draws": 10000
+      },
+      "iou_monolayer": {
+        "estimate_pp": 0.030077800569749957,
+        "percentile95_pp": [
+          -0.07319766948504391,
+          0.2148437212069233
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_monolayer": {
+        "estimate_pp": 0.5323072355302383,
+        "percentile95_pp": [
+          -0.625019095879952,
+          1.9702026115471571
+        ],
+        "defined_draws": 10000
+      },
+      "iou_fewlayer": {
+        "estimate_pp": 0.03606168782952501,
+        "percentile95_pp": [
+          -0.07922957901430522,
+          0.22678160308482512
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_fewlayer": {
+        "estimate_pp": 0.6623455506060139,
+        "percentile95_pp": [
+          -0.31165257759350334,
+          1.883383778152865
+        ],
+        "defined_draws": 10000
+      },
+      "iou_multilayer": {
+        "estimate_pp": 0.003399431688078103,
+        "percentile95_pp": [
+          -0.003754552331669825,
+          0.014421000771936695
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_multilayer": {
+        "estimate_pp": 0.01816430275459746,
+        "percentile95_pp": [
+          -0.056491532781505205,
+          0.10547272371120013
+        ],
+        "defined_draws": 10000
+      }
+    },
+    "A_minus_direct": {
+      "few_to_mono_given_few": {
+        "estimate_pp": 0.2327686538212831,
+        "percentile95_pp": [
+          0.12464652408277037,
+          0.3752391805043891
+        ],
+        "defined_draws": 10000
+      },
+      "mono_to_few_given_mono": {
+        "estimate_pp": -0.4601113471069061,
+        "percentile95_pp": [
+          -0.9194320903365011,
+          -0.2209790434706147
+        ],
+        "defined_draws": 10000
+      },
+      "recall_monolayer": {
+        "estimate_pp": 0.4815521014352897,
+        "percentile95_pp": [
+          0.2427692233352835,
+          0.9379359208029228
+        ],
+        "defined_draws": 10000
+      },
+      "recall_fewlayer": {
+        "estimate_pp": -0.14771541421145784,
+        "percentile95_pp": [
+          -0.32608196416532176,
+          -0.04792602742245634
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_recall": {
+        "estimate_pp": 0.16691834361191038,
+        "percentile95_pp": [
+          0.014228994219941674,
+          0.41033228696051455
+        ],
+        "defined_draws": 10000
+      },
+      "miou_4class": {
+        "estimate_pp": 0.05481334825772066,
+        "percentile95_pp": [
+          -0.0407740158091599,
+          0.22228476988818271
+        ],
+        "defined_draws": 10000
+      },
+      "miou_foreground": {
+        "estimate_pp": 0.07274894027853307,
+        "percentile95_pp": [
+          -0.054847617158221285,
+          0.29633718366994743
+        ],
+        "defined_draws": 10000
+      },
+      "thin_mean_iou": {
+        "estimate_pp": 0.10718199449670784,
+        "percentile95_pp": [
+          -0.08422024734714845,
+          0.4441990826493994
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_foreground": {
+        "estimate_pp": 0.6688133434215371,
+        "percentile95_pp": [
+          -0.151693291941718,
+          1.6462407737931655
+        ],
+        "defined_draws": 10000
+      },
+      "monolayer_fewlayer_error_rate": {
+        "estimate_pp": -0.0023770811654525922,
+        "percentile95_pp": [
+          -0.010282298712278867,
+          0.005037091083506884
+        ],
+        "defined_draws": 10000
+      },
+      "iou_background": {
+        "estimate_pp": 0.0010065721953167461,
+        "percentile95_pp": [
+          8.145767441125617e-06,
+          0.0028720262425599437
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_background": {
+        "estimate_pp": 0.007474925940309518,
+        "percentile95_pp": [
+          -0.02282989533302998,
+          0.03874564601086704
+        ],
+        "defined_draws": 10000
+      },
+      "iou_monolayer": {
+        "estimate_pp": 0.12421026752281739,
+        "percentile95_pp": [
+          -0.091693321501288,
+          0.543870399618757
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_monolayer": {
+        "estimate_pp": 1.0798227416375927,
+        "percentile95_pp": [
+          -0.32277135654803113,
+          2.8595210669361935
+        ],
+        "defined_draws": 10000
+      },
+      "iou_fewlayer": {
+        "estimate_pp": 0.0901537214705761,
+        "percentile95_pp": [
+          -0.08328789627606692,
+          0.3880071968421062
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_fewlayer": {
+        "estimate_pp": 0.9159613978707903,
+        "percentile95_pp": [
+          -0.2513983688758459,
+          2.2471232639943324
+        ],
+        "defined_draws": 10000
+      },
+      "iou_multilayer": {
+        "estimate_pp": 0.0038828318421835206,
+        "percentile95_pp": [
+          -0.005087668920437383,
+          0.018172557994575428
+        ],
+        "defined_draws": 10000
+      },
+      "boundary_f1_multilayer": {
+        "estimate_pp": 0.010655890756239295,
+        "percentile95_pp": [
+          -0.08053581683544142,
+          0.12233861118137954
+        ],
+        "defined_draws": 10000
+      }
+    }
+  },
+  "image_macro": {
+    "direct": {
+      "few_to_mono_given_few": {
+        "mean": 0.05693694054396975,
+        "n_defined": 21
+      },
+      "mono_to_few_given_mono": {
+        "mean": 0.029958242722581196,
+        "n_defined": 23
+      },
+      "recall_monolayer": {
+        "mean": 0.9408724353463773,
+        "n_defined": 23
+      },
+      "recall_fewlayer": {
+        "mean": 0.9189172234428973,
+        "n_defined": 21
+      },
+      "thin_mean_recall": {
+        "mean": 0.932883442162101,
+        "n_defined": 25
+      },
+      "miou_4class": {
+        "mean": 0.8725090935824056,
+        "n_defined": 25
+      },
+      "miou_foreground": {
+        "mean": 0.8314906153982168,
+        "n_defined": 25
+      },
+      "thin_mean_iou": {
+        "mean": 0.759317417242579,
+        "n_defined": 25
+      },
+      "boundary_f1_foreground": {
+        "mean": 0.6818553880158241,
+        "n_defined": 25
+      },
+      "monolayer_fewlayer_error_rate": {
+        "mean": 0.005389381178459937,
+        "n_defined": 25
+      },
+      "iou_background": {
+        "mean": 0.9954543384130381,
+        "n_defined": 25
+      },
+      "boundary_f1_background": {
+        "mean": 0.7753201006366058,
+        "n_defined": 25
+      },
+      "iou_monolayer": {
+        "mean": 0.7731338793241384,
+        "n_defined": 25
+      },
+      "boundary_f1_monolayer": {
+        "mean": 0.6700595400761606,
+        "n_defined": 25
+      },
+      "iou_fewlayer": {
+        "mean": 0.7354807440224963,
+        "n_defined": 24
+      },
+      "boundary_f1_fewlayer": {
+        "mean": 0.5887342538362935,
+        "n_defined": 24
+      },
+      "iou_multilayer": {
+        "mean": 0.975661631127895,
+        "n_defined": 25
+      },
+      "boundary_f1_multilayer": {
+        "mean": 0.7723079820171996,
+        "n_defined": 25
+      }
+    },
+    "A": {
+      "few_to_mono_given_few": {
+        "mean": 0.07155917815124013,
+        "n_defined": 21
+      },
+      "mono_to_few_given_mono": {
+        "mean": 0.02181193475977668,
+        "n_defined": 23
+      },
+      "recall_monolayer": {
+        "mean": 0.9490684419625823,
+        "n_defined": 23
+      },
+      "recall_fewlayer": {
+        "mean": 0.9051509438416948,
+        "n_defined": 21
+      },
+      "thin_mean_recall": {
+        "mean": 0.931238438334899,
+        "n_defined": 25
+      },
+      "miou_4class": {
+        "mean": 0.8845067232922367,
+        "n_defined": 25
+      },
+      "miou_foreground": {
+        "mean": 0.8473922889081645,
+        "n_defined": 25
+      },
+      "thin_mean_iou": {
+        "mean": 0.7831763007269755,
+        "n_defined": 25
+      },
+      "boundary_f1_foreground": {
+        "mean": 0.7031806384216456,
+        "n_defined": 25
+      },
+      "monolayer_fewlayer_error_rate": {
+        "mean": 0.005365610366805411,
+        "n_defined": 25
+      },
+      "iou_background": {
+        "mean": 0.9954681668844536,
+        "n_defined": 25
+      },
+      "boundary_f1_background": {
+        "mean": 0.7752843546624287,
+        "n_defined": 25
+      },
+      "iou_monolayer": {
+        "mean": 0.7780087873393532,
+        "n_defined": 25
+      },
+      "boundary_f1_monolayer": {
+        "mean": 0.6839842583062071,
+        "n_defined": 25
+      },
+      "iou_fewlayer": {
+        "mean": 0.7714049100436678,
+        "n_defined": 23
+      },
+      "boundary_f1_fewlayer": {
+        "mean": 0.6266024696641452,
+        "n_defined": 23
+      },
+      "iou_multilayer": {
+        "mean": 0.9757038513911407,
+        "n_defined": 25
+      },
+      "boundary_f1_multilayer": {
+        "mean": 0.7721713877767772,
+        "n_defined": 25
+      }
+    },
+    "B": {
+      "few_to_mono_given_few": {
+        "mean": 0.06653879696114214,
+        "n_defined": 21
+      },
+      "mono_to_few_given_mono": {
+        "mean": 0.02533496016926768,
+        "n_defined": 23
+      },
+      "recall_monolayer": {
+        "mean": 0.945031764856029,
+        "n_defined": 23
+      },
+      "recall_fewlayer": {
+        "mean": 0.9102056998906148,
+        "n_defined": 21
+      },
+      "thin_mean_recall": {
+        "mean": 0.9316753991004064,
+        "n_defined": 25
+      },
+      "miou_4class": {
+        "mean": 0.883840824565537,
+        "n_defined": 25
+      },
+      "miou_foreground": {
+        "mean": 0.8463977718185043,
+        "n_defined": 25
+      },
+      "thin_mean_iou": {
+        "mean": 0.7811385887364818,
+        "n_defined": 25
+      },
+      "boundary_f1_foreground": {
+        "mean": 0.7008626413387617,
+        "n_defined": 25
+      },
+      "monolayer_fewlayer_error_rate": {
+        "mean": 0.005384576612903226,
+        "n_defined": 25
+      },
+      "iou_background": {
+        "mean": 0.995463107617494,
+        "n_defined": 25
+      },
+      "boundary_f1_background": {
+        "mean": 0.7748075342326832,
+        "n_defined": 25
+      },
+      "iou_monolayer": {
+        "mean": 0.8073557019245534,
+        "n_defined": 24
+      },
+      "boundary_f1_monolayer": {
+        "mean": 0.706652674738485,
+        "n_defined": 24
+      },
+      "iou_fewlayer": {
+        "mean": 0.7402483373064809,
+        "n_defined": 24
+      },
+      "boundary_f1_fewlayer": {
+        "mean": 0.5999393317677623,
+        "n_defined": 24
+      },
+      "iou_multilayer": {
+        "mean": 0.9757109947074002,
+        "n_defined": 25
+      },
+      "boundary_f1_multilayer": {
+        "mean": 0.7724395910662936,
+        "n_defined": 25
+      }
+    }
+  },
+  "m109": {
+    "direct": {
+      "m109": {
+        "confusion": [
+          [
+            2455044,
+            4163,
+            871,
+            8654
+          ],
+          [
+            3178,
+            314251,
+            173,
+            1
+          ],
+          [
+            25308,
+            535778,
+            358570,
+            45265
+          ],
+          [
+            3539,
+            210,
+            119,
+            1165196
+          ]
+        ],
+        "boundaries": [
+          [
+            8200,
+            12763,
+            8463,
+            13799
+          ],
+          [
+            2311,
+            7377,
+            2318,
+            4781
+          ],
+          [
+            2446,
+            6945,
+            2448,
+            7613
+          ],
+          [
+            6858,
+            11418,
+            6863,
+            9389
+          ]
+        ],
+        "true_few_pixels": 964921,
+        "true_mono_pixels": 317603,
+        "few_to_mono_pixels": 535778,
+        "mono_to_few_pixels": 173,
+        "metrics": {
+          "few_to_mono_given_few": 0.5552558188701459,
+          "mono_to_few_given_mono": 0.0005447051822558351,
+          "recall_monolayer": 0.9894459435206846,
+          "recall_fewlayer": 0.3716055511280198,
+          "thin_mean_recall": 0.6805257473243522,
+          "miou_4class": 0.6679979612137005,
+          "miou_foreground": 0.563423836590755,
+          "thin_mean_iou": 0.36876157501133455,
+          "boundary_f1_foreground": 0.4587366699478324,
+          "monolayer_fewlayer_error_rate": 0.10892604546045785,
+          "iou_background": 0.981720335082537,
+          "boundary_f1_background": 0.6275547970913978,
+          "iou_monolayer": 0.36636494845841583,
+          "boundary_f1_monolayer": 0.3806131968006994,
+          "iou_fewlayer": 0.3711582015642532,
+          "boundary_f1_fewlayer": 0.33617879895767755,
+          "iou_multilayer": 0.952748359749596,
+          "boundary_f1_multilayer": 0.6594180140851204
+        }
+      },
+      "m109_share_of_all_few_to_mono_errors": 0.8573092696570782,
+      "leave_m109_out": {
+        "confusion": [
+          [
+            92106570,
+            30425,
+            25713,
+            86307
+          ],
+          [
+            15798,
+            2111334,
+            37811,
+            3374
+          ],
+          [
+            8273,
+            89175,
+            2574379,
+            20961
+          ],
+          [
+            159739,
+            3034,
+            70522,
+            20744265
+          ]
+        ],
+        "boundaries": [
+          [
+            129872,
+            166260,
+            130159,
+            173559
+          ],
+          [
+            40528,
+            54422,
+            40417,
+            49744
+          ],
+          [
+            41663,
+            65484,
+            41541,
+            58329
+          ],
+          [
+            114516,
+            154875,
+            114548,
+            147404
+          ]
+        ],
+        "true_few_pixels": 2692788,
+        "true_mono_pixels": 2168317,
+        "few_to_mono_pixels": 89175,
+        "mono_to_few_pixels": 37811,
+        "metrics": {
+          "few_to_mono_given_few": 0.03311623492083298,
+          "mono_to_few_given_mono": 0.017437948418058798,
+          "recall_monolayer": 0.9737201709897584,
+          "recall_fewlayer": 0.9560273590048678,
+          "thin_mean_recall": 0.9648737649973131,
+          "miou_4class": 0.9531128672872997,
+          "miou_foreground": 0.9386603711717519,
+          "thin_mean_iou": 0.9161452823240843,
+          "boundary_f1_foreground": 0.7356598899592911,
+          "monolayer_fewlayer_error_rate": 0.0010753535000433577,
+          "iou_background": 0.9964703556339428,
+          "boundary_f1_background": 0.7652216264215652,
+          "iou_monolayer": 0.9215971882419135,
+          "boundary_f1_monolayer": 0.7771233703115344,
+          "iou_fewlayer": 0.9106933764062553,
+          "boundary_f1_fewlayer": 0.6720689420790332,
+          "iou_multilayer": 0.983690548867087,
+          "boundary_f1_multilayer": 0.7577873574873055
+        }
+      }
+    },
+    "A": {
+      "m109": {
+        "confusion": [
+          [
+            2454963,
+            4248,
+            891,
+            8630
+          ],
+          [
+            3143,
+            314407,
+            52,
+            1
+          ],
+          [
+            24485,
+            538006,
+            358544,
+            43886
+          ],
+          [
+            3523,
+            222,
+            131,
+            1165188
+          ]
+        ],
+        "boundaries": [
+          [
+            8089,
+            12510,
+            8387,
+            13799
+          ],
+          [
+            2245,
+            7402,
+            2237,
+            4781
+          ],
+          [
+            2406,
+            7030,
+            2402,
+            7613
+          ],
+          [
+            6877,
+            11281,
+            6882,
+            9389
+          ]
+        ],
+        "true_few_pixels": 964921,
+        "true_mono_pixels": 317603,
+        "few_to_mono_pixels": 538006,
+        "mono_to_few_pixels": 52,
+        "metrics": {
+          "few_to_mono_given_few": 0.5575648161870247,
+          "mono_to_few_given_mono": 0.00016372641316360361,
+          "recall_monolayer": 0.9899371227601754,
+          "recall_fewlayer": 0.37157860591696107,
+          "thin_mean_recall": 0.6807578643385682,
+          "miou_4class": 0.6681471623667871,
+          "miou_foreground": 0.5635191634696349,
+          "thin_mean_iou": 0.3683607184833425,
+          "boundary_f1_foreground": 0.4539984065148692,
+          "monolayer_fewlayer_error_rate": 0.10935426964099897,
+          "iou_background": 0.9820311590582439,
+          "boundary_f1_background": 0.6265999723166205,
+          "iou_monolayer": 0.3655559547436921,
+          "boundary_f1_monolayer": 0.36802983362767894,
+          "iou_fewlayer": 0.3711654822229929,
+          "boundary_f1_fewlayer": 0.3283369132428663,
+          "iou_multilayer": 0.9538360534422196,
+          "boundary_f1_multilayer": 0.6656284726740624
+        }
+      },
+      "m109_share_of_all_few_to_mono_errors": 0.8493039100695063,
+      "leave_m109_out": {
+        "confusion": [
+          [
+            92105969,
+            31889,
+            24749,
+            86408
+          ],
+          [
+            15449,
+            2123149,
+            26494,
+            3225
+          ],
+          [
+            8011,
+            95461,
+            2569002,
+            20314
+          ],
+          [
+            159580,
+            3405,
+            71496,
+            20743079
+          ]
+        ],
+        "boundaries": [
+          [
+            129810,
+            166052,
+            130086,
+            173559
+          ],
+          [
+            41656,
+            55285,
+            41340,
+            49744
+          ],
+          [
+            42665,
+            66154,
+            42371,
+            58329
+          ],
+          [
+            114418,
+            154756,
+            114450,
+            147404
+          ]
+        ],
+        "true_few_pixels": 2692788,
+        "true_mono_pixels": 2168317,
+        "few_to_mono_pixels": 95461,
+        "mono_to_few_pixels": 26494,
+        "metrics": {
+          "few_to_mono_given_few": 0.03545061846680838,
+          "mono_to_few_given_mono": 0.012218693115443914,
+          "recall_monolayer": 0.9791690975074216,
+          "recall_fewlayer": 0.9540305438081275,
+          "thin_mean_recall": 0.9665998206577746,
+          "miou_4class": 0.9540151627351368,
+          "miou_foreground": 0.9398628321133561,
+          "thin_mean_iou": 0.917960884463267,
+          "boundary_f1_foreground": 0.7436860018237104,
+          "monolayer_fewlayer_error_rate": 0.001032749563714013,
+          "iou_background": 0.9964721546004792,
+          "boundary_f1_background": 0.7652926669992237,
+          "iou_monolayer": 0.9234808653230521,
+          "boundary_f1_monolayer": 0.7903671474767218,
+          "iou_fewlayer": 0.9124409036034817,
+          "boundary_f1_fewlayer": 0.6832536825869796,
+          "iou_multilayer": 0.9836667274135344,
+          "boundary_f1_multilayer": 0.7574371754074297
+        }
+      }
+    },
+    "B": {
+      "m109": {
+        "confusion": [
+          [
+            2454973,
+            4247,
+            869,
+            8643
+          ],
+          [
+            3131,
+            314406,
+            65,
+            1
+          ],
+          [
+            24729,
+            537544,
+            358423,
+            44225
+          ],
+          [
+            3535,
+            215,
+            118,
+            1165196
+          ]
+        ],
+        "boundaries": [
+          [
+            8143,
+            12595,
+            8409,
+            13799
+          ],
+          [
+            2246,
+            7531,
+            2251,
+            4781
+          ],
+          [
+            2335,
+            6947,
+            2342,
+            7613
+          ],
+          [
+            6867,
+            11319,
+            6872,
+            9389
+          ]
+        ],
+        "true_few_pixels": 964921,
+        "true_mono_pixels": 317603,
+        "few_to_mono_pixels": 537544,
+        "mono_to_few_pixels": 65,
+        "metrics": {
+          "few_to_mono_given_few": 0.5570860205135965,
+          "mono_to_few_given_mono": 0.0002046580164545045,
+          "recall_monolayer": 0.9899339741753069,
+          "recall_fewlayer": 0.3714532070501108,
+          "thin_mean_recall": 0.6806935906127088,
+          "miou_4class": 0.6680776210509136,
+          "miou_foreground": 0.5634570555736609,
+          "thin_mean_iou": 0.3684016680394385,
+          "boundary_f1_foreground": 0.4499489600545605,
+          "monolayer_fewlayer_error_rate": 0.10926301541363163,
+          "iou_background": 0.9819393174826718,
+          "boundary_f1_background": 0.6274102055423144,
+          "iou_monolayer": 0.36575466287579583,
+          "boundary_f1_monolayer": 0.36516227442955246,
+          "iou_fewlayer": 0.37104867320308127,
+          "boundary_f1_fewlayer": 0.3212438005982983,
+          "iou_multilayer": 0.9535678306421056,
+          "boundary_f1_multilayer": 0.6634408051358306
+        }
+      },
+      "m109_share_of_all_few_to_mono_errors": 0.8543999186201021,
+      "leave_m109_out": {
+        "confusion": [
+          [
+            92106038,
+            31368,
+            25407,
+            86202
+          ],
+          [
+            15629,
+            2116286,
+            33133,
+            3269
+          ],
+          [
+            8048,
+            91604,
+            2572725,
+            20411
+          ],
+          [
+            159589,
+            3205,
+            71521,
+            20743245
+          ]
+        ],
+        "boundaries": [
+          [
+            129756,
+            166180,
+            130039,
+            173559
+          ],
+          [
+            41636,
+            56029,
+            41351,
+            49744
+          ],
+          [
+            42782,
+            67012,
+            42532,
+            58329
+          ],
+          [
+            114429,
+            154691,
+            114463,
+            147404
+          ]
+        ],
+        "true_few_pixels": 2692788,
+        "true_mono_pixels": 2168317,
+        "few_to_mono_pixels": 91604,
+        "mono_to_few_pixels": 33133,
+        "metrics": {
+          "few_to_mono_given_few": 0.03401827399706178,
+          "mono_to_few_given_mono": 0.015280514795576476,
+          "recall_monolayer": 0.9760039698992352,
+          "recall_fewlayer": 0.9554131257269417,
+          "thin_mean_recall": 0.9657085478130885,
+          "miou_4class": 0.9534683729013786,
+          "miou_foreground": 0.9391343423067102,
+          "thin_mean_iou": 0.9168626977326765,
+          "boundary_f1_foreground": 0.7410647557732397,
+          "monolayer_fewlayer_error_rate": 0.001056308329539542,
+          "iou_background": 0.9964704646853841,
+          "boundary_f1_background": 0.7647071384541305,
+          "iou_monolayer": 0.9223323312242263,
+          "boundary_f1_monolayer": 0.7847272848799306,
+          "iou_fewlayer": 0.9113930642411266,
+          "boundary_f1_fewlayer": 0.6807875278980049,
+          "iou_multilayer": 0.9836776314547777,
+          "boundary_f1_multilayer": 0.7576794545417838
+        }
+      }
+    }
+  },
+  "per_image_counts": [
+    {
+      "id": "m108",
+      "direct": {
+        "confusion": [
+          [
+            2789119,
+            3131,
+            271,
+            1154
+          ],
+          [
+            148,
+            203319,
+            792,
+            36
+          ],
+          [
+            206,
+            3610,
+            293693,
+            143
+          ],
+          [
+            3669,
+            38,
+            3815,
+            1617176
+          ]
+        ],
+        "boundaries": [
+          [
+            4799,
+            5913,
+            4806,
+            5537
+          ],
+          [
+            3436,
+            4268,
+            3424,
+            4128
+          ],
+          [
+            3088,
+            4080,
+            3091,
+            4187
+          ],
+          [
+            4299,
+            5586,
+            4292,
+            5154
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            2789072,
+            3192,
+            271,
+            1140
+          ],
+          [
+            137,
+            203321,
+            802,
+            35
+          ],
+          [
+            191,
+            3493,
+            293850,
+            118
+          ],
+          [
+            3668,
+            47,
+            3870,
+            1617113
+          ]
+        ],
+        "boundaries": [
+          [
+            4791,
+            5909,
+            4794,
+            5537
+          ],
+          [
+            3437,
+            4305,
+            3416,
+            4128
+          ],
+          [
+            3134,
+            4173,
+            3122,
+            4187
+          ],
+          [
+            4289,
+            5586,
+            4279,
+            5154
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            2789098,
+            3129,
+            288,
+            1160
+          ],
+          [
+            145,
+            202951,
+            1159,
+            40
+          ],
+          [
+            200,
+            2150,
+            295186,
+            116
+          ],
+          [
+            3669,
+            42,
+            3844,
+            1617143
+          ]
+        ],
+        "boundaries": [
+          [
+            4799,
+            5913,
+            4803,
+            5537
+          ],
+          [
+            3618,
+            4390,
+            3581,
+            4128
+          ],
+          [
+            3268,
+            4244,
+            3248,
+            4187
+          ],
+          [
+            4301,
+            5589,
+            4295,
+            5154
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m109",
+      "direct": {
+        "confusion": [
+          [
+            2455044,
+            4163,
+            871,
+            8654
+          ],
+          [
+            3178,
+            314251,
+            173,
+            1
+          ],
+          [
+            25308,
+            535778,
+            358570,
+            45265
+          ],
+          [
+            3539,
+            210,
+            119,
+            1165196
+          ]
+        ],
+        "boundaries": [
+          [
+            8200,
+            12763,
+            8463,
+            13799
+          ],
+          [
+            2311,
+            7377,
+            2318,
+            4781
+          ],
+          [
+            2446,
+            6945,
+            2448,
+            7613
+          ],
+          [
+            6858,
+            11418,
+            6863,
+            9389
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            2454963,
+            4248,
+            891,
+            8630
+          ],
+          [
+            3143,
+            314407,
+            52,
+            1
+          ],
+          [
+            24485,
+            538006,
+            358544,
+            43886
+          ],
+          [
+            3523,
+            222,
+            131,
+            1165188
+          ]
+        ],
+        "boundaries": [
+          [
+            8089,
+            12510,
+            8387,
+            13799
+          ],
+          [
+            2245,
+            7402,
+            2237,
+            4781
+          ],
+          [
+            2406,
+            7030,
+            2402,
+            7613
+          ],
+          [
+            6877,
+            11281,
+            6882,
+            9389
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            2454973,
+            4247,
+            869,
+            8643
+          ],
+          [
+            3131,
+            314406,
+            65,
+            1
+          ],
+          [
+            24729,
+            537544,
+            358423,
+            44225
+          ],
+          [
+            3535,
+            215,
+            118,
+            1165196
+          ]
+        ],
+        "boundaries": [
+          [
+            8143,
+            12595,
+            8409,
+            13799
+          ],
+          [
+            2246,
+            7531,
+            2251,
+            4781
+          ],
+          [
+            2335,
+            6947,
+            2342,
+            7613
+          ],
+          [
+            6867,
+            11319,
+            6872,
+            9389
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m120",
+      "direct": {
+        "confusion": [
+          [
+            3493640,
+            1980,
+            849,
+            2512
+          ],
+          [
+            14,
+            93102,
+            151,
+            0
+          ],
+          [
+            897,
+            2212,
+            67728,
+            1444
+          ],
+          [
+            2841,
+            139,
+            2686,
+            1250125
+          ]
+        ],
+        "boundaries": [
+          [
+            5407,
+            6483,
+            5398,
+            6689
+          ],
+          [
+            2012,
+            2737,
+            2013,
+            2242
+          ],
+          [
+            1681,
+            2858,
+            1685,
+            2665
+          ],
+          [
+            3613,
+            5167,
+            3607,
+            4688
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3493625,
+            2026,
+            818,
+            2512
+          ],
+          [
+            14,
+            93197,
+            56,
+            0
+          ],
+          [
+            883,
+            3036,
+            66933,
+            1429
+          ],
+          [
+            2832,
+            170,
+            2688,
+            1250101
+          ]
+        ],
+        "boundaries": [
+          [
+            5398,
+            6473,
+            5387,
+            6689
+          ],
+          [
+            1898,
+            2790,
+            1894,
+            2242
+          ],
+          [
+            1632,
+            2961,
+            1618,
+            2665
+          ],
+          [
+            3606,
+            5170,
+            3600,
+            4688
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3493614,
+            2008,
+            847,
+            2512
+          ],
+          [
+            14,
+            93170,
+            83,
+            0
+          ],
+          [
+            871,
+            2933,
+            67050,
+            1427
+          ],
+          [
+            2828,
+            107,
+            2763,
+            1250093
+          ]
+        ],
+        "boundaries": [
+          [
+            5408,
+            6475,
+            5395,
+            6689
+          ],
+          [
+            1943,
+            2770,
+            1941,
+            2242
+          ],
+          [
+            1613,
+            2923,
+            1616,
+            2665
+          ],
+          [
+            3606,
+            5171,
+            3600,
+            4688
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m127",
+      "direct": {
+        "confusion": [
+          [
+            3775136,
+            1446,
+            2628,
+            8248
+          ],
+          [
+            638,
+            97347,
+            1053,
+            264
+          ],
+          [
+            890,
+            0,
+            245231,
+            2699
+          ],
+          [
+            2015,
+            195,
+            5486,
+            777044
+          ]
+        ],
+        "boundaries": [
+          [
+            3090,
+            4249,
+            3098,
+            7111
+          ],
+          [
+            2690,
+            3189,
+            2687,
+            3031
+          ],
+          [
+            3196,
+            5044,
+            3191,
+            4477
+          ],
+          [
+            2016,
+            4365,
+            2014,
+            4417
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3775115,
+            1548,
+            2551,
+            8244
+          ],
+          [
+            624,
+            97771,
+            672,
+            235
+          ],
+          [
+            876,
+            27,
+            245254,
+            2663
+          ],
+          [
+            2006,
+            199,
+            5698,
+            776837
+          ]
+        ],
+        "boundaries": [
+          [
+            3086,
+            4230,
+            3096,
+            7111
+          ],
+          [
+            2732,
+            3234,
+            2706,
+            3031
+          ],
+          [
+            3254,
+            5101,
+            3240,
+            4477
+          ],
+          [
+            2000,
+            4339,
+            2000,
+            4417
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3775083,
+            1607,
+            2539,
+            8229
+          ],
+          [
+            620,
+            97816,
+            616,
+            250
+          ],
+          [
+            888,
+            29,
+            245214,
+            2689
+          ],
+          [
+            2007,
+            199,
+            5675,
+            776859
+          ]
+        ],
+        "boundaries": [
+          [
+            3080,
+            4240,
+            3090,
+            7111
+          ],
+          [
+            2742,
+            3212,
+            2739,
+            3031
+          ],
+          [
+            3264,
+            5049,
+            3256,
+            4477
+          ],
+          [
+            2002,
+            4348,
+            2001,
+            4417
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m132",
+      "direct": {
+        "confusion": [
+          [
+            2868423,
+            2883,
+            1759,
+            8101
+          ],
+          [
+            1756,
+            244938,
+            1352,
+            79
+          ],
+          [
+            7,
+            1198,
+            97607,
+            1997
+          ],
+          [
+            4905,
+            445,
+            5576,
+            1679294
+          ]
+        ],
+        "boundaries": [
+          [
+            7003,
+            9335,
+            7123,
+            11036
+          ],
+          [
+            3565,
+            4692,
+            3532,
+            4399
+          ],
+          [
+            3224,
+            5600,
+            3197,
+            3967
+          ],
+          [
+            7159,
+            10133,
+            7145,
+            10087
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            2868358,
+            3217,
+            1504,
+            8087
+          ],
+          [
+            1738,
+            245860,
+            454,
+            73
+          ],
+          [
+            6,
+            2258,
+            96575,
+            1970
+          ],
+          [
+            4903,
+            584,
+            5467,
+            1679266
+          ]
+        ],
+        "boundaries": [
+          [
+            6991,
+            9339,
+            7130,
+            11036
+          ],
+          [
+            3658,
+            4800,
+            3604,
+            4399
+          ],
+          [
+            3230,
+            5708,
+            3143,
+            3967
+          ],
+          [
+            7167,
+            10134,
+            7153,
+            10087
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            2868329,
+            3048,
+            1705,
+            8084
+          ],
+          [
+            1742,
+            245399,
+            910,
+            74
+          ],
+          [
+            6,
+            1990,
+            96845,
+            1968
+          ],
+          [
+            4902,
+            436,
+            5615,
+            1679267
+          ]
+        ],
+        "boundaries": [
+          [
+            6976,
+            9341,
+            7098,
+            11036
+          ],
+          [
+            3703,
+            4865,
+            3620,
+            4399
+          ],
+          [
+            3235,
+            5846,
+            3172,
+            3967
+          ],
+          [
+            7167,
+            10132,
+            7153,
+            10087
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m134",
+      "direct": {
+        "confusion": [
+          [
+            3151717,
+            576,
+            513,
+            6601
+          ],
+          [
+            252,
+            62833,
+            628,
+            70
+          ],
+          [
+            0,
+            23,
+            28083,
+            51
+          ],
+          [
+            33635,
+            82,
+            183,
+            1635073
+          ]
+        ],
+        "boundaries": [
+          [
+            5411,
+            8720,
+            5425,
+            7912
+          ],
+          [
+            1931,
+            2026,
+            1922,
+            2035
+          ],
+          [
+            1381,
+            1591,
+            1377,
+            1405
+          ],
+          [
+            5421,
+            8799,
+            5388,
+            7001
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3151692,
+            710,
+            423,
+            6582
+          ],
+          [
+            243,
+            63209,
+            261,
+            70
+          ],
+          [
+            0,
+            157,
+            27951,
+            49
+          ],
+          [
+            33631,
+            88,
+            209,
+            1635045
+          ]
+        ],
+        "boundaries": [
+          [
+            5408,
+            8716,
+            5412,
+            7912
+          ],
+          [
+            1984,
+            2103,
+            1927,
+            2035
+          ],
+          [
+            1407,
+            1602,
+            1397,
+            1405
+          ],
+          [
+            5422,
+            8801,
+            5389,
+            7001
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3151726,
+            668,
+            420,
+            6593
+          ],
+          [
+            243,
+            63126,
+            349,
+            65
+          ],
+          [
+            0,
+            81,
+            28026,
+            50
+          ],
+          [
+            33632,
+            82,
+            196,
+            1635063
+          ]
+        ],
+        "boundaries": [
+          [
+            5394,
+            8705,
+            5394,
+            7912
+          ],
+          [
+            1931,
+            2044,
+            1916,
+            2035
+          ],
+          [
+            1399,
+            1526,
+            1391,
+            1405
+          ],
+          [
+            5418,
+            8799,
+            5386,
+            7001
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m135",
+      "direct": {
+        "confusion": [
+          [
+            4763391,
+            26,
+            75,
+            2525
+          ],
+          [
+            216,
+            16090,
+            0,
+            516
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2809,
+            1,
+            0,
+            134671
+          ]
+        ],
+        "boundaries": [
+          [
+            5205,
+            5907,
+            5249,
+            5715
+          ],
+          [
+            612,
+            666,
+            617,
+            677
+          ],
+          [
+            0,
+            66,
+            0,
+            0
+          ],
+          [
+            5289,
+            5856,
+            5317,
+            5759
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4763388,
+            5,
+            102,
+            2522
+          ],
+          [
+            214,
+            16093,
+            0,
+            515
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2810,
+            0,
+            0,
+            134671
+          ]
+        ],
+        "boundaries": [
+          [
+            5206,
+            5903,
+            5249,
+            5715
+          ],
+          [
+            613,
+            650,
+            617,
+            677
+          ],
+          [
+            0,
+            84,
+            0,
+            0
+          ],
+          [
+            5289,
+            5853,
+            5317,
+            5759
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4763397,
+            58,
+            39,
+            2523
+          ],
+          [
+            215,
+            16092,
+            0,
+            515
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2809,
+            1,
+            0,
+            134671
+          ]
+        ],
+        "boundaries": [
+          [
+            5204,
+            5904,
+            5249,
+            5715
+          ],
+          [
+            613,
+            694,
+            617,
+            677
+          ],
+          [
+            0,
+            38,
+            0,
+            0
+          ],
+          [
+            5289,
+            5854,
+            5317,
+            5759
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m16",
+      "direct": {
+        "confusion": [
+          [
+            4637845,
+            78,
+            1487,
+            946
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            310,
+            2,
+            159354,
+            415
+          ],
+          [
+            1701,
+            0,
+            394,
+            117788
+          ]
+        ],
+        "boundaries": [
+          [
+            2749,
+            3218,
+            2729,
+            3658
+          ],
+          [
+            0,
+            57,
+            0,
+            0
+          ],
+          [
+            2406,
+            2594,
+            2414,
+            2557
+          ],
+          [
+            2708,
+            2984,
+            2697,
+            2972
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4637827,
+            1,
+            1587,
+            941
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            301,
+            0,
+            159380,
+            400
+          ],
+          [
+            1699,
+            0,
+            407,
+            117777
+          ]
+        ],
+        "boundaries": [
+          [
+            2748,
+            3214,
+            2723,
+            3658
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            2403,
+            2639,
+            2407,
+            2557
+          ],
+          [
+            2706,
+            2980,
+            2692,
+            2972
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4637794,
+            46,
+            1593,
+            923
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            299,
+            0,
+            159382,
+            400
+          ],
+          [
+            1699,
+            0,
+            407,
+            117777
+          ]
+        ],
+        "boundaries": [
+          [
+            2743,
+            3223,
+            2717,
+            3658
+          ],
+          [
+            0,
+            36,
+            0,
+            0
+          ],
+          [
+            2398,
+            2643,
+            2401,
+            2557
+          ],
+          [
+            2706,
+            2962,
+            2692,
+            2972
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m170",
+      "direct": {
+        "confusion": [
+          [
+            4831132,
+            293,
+            402,
+            174
+          ],
+          [
+            312,
+            29712,
+            273,
+            0
+          ],
+          [
+            0,
+            1268,
+            14494,
+            81
+          ],
+          [
+            237,
+            0,
+            52,
+            41890
+          ]
+        ],
+        "boundaries": [
+          [
+            1787,
+            1883,
+            1778,
+            1932
+          ],
+          [
+            1079,
+            1305,
+            1061,
+            1155
+          ],
+          [
+            666,
+            851,
+            655,
+            819
+          ],
+          [
+            1135,
+            1146,
+            1134,
+            1154
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4831128,
+            301,
+            398,
+            174
+          ],
+          [
+            310,
+            29828,
+            159,
+            0
+          ],
+          [
+            0,
+            1812,
+            13962,
+            69
+          ],
+          [
+            237,
+            9,
+            42,
+            41891
+          ]
+        ],
+        "boundaries": [
+          [
+            1787,
+            1883,
+            1776,
+            1932
+          ],
+          [
+            1078,
+            1352,
+            1052,
+            1155
+          ],
+          [
+            607,
+            796,
+            610,
+            819
+          ],
+          [
+            1135,
+            1146,
+            1134,
+            1154
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4831128,
+            299,
+            401,
+            173
+          ],
+          [
+            323,
+            29784,
+            190,
+            0
+          ],
+          [
+            0,
+            1336,
+            14434,
+            73
+          ],
+          [
+            237,
+            0,
+            51,
+            41891
+          ]
+        ],
+        "boundaries": [
+          [
+            1786,
+            1885,
+            1777,
+            1932
+          ],
+          [
+            1092,
+            1375,
+            1072,
+            1155
+          ],
+          [
+            689,
+            870,
+            675,
+            819
+          ],
+          [
+            1135,
+            1146,
+            1134,
+            1154
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m171",
+      "direct": {
+        "confusion": [
+          [
+            4653995,
+            1,
+            39,
+            1127
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            288,
+            16,
+            10104,
+            215
+          ],
+          [
+            3514,
+            0,
+            304,
+            250717
+          ]
+        ],
+        "boundaries": [
+          [
+            4727,
+            5110,
+            4735,
+            5216
+          ],
+          [
+            0,
+            17,
+            0,
+            0
+          ],
+          [
+            965,
+            999,
+            962,
+            1009
+          ],
+          [
+            4679,
+            5055,
+            4681,
+            5108
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4653993,
+            0,
+            43,
+            1126
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            269,
+            3,
+            10169,
+            182
+          ],
+          [
+            3514,
+            0,
+            310,
+            250711
+          ]
+        ],
+        "boundaries": [
+          [
+            4719,
+            5102,
+            4735,
+            5216
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            974,
+            1008,
+            970,
+            1009
+          ],
+          [
+            4679,
+            5054,
+            4681,
+            5108
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4653992,
+            0,
+            44,
+            1126
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            249,
+            0,
+            10193,
+            181
+          ],
+          [
+            3514,
+            0,
+            310,
+            250711
+          ]
+        ],
+        "boundaries": [
+          [
+            4721,
+            5102,
+            4737,
+            5216
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            976,
+            1001,
+            972,
+            1009
+          ],
+          [
+            4679,
+            5053,
+            4681,
+            5108
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m21",
+      "direct": {
+        "confusion": [
+          [
+            3901993,
+            504,
+            231,
+            5596
+          ],
+          [
+            2332,
+            112019,
+            1492,
+            0
+          ],
+          [
+            230,
+            142,
+            36974,
+            5743
+          ],
+          [
+            2254,
+            0,
+            197,
+            850613
+          ]
+        ],
+        "boundaries": [
+          [
+            5976,
+            6636,
+            5976,
+            7768
+          ],
+          [
+            2801,
+            3120,
+            2783,
+            3284
+          ],
+          [
+            1776,
+            2433,
+            1769,
+            2541
+          ],
+          [
+            4743,
+            5618,
+            4743,
+            6172
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3901974,
+            539,
+            217,
+            5594
+          ],
+          [
+            2317,
+            112565,
+            961,
+            0
+          ],
+          [
+            225,
+            457,
+            36702,
+            5705
+          ],
+          [
+            2254,
+            0,
+            201,
+            850609
+          ]
+        ],
+        "boundaries": [
+          [
+            5981,
+            6642,
+            5975,
+            7768
+          ],
+          [
+            2854,
+            3147,
+            2822,
+            3284
+          ],
+          [
+            1823,
+            2445,
+            1804,
+            2541
+          ],
+          [
+            4748,
+            5615,
+            4748,
+            6172
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3901985,
+            530,
+            215,
+            5594
+          ],
+          [
+            2319,
+            112565,
+            959,
+            0
+          ],
+          [
+            228,
+            431,
+            36708,
+            5722
+          ],
+          [
+            2254,
+            0,
+            198,
+            850612
+          ]
+        ],
+        "boundaries": [
+          [
+            5984,
+            6638,
+            5979,
+            7768
+          ],
+          [
+            2848,
+            3134,
+            2826,
+            3284
+          ],
+          [
+            1813,
+            2423,
+            1805,
+            2541
+          ],
+          [
+            4746,
+            5616,
+            4746,
+            6172
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m22",
+      "direct": {
+        "confusion": [
+          [
+            2515135,
+            623,
+            3020,
+            7612
+          ],
+          [
+            97,
+            80207,
+            2215,
+            0
+          ],
+          [
+            212,
+            1,
+            324970,
+            991
+          ],
+          [
+            3921,
+            0,
+            14228,
+            1967088
+          ]
+        ],
+        "boundaries": [
+          [
+            7575,
+            9439,
+            7597,
+            10354
+          ],
+          [
+            1739,
+            2006,
+            1740,
+            2121
+          ],
+          [
+            4017,
+            5916,
+            4016,
+            5283
+          ],
+          [
+            7952,
+            10451,
+            7957,
+            9894
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            2515096,
+            682,
+            3002,
+            7610
+          ],
+          [
+            90,
+            81441,
+            988,
+            0
+          ],
+          [
+            205,
+            86,
+            324931,
+            952
+          ],
+          [
+            3920,
+            0,
+            14497,
+            1966820
+          ]
+        ],
+        "boundaries": [
+          [
+            7566,
+            9439,
+            7588,
+            10354
+          ],
+          [
+            1993,
+            2046,
+            1980,
+            2121
+          ],
+          [
+            4285,
+            5963,
+            4266,
+            5283
+          ],
+          [
+            7932,
+            10464,
+            7941,
+            9894
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            2515107,
+            670,
+            3003,
+            7610
+          ],
+          [
+            92,
+            81215,
+            1212,
+            0
+          ],
+          [
+            205,
+            44,
+            324969,
+            956
+          ],
+          [
+            3920,
+            0,
+            14499,
+            1966818
+          ]
+        ],
+        "boundaries": [
+          [
+            7565,
+            9438,
+            7587,
+            10354
+          ],
+          [
+            1965,
+            2027,
+            1968,
+            2121
+          ],
+          [
+            4258,
+            5954,
+            4250,
+            5283
+          ],
+          [
+            7935,
+            10468,
+            7942,
+            9894
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m23",
+      "direct": {
+        "confusion": [
+          [
+            4358850,
+            1724,
+            1079,
+            1043
+          ],
+          [
+            2443,
+            244031,
+            607,
+            1278
+          ],
+          [
+            141,
+            191,
+            75154,
+            67
+          ],
+          [
+            8043,
+            52,
+            6228,
+            219389
+          ]
+        ],
+        "boundaries": [
+          [
+            8121,
+            9506,
+            8148,
+            10018
+          ],
+          [
+            2568,
+            3392,
+            2560,
+            3209
+          ],
+          [
+            2552,
+            3670,
+            2529,
+            3378
+          ],
+          [
+            6931,
+            8814,
+            6983,
+            8628
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4358814,
+            1760,
+            1082,
+            1040
+          ],
+          [
+            2361,
+            244437,
+            337,
+            1224
+          ],
+          [
+            128,
+            498,
+            74863,
+            64
+          ],
+          [
+            8036,
+            54,
+            6321,
+            219301
+          ]
+        ],
+        "boundaries": [
+          [
+            8127,
+            9491,
+            8153,
+            10018
+          ],
+          [
+            2599,
+            3417,
+            2579,
+            3209
+          ],
+          [
+            2570,
+            3673,
+            2541,
+            3378
+          ],
+          [
+            6905,
+            8774,
+            6952,
+            8628
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4358817,
+            1760,
+            1076,
+            1043
+          ],
+          [
+            2375,
+            244381,
+            369,
+            1234
+          ],
+          [
+            135,
+            471,
+            74883,
+            64
+          ],
+          [
+            8042,
+            54,
+            6256,
+            219360
+          ]
+        ],
+        "boundaries": [
+          [
+            8126,
+            9513,
+            8152,
+            10018
+          ],
+          [
+            2584,
+            3411,
+            2576,
+            3209
+          ],
+          [
+            2556,
+            3666,
+            2535,
+            3378
+          ],
+          [
+            6916,
+            8790,
+            6969,
+            8628
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m26",
+      "direct": {
+        "confusion": [
+          [
+            3858791,
+            778,
+            1254,
+            1181
+          ],
+          [
+            1403,
+            13930,
+            866,
+            97
+          ],
+          [
+            1777,
+            2218,
+            148800,
+            0
+          ],
+          [
+            9940,
+            0,
+            30,
+            879255
+          ]
+        ],
+        "boundaries": [
+          [
+            6592,
+            8918,
+            6603,
+            8958
+          ],
+          [
+            878,
+            1798,
+            871,
+            1271
+          ],
+          [
+            2162,
+            2866,
+            2151,
+            2661
+          ],
+          [
+            3874,
+            5597,
+            3899,
+            5450
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3858744,
+            774,
+            1311,
+            1175
+          ],
+          [
+            1371,
+            14058,
+            785,
+            82
+          ],
+          [
+            1742,
+            2421,
+            148632,
+            0
+          ],
+          [
+            9940,
+            5,
+            22,
+            879258
+          ]
+        ],
+        "boundaries": [
+          [
+            6608,
+            8924,
+            6621,
+            8958
+          ],
+          [
+            920,
+            1989,
+            917,
+            1271
+          ],
+          [
+            2146,
+            2972,
+            2143,
+            2661
+          ],
+          [
+            3874,
+            5584,
+            3901,
+            5450
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3858778,
+            625,
+            1422,
+            1179
+          ],
+          [
+            1407,
+            13874,
+            929,
+            86
+          ],
+          [
+            1724,
+            2025,
+            149046,
+            0
+          ],
+          [
+            9940,
+            0,
+            28,
+            879257
+          ]
+        ],
+        "boundaries": [
+          [
+            6594,
+            8933,
+            6607,
+            8958
+          ],
+          [
+            933,
+            1847,
+            917,
+            1271
+          ],
+          [
+            2234,
+            3132,
+            2208,
+            2661
+          ],
+          [
+            3874,
+            5587,
+            3901,
+            5450
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m30",
+      "direct": {
+        "confusion": [
+          [
+            3182591,
+            563,
+            4828,
+            1000
+          ],
+          [
+            11,
+            57656,
+            8784,
+            0
+          ],
+          [
+            458,
+            934,
+            353086,
+            761
+          ],
+          [
+            25759,
+            255,
+            5866,
+            1277768
+          ]
+        ],
+        "boundaries": [
+          [
+            5358,
+            9074,
+            5383,
+            8030
+          ],
+          [
+            1020,
+            2346,
+            1007,
+            1927
+          ],
+          [
+            3477,
+            6606,
+            3478,
+            5894
+          ],
+          [
+            4630,
+            8977,
+            4633,
+            6162
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3182511,
+            596,
+            4885,
+            990
+          ],
+          [
+            8,
+            61306,
+            5137,
+            0
+          ],
+          [
+            404,
+            1015,
+            353103,
+            717
+          ],
+          [
+            25715,
+            97,
+            6232,
+            1277604
+          ]
+        ],
+        "boundaries": [
+          [
+            5319,
+            8986,
+            5356,
+            8030
+          ],
+          [
+            1324,
+            2527,
+            1304,
+            1927
+          ],
+          [
+            3751,
+            6868,
+            3733,
+            5894
+          ],
+          [
+            4613,
+            8965,
+            4617,
+            6162
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3182527,
+            550,
+            4914,
+            991
+          ],
+          [
+            12,
+            57246,
+            9193,
+            0
+          ],
+          [
+            454,
+            740,
+            353316,
+            729
+          ],
+          [
+            25716,
+            87,
+            6215,
+            1277630
+          ]
+        ],
+        "boundaries": [
+          [
+            5332,
+            9037,
+            5362,
+            8030
+          ],
+          [
+            1210,
+            3092,
+            1159,
+            1927
+          ],
+          [
+            3688,
+            7322,
+            3649,
+            5894
+          ],
+          [
+            4614,
+            8970,
+            4611,
+            6162
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m31",
+      "direct": {
+        "confusion": [
+          [
+            3353164,
+            1390,
+            1875,
+            9390
+          ],
+          [
+            53,
+            254,
+            4,
+            0
+          ],
+          [
+            595,
+            74510,
+            337465,
+            776
+          ],
+          [
+            14674,
+            0,
+            17750,
+            1108420
+          ]
+        ],
+        "boundaries": [
+          [
+            11885,
+            15231,
+            11899,
+            15763
+          ],
+          [
+            201,
+            2496,
+            227,
+            238
+          ],
+          [
+            1945,
+            5886,
+            1939,
+            3782
+          ],
+          [
+            10925,
+            15719,
+            10902,
+            15303
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3353075,
+            1476,
+            1845,
+            9423
+          ],
+          [
+            56,
+            245,
+            10,
+            0
+          ],
+          [
+            566,
+            76145,
+            335931,
+            704
+          ],
+          [
+            14620,
+            0,
+            17996,
+            1108228
+          ]
+        ],
+        "boundaries": [
+          [
+            11885,
+            15236,
+            11896,
+            15763
+          ],
+          [
+            210,
+            2496,
+            228,
+            238
+          ],
+          [
+            1858,
+            5813,
+            1855,
+            3782
+          ],
+          [
+            10910,
+            15689,
+            10904,
+            15303
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3353107,
+            1399,
+            1952,
+            9361
+          ],
+          [
+            58,
+            251,
+            2,
+            0
+          ],
+          [
+            585,
+            75655,
+            336373,
+            733
+          ],
+          [
+            14613,
+            0,
+            17995,
+            1108236
+          ]
+        ],
+        "boundaries": [
+          [
+            11881,
+            15240,
+            11891,
+            15763
+          ],
+          [
+            206,
+            2563,
+            228,
+            238
+          ],
+          [
+            1924,
+            5907,
+            1929,
+            3782
+          ],
+          [
+            10891,
+            15665,
+            10883,
+            15303
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m4",
+      "direct": {
+        "confusion": [
+          [
+            2861081,
+            4822,
+            536,
+            6333
+          ],
+          [
+            814,
+            10927,
+            3698,
+            0
+          ],
+          [
+            416,
+            0,
+            39192,
+            1351
+          ],
+          [
+            7572,
+            110,
+            334,
+            1983134
+          ]
+        ],
+        "boundaries": [
+          [
+            4824,
+            7558,
+            4840,
+            7119
+          ],
+          [
+            460,
+            1419,
+            470,
+            1004
+          ],
+          [
+            1032,
+            2029,
+            1026,
+            1622
+          ],
+          [
+            4647,
+            7287,
+            4636,
+            6762
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            2861054,
+            4865,
+            517,
+            6336
+          ],
+          [
+            801,
+            11647,
+            2991,
+            0
+          ],
+          [
+            384,
+            0,
+            39463,
+            1112
+          ],
+          [
+            7565,
+            116,
+            357,
+            1983112
+          ]
+        ],
+        "boundaries": [
+          [
+            4823,
+            7539,
+            4830,
+            7119
+          ],
+          [
+            618,
+            1477,
+            628,
+            1004
+          ],
+          [
+            1219,
+            2083,
+            1207,
+            1622
+          ],
+          [
+            4656,
+            7226,
+            4645,
+            6762
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            2861085,
+            4729,
+            633,
+            6325
+          ],
+          [
+            799,
+            11293,
+            3347,
+            0
+          ],
+          [
+            384,
+            0,
+            39447,
+            1128
+          ],
+          [
+            7566,
+            113,
+            356,
+            1983115
+          ]
+        ],
+        "boundaries": [
+          [
+            4821,
+            7539,
+            4843,
+            7119
+          ],
+          [
+            578,
+            1422,
+            582,
+            1004
+          ],
+          [
+            1161,
+            2157,
+            1163,
+            1622
+          ],
+          [
+            4658,
+            7226,
+            4647,
+            6762
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m46",
+      "direct": {
+        "confusion": [
+          [
+            4296859,
+            2497,
+            778,
+            1028
+          ],
+          [
+            115,
+            120292,
+            1889,
+            0
+          ],
+          [
+            37,
+            92,
+            12826,
+            633
+          ],
+          [
+            7884,
+            116,
+            994,
+            474280
+          ]
+        ],
+        "boundaries": [
+          [
+            4330,
+            5758,
+            4295,
+            6667
+          ],
+          [
+            1848,
+            2477,
+            1843,
+            2283
+          ],
+          [
+            1627,
+            2278,
+            1626,
+            2342
+          ],
+          [
+            4274,
+            5623,
+            4235,
+            5725
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4296838,
+            2616,
+            681,
+            1027
+          ],
+          [
+            113,
+            121110,
+            1073,
+            0
+          ],
+          [
+            37,
+            173,
+            12741,
+            637
+          ],
+          [
+            7878,
+            121,
+            1009,
+            474266
+          ]
+        ],
+        "boundaries": [
+          [
+            4328,
+            5763,
+            4293,
+            6667
+          ],
+          [
+            2061,
+            2494,
+            2046,
+            2283
+          ],
+          [
+            1855,
+            2250,
+            1862,
+            2342
+          ],
+          [
+            4265,
+            5624,
+            4226,
+            5725
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4296854,
+            2581,
+            700,
+            1027
+          ],
+          [
+            113,
+            120982,
+            1201,
+            0
+          ],
+          [
+            37,
+            176,
+            12738,
+            637
+          ],
+          [
+            7890,
+            121,
+            992,
+            474271
+          ]
+        ],
+        "boundaries": [
+          [
+            4331,
+            5756,
+            4296,
+            6667
+          ],
+          [
+            2044,
+            2493,
+            2024,
+            2283
+          ],
+          [
+            1812,
+            2235,
+            1827,
+            2342
+          ],
+          [
+            4273,
+            5623,
+            4234,
+            5725
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m5",
+      "direct": {
+        "confusion": [
+          [
+            3843171,
+            355,
+            0,
+            3095
+          ],
+          [
+            238,
+            81122,
+            0,
+            57
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1566,
+            503,
+            0,
+            990213
+          ]
+        ],
+        "boundaries": [
+          [
+            5079,
+            5551,
+            5070,
+            5568
+          ],
+          [
+            1879,
+            1885,
+            1887,
+            1892
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4353,
+            4814,
+            4355,
+            4823
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3843167,
+            359,
+            0,
+            3095
+          ],
+          [
+            232,
+            81128,
+            0,
+            57
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1564,
+            519,
+            0,
+            990199
+          ]
+        ],
+        "boundaries": [
+          [
+            5081,
+            5549,
+            5070,
+            5568
+          ],
+          [
+            1881,
+            1887,
+            1887,
+            1892
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4353,
+            4814,
+            4355,
+            4823
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3843170,
+            356,
+            0,
+            3095
+          ],
+          [
+            236,
+            81124,
+            0,
+            57
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1564,
+            515,
+            0,
+            990203
+          ]
+        ],
+        "boundaries": [
+          [
+            5079,
+            5549,
+            5070,
+            5568
+          ],
+          [
+            1879,
+            1885,
+            1887,
+            1892
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4353,
+            4814,
+            4355,
+            4823
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m76",
+      "direct": {
+        "confusion": [
+          [
+            4761491,
+            732,
+            51,
+            1045
+          ],
+          [
+            107,
+            5240,
+            91,
+            8
+          ],
+          [
+            80,
+            168,
+            5892,
+            3
+          ],
+          [
+            4773,
+            2,
+            547,
+            140090
+          ]
+        ],
+        "boundaries": [
+          [
+            5406,
+            6346,
+            5444,
+            6000
+          ],
+          [
+            358,
+            725,
+            355,
+            373
+          ],
+          [
+            418,
+            563,
+            397,
+            539
+          ],
+          [
+            5360,
+            6026,
+            5386,
+            5893
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4761533,
+            689,
+            54,
+            1043
+          ],
+          [
+            107,
+            5231,
+            100,
+            8
+          ],
+          [
+            80,
+            207,
+            5853,
+            3
+          ],
+          [
+            4774,
+            14,
+            546,
+            140078
+          ]
+        ],
+        "boundaries": [
+          [
+            5406,
+            6332,
+            5444,
+            6000
+          ],
+          [
+            359,
+            751,
+            354,
+            373
+          ],
+          [
+            427,
+            595,
+            418,
+            539
+          ],
+          [
+            5357,
+            6026,
+            5383,
+            5893
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4761467,
+            755,
+            54,
+            1043
+          ],
+          [
+            109,
+            5218,
+            111,
+            8
+          ],
+          [
+            76,
+            252,
+            5812,
+            3
+          ],
+          [
+            4772,
+            24,
+            531,
+            140085
+          ]
+        ],
+        "boundaries": [
+          [
+            5406,
+            6368,
+            5444,
+            6000
+          ],
+          [
+            359,
+            770,
+            354,
+            373
+          ],
+          [
+            384,
+            529,
+            378,
+            539
+          ],
+          [
+            5361,
+            6026,
+            5387,
+            5893
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m85",
+      "direct": {
+        "confusion": [
+          [
+            4692779,
+            504,
+            6,
+            548
+          ],
+          [
+            432,
+            86956,
+            0,
+            301
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1807,
+            487,
+            0,
+            136500
+          ]
+        ],
+        "boundaries": [
+          [
+            4090,
+            4270,
+            4067,
+            4212
+          ],
+          [
+            2670,
+            2734,
+            2665,
+            2734
+          ],
+          [
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            3929,
+            4111,
+            3920,
+            3988
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4692767,
+            524,
+            0,
+            546
+          ],
+          [
+            428,
+            86971,
+            0,
+            290
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1806,
+            491,
+            0,
+            136497
+          ]
+        ],
+        "boundaries": [
+          [
+            4092,
+            4270,
+            4067,
+            4212
+          ],
+          [
+            2676,
+            2741,
+            2665,
+            2734
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3929,
+            4109,
+            3920,
+            3988
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4692767,
+            517,
+            6,
+            547
+          ],
+          [
+            428,
+            86966,
+            0,
+            295
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1806,
+            488,
+            0,
+            136500
+          ]
+        ],
+        "boundaries": [
+          [
+            4092,
+            4268,
+            4067,
+            4212
+          ],
+          [
+            2673,
+            2737,
+            2665,
+            2734
+          ],
+          [
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            3929,
+            4109,
+            3920,
+            3988
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m86",
+      "direct": {
+        "confusion": [
+          [
+            3154215,
+            1445,
+            1140,
+            823
+          ],
+          [
+            2189,
+            253567,
+            11605,
+            1
+          ],
+          [
+            1629,
+            270,
+            166631,
+            3435
+          ],
+          [
+            8428,
+            0,
+            2721,
+            1312221
+          ]
+        ],
+        "boundaries": [
+          [
+            5615,
+            7550,
+            5592,
+            8426
+          ],
+          [
+            3652,
+            4500,
+            3641,
+            4923
+          ],
+          [
+            3259,
+            5003,
+            3245,
+            5249
+          ],
+          [
+            3485,
+            5677,
+            3493,
+            5497
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3154186,
+            1597,
+            1022,
+            818
+          ],
+          [
+            2139,
+            254380,
+            10843,
+            0
+          ],
+          [
+            1610,
+            526,
+            166442,
+            3387
+          ],
+          [
+            8425,
+            0,
+            2747,
+            1312198
+          ]
+        ],
+        "boundaries": [
+          [
+            5617,
+            7553,
+            5594,
+            8426
+          ],
+          [
+            3715,
+            4503,
+            3707,
+            4923
+          ],
+          [
+            3308,
+            4989,
+            3290,
+            5249
+          ],
+          [
+            3481,
+            5678,
+            3488,
+            5497
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3154210,
+            1511,
+            1084,
+            818
+          ],
+          [
+            2214,
+            253694,
+            11453,
+            1
+          ],
+          [
+            1605,
+            382,
+            166600,
+            3378
+          ],
+          [
+            8423,
+            0,
+            2753,
+            1312194
+          ]
+        ],
+        "boundaries": [
+          [
+            5593,
+            7530,
+            5576,
+            8426
+          ],
+          [
+            3639,
+            4509,
+            3627,
+            4923
+          ],
+          [
+            3307,
+            5135,
+            3274,
+            5249
+          ],
+          [
+            3481,
+            5679,
+            3483,
+            5497
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m89",
+      "direct": {
+        "confusion": [
+          [
+            4835949,
+            444,
+            27,
+            1531
+          ],
+          [
+            932,
+            7225,
+            297,
+            403
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3105,
+            35,
+            0,
+            70372
+          ]
+        ],
+        "boundaries": [
+          [
+            4109,
+            5005,
+            4167,
+            4865
+          ],
+          [
+            858,
+            1069,
+            855,
+            1199
+          ],
+          [
+            0,
+            121,
+            0,
+            0
+          ],
+          [
+            3620,
+            4250,
+            3676,
+            4175
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4835940,
+            438,
+            42,
+            1531
+          ],
+          [
+            911,
+            7328,
+            230,
+            388
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3105,
+            40,
+            0,
+            70367
+          ]
+        ],
+        "boundaries": [
+          [
+            4114,
+            5010,
+            4173,
+            4865
+          ],
+          [
+            869,
+            1088,
+            865,
+            1199
+          ],
+          [
+            0,
+            166,
+            0,
+            0
+          ],
+          [
+            3625,
+            4252,
+            3681,
+            4175
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4835941,
+            476,
+            3,
+            1531
+          ],
+          [
+            918,
+            7385,
+            161,
+            393
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3105,
+            38,
+            0,
+            70369
+          ]
+        ],
+        "boundaries": [
+          [
+            4114,
+            5011,
+            4173,
+            4865
+          ],
+          [
+            880,
+            1122,
+            872,
+            1199
+          ],
+          [
+            0,
+            87,
+            0,
+            0
+          ],
+          [
+            3624,
+            4250,
+            3680,
+            4175
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m92",
+      "direct": {
+        "confusion": [
+          [
+            3138631,
+            2158,
+            2606,
+            8432
+          ],
+          [
+            887,
+            276976,
+            1194,
+            131
+          ],
+          [
+            96,
+            2173,
+            156660,
+            156
+          ],
+          [
+            2456,
+            4,
+            2585,
+            1325175
+          ]
+        ],
+        "boundaries": [
+          [
+            4707,
+            7081,
+            4727,
+            7755
+          ],
+          [
+            3556,
+            4097,
+            3562,
+            4341
+          ],
+          [
+            2696,
+            3896,
+            2700,
+            3714
+          ],
+          [
+            3348,
+            5491,
+            3354,
+            5663
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            3138586,
+            2559,
+            2132,
+            8550
+          ],
+          [
+            827,
+            277766,
+            475,
+            120
+          ],
+          [
+            100,
+            2877,
+            155955,
+            153
+          ],
+          [
+            2447,
+            13,
+            2606,
+            1325154
+          ]
+        ],
+        "boundaries": [
+          [
+            4698,
+            7032,
+            4717,
+            7755
+          ],
+          [
+            3467,
+            4100,
+            3461,
+            4341
+          ],
+          [
+            2646,
+            3751,
+            2638,
+            3714
+          ],
+          [
+            3346,
+            5519,
+            3352,
+            5663
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            3138608,
+            2462,
+            2271,
+            8486
+          ],
+          [
+            844,
+            277606,
+            622,
+            116
+          ],
+          [
+            98,
+            2676,
+            156154,
+            157
+          ],
+          [
+            2451,
+            9,
+            2601,
+            1325159
+          ]
+        ],
+        "boundaries": [
+          [
+            4698,
+            7050,
+            4719,
+            7755
+          ],
+          [
+            3500,
+            4185,
+            3493,
+            4341
+          ],
+          [
+            2681,
+            3886,
+            2677,
+            3714
+          ],
+          [
+            3346,
+            5517,
+            3352,
+            5663
+          ]
+        ]
+      }
+    },
+    {
+      "id": "m96",
+      "direct": {
+        "confusion": [
+          [
+            4387472,
+            1472,
+            259,
+            6262
+          ],
+          [
+            409,
+            13591,
+            820,
+            133
+          ],
+          [
+            4,
+            147,
+            435,
+            0
+          ],
+          [
+            2231,
+            570,
+            546,
+            505969
+          ]
+        ],
+        "boundaries": [
+          [
+            6027,
+            7519,
+            6010,
+            7250
+          ],
+          [
+            715,
+            1401,
+            695,
+            1278
+          ],
+          [
+            95,
+            528,
+            93,
+            238
+          ],
+          [
+            6126,
+            7329,
+            6101,
+            6929
+          ]
+        ]
+      },
+      "A": {
+        "confusion": [
+          [
+            4387486,
+            1415,
+            262,
+            6302
+          ],
+          [
+            408,
+            14257,
+            160,
+            128
+          ],
+          [
+            4,
+            270,
+            312,
+            0
+          ],
+          [
+            2231,
+            838,
+            271,
+            505976
+          ]
+        ],
+        "boundaries": [
+          [
+            6031,
+            7517,
+            6007,
+            7250
+          ],
+          [
+            710,
+            1384,
+            681,
+            1278
+          ],
+          [
+            136,
+            514,
+            107,
+            238
+          ],
+          [
+            6131,
+            7354,
+            6092,
+            6929
+          ]
+        ]
+      },
+      "B": {
+        "confusion": [
+          [
+            4387454,
+            1584,
+            198,
+            6229
+          ],
+          [
+            403,
+            14148,
+            267,
+            135
+          ],
+          [
+            4,
+            233,
+            349,
+            0
+          ],
+          [
+            2230,
+            889,
+            236,
+            505961
+          ]
+        ],
+        "boundaries": [
+          [
+            6029,
+            7522,
+            6013,
+            7250
+          ],
+          [
+            696,
+            1446,
+            687,
+            1278
+          ],
+          [
+            122,
+            433,
+            106,
+            238
+          ],
+          [
+            6125,
+            7297,
+            6094,
+            6929
+          ]
+        ]
+      }
+    }
+  ]
+}

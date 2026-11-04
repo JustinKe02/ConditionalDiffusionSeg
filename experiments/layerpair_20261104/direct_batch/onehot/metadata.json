@@ -1,0 +1,8 @@
+{
+  "parameter_count": 18192148,
+  "precision": "FP32; TF32 disabled",
+  "ema": false,
+  "direct_control": "zero state/time; same ordinal reconstruction loss",
+  "augmentation": "whole-image gamma/gain, rotations and flips; edge pad to multiple of 64",
+  "validation": "val only; best selected by four-class mIoU"
+}

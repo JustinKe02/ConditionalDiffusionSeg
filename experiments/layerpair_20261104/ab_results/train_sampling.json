@@ -1,0 +1,716 @@
+[
+  {
+    "id": "m1",
+    "selected": 7113,
+    "eligible": 7113,
+    "thin_labels": 6460
+  },
+  {
+    "id": "m100",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 5920
+  },
+  {
+    "id": "m101",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 4906
+  },
+  {
+    "id": "m102",
+    "selected": 8192,
+    "eligible": 8062,
+    "thin_labels": 7558
+  },
+  {
+    "id": "m103",
+    "selected": 7280,
+    "eligible": 7135,
+    "thin_labels": 6028
+  },
+  {
+    "id": "m107",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7827
+  },
+  {
+    "id": "m11",
+    "selected": 8192,
+    "eligible": 8102,
+    "thin_labels": 7386
+  },
+  {
+    "id": "m110",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7014
+  },
+  {
+    "id": "m111",
+    "selected": 7145,
+    "eligible": 7145,
+    "thin_labels": 6278
+  },
+  {
+    "id": "m112",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7167
+  },
+  {
+    "id": "m113",
+    "selected": 4562,
+    "eligible": 1161,
+    "thin_labels": 768
+  },
+  {
+    "id": "m114",
+    "selected": 3266,
+    "eligible": 1137,
+    "thin_labels": 478
+  },
+  {
+    "id": "m115",
+    "selected": 4672,
+    "eligible": 2925,
+    "thin_labels": 1936
+  },
+  {
+    "id": "m116",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 5913
+  },
+  {
+    "id": "m117",
+    "selected": 7079,
+    "eligible": 6880,
+    "thin_labels": 6088
+  },
+  {
+    "id": "m118",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7657
+  },
+  {
+    "id": "m121",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6417
+  },
+  {
+    "id": "m123",
+    "selected": 4240,
+    "eligible": 1384,
+    "thin_labels": 858
+  },
+  {
+    "id": "m125",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7178
+  },
+  {
+    "id": "m126",
+    "selected": 3369,
+    "eligible": 776,
+    "thin_labels": 220
+  },
+  {
+    "id": "m128",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 5541
+  },
+  {
+    "id": "m129",
+    "selected": 4173,
+    "eligible": 1506,
+    "thin_labels": 531
+  },
+  {
+    "id": "m13",
+    "selected": 6789,
+    "eligible": 6789,
+    "thin_labels": 5933
+  },
+  {
+    "id": "m131",
+    "selected": 8192,
+    "eligible": 8020,
+    "thin_labels": 7122
+  },
+  {
+    "id": "m133",
+    "selected": 8192,
+    "eligible": 8007,
+    "thin_labels": 5295
+  },
+  {
+    "id": "m136",
+    "selected": 4695,
+    "eligible": 1212,
+    "thin_labels": 138
+  },
+  {
+    "id": "m137",
+    "selected": 5429,
+    "eligible": 2295,
+    "thin_labels": 66
+  },
+  {
+    "id": "m138",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 3285
+  },
+  {
+    "id": "m139",
+    "selected": 2451,
+    "eligible": 437,
+    "thin_labels": 103
+  },
+  {
+    "id": "m14",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7448
+  },
+  {
+    "id": "m140",
+    "selected": 2632,
+    "eligible": 449,
+    "thin_labels": 281
+  },
+  {
+    "id": "m141",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6975
+  },
+  {
+    "id": "m142",
+    "selected": 5484,
+    "eligible": 5484,
+    "thin_labels": 4297
+  },
+  {
+    "id": "m143",
+    "selected": 7303,
+    "eligible": 7303,
+    "thin_labels": 5714
+  },
+  {
+    "id": "m145",
+    "selected": 7249,
+    "eligible": 7177,
+    "thin_labels": 5944
+  },
+  {
+    "id": "m146",
+    "selected": 3159,
+    "eligible": 1100,
+    "thin_labels": 587
+  },
+  {
+    "id": "m147",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6784
+  },
+  {
+    "id": "m148",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6360
+  },
+  {
+    "id": "m151",
+    "selected": 8192,
+    "eligible": 8123,
+    "thin_labels": 6661
+  },
+  {
+    "id": "m153",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6974
+  },
+  {
+    "id": "m154",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 5876
+  },
+  {
+    "id": "m156",
+    "selected": 8192,
+    "eligible": 8178,
+    "thin_labels": 6865
+  },
+  {
+    "id": "m157",
+    "selected": 7403,
+    "eligible": 7232,
+    "thin_labels": 6709
+  },
+  {
+    "id": "m158",
+    "selected": 8192,
+    "eligible": 8122,
+    "thin_labels": 6681
+  },
+  {
+    "id": "m159",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6071
+  },
+  {
+    "id": "m160",
+    "selected": 8192,
+    "eligible": 8086,
+    "thin_labels": 6345
+  },
+  {
+    "id": "m161",
+    "selected": 2316,
+    "eligible": 246,
+    "thin_labels": 18
+  },
+  {
+    "id": "m164",
+    "selected": 7798,
+    "eligible": 7319,
+    "thin_labels": 3332
+  },
+  {
+    "id": "m165",
+    "selected": 8192,
+    "eligible": 7982,
+    "thin_labels": 6442
+  },
+  {
+    "id": "m166",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7159
+  },
+  {
+    "id": "m167",
+    "selected": 2337,
+    "eligible": 325,
+    "thin_labels": 14
+  },
+  {
+    "id": "m168",
+    "selected": 4404,
+    "eligible": 2614,
+    "thin_labels": 1802
+  },
+  {
+    "id": "m17",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7376
+  },
+  {
+    "id": "m172",
+    "selected": 2926,
+    "eligible": 969,
+    "thin_labels": 98
+  },
+  {
+    "id": "m18",
+    "selected": 4290,
+    "eligible": 1519,
+    "thin_labels": 589
+  },
+  {
+    "id": "m19",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7042
+  },
+  {
+    "id": "m2",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7275
+  },
+  {
+    "id": "m20",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7319
+  },
+  {
+    "id": "m24",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7454
+  },
+  {
+    "id": "m25",
+    "selected": 7955,
+    "eligible": 7381,
+    "thin_labels": 6829
+  },
+  {
+    "id": "m27",
+    "selected": 6354,
+    "eligible": 6080,
+    "thin_labels": 4666
+  },
+  {
+    "id": "m28",
+    "selected": 6420,
+    "eligible": 3346,
+    "thin_labels": 2966
+  },
+  {
+    "id": "m29",
+    "selected": 3400,
+    "eligible": 768,
+    "thin_labels": 54
+  },
+  {
+    "id": "m3",
+    "selected": 2960,
+    "eligible": 839,
+    "thin_labels": 389
+  },
+  {
+    "id": "m32",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7190
+  },
+  {
+    "id": "m33",
+    "selected": 8192,
+    "eligible": 8055,
+    "thin_labels": 5738
+  },
+  {
+    "id": "m34",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7017
+  },
+  {
+    "id": "m35",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6832
+  },
+  {
+    "id": "m36",
+    "selected": 6758,
+    "eligible": 6568,
+    "thin_labels": 5968
+  },
+  {
+    "id": "m37",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7319
+  },
+  {
+    "id": "m38",
+    "selected": 7068,
+    "eligible": 7068,
+    "thin_labels": 4909
+  },
+  {
+    "id": "m39",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6884
+  },
+  {
+    "id": "m42",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 5608
+  },
+  {
+    "id": "m43",
+    "selected": 8079,
+    "eligible": 8046,
+    "thin_labels": 6925
+  },
+  {
+    "id": "m44",
+    "selected": 2665,
+    "eligible": 326,
+    "thin_labels": 83
+  },
+  {
+    "id": "m45",
+    "selected": 7785,
+    "eligible": 7785,
+    "thin_labels": 6668
+  },
+  {
+    "id": "m48",
+    "selected": 6879,
+    "eligible": 6879,
+    "thin_labels": 6340
+  },
+  {
+    "id": "m49",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6015
+  },
+  {
+    "id": "m50",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6442
+  },
+  {
+    "id": "m51",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 3336
+  },
+  {
+    "id": "m52",
+    "selected": 5964,
+    "eligible": 5964,
+    "thin_labels": 5088
+  },
+  {
+    "id": "m53",
+    "selected": 4070,
+    "eligible": 4070,
+    "thin_labels": 3074
+  },
+  {
+    "id": "m54",
+    "selected": 8192,
+    "eligible": 8157,
+    "thin_labels": 7579
+  },
+  {
+    "id": "m55",
+    "selected": 7222,
+    "eligible": 7222,
+    "thin_labels": 5709
+  },
+  {
+    "id": "m56",
+    "selected": 2553,
+    "eligible": 473,
+    "thin_labels": 60
+  },
+  {
+    "id": "m57",
+    "selected": 7838,
+    "eligible": 7677,
+    "thin_labels": 6476
+  },
+  {
+    "id": "m58",
+    "selected": 8015,
+    "eligible": 8015,
+    "thin_labels": 6795
+  },
+  {
+    "id": "m59",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6229
+  },
+  {
+    "id": "m6",
+    "selected": 6644,
+    "eligible": 6499,
+    "thin_labels": 5955
+  },
+  {
+    "id": "m61",
+    "selected": 6440,
+    "eligible": 6303,
+    "thin_labels": 5371
+  },
+  {
+    "id": "m62",
+    "selected": 8192,
+    "eligible": 8176,
+    "thin_labels": 5907
+  },
+  {
+    "id": "m63",
+    "selected": 7968,
+    "eligible": 7968,
+    "thin_labels": 6899
+  },
+  {
+    "id": "m64",
+    "selected": 6765,
+    "eligible": 6765,
+    "thin_labels": 5826
+  },
+  {
+    "id": "m65",
+    "selected": 7014,
+    "eligible": 6923,
+    "thin_labels": 5840
+  },
+  {
+    "id": "m66",
+    "selected": 5759,
+    "eligible": 5353,
+    "thin_labels": 4273
+  },
+  {
+    "id": "m67",
+    "selected": 7001,
+    "eligible": 6404,
+    "thin_labels": 5276
+  },
+  {
+    "id": "m68",
+    "selected": 2330,
+    "eligible": 291,
+    "thin_labels": 86
+  },
+  {
+    "id": "m69",
+    "selected": 4736,
+    "eligible": 2523,
+    "thin_labels": 366
+  },
+  {
+    "id": "m70",
+    "selected": 6322,
+    "eligible": 6183,
+    "thin_labels": 5518
+  },
+  {
+    "id": "m71",
+    "selected": 3188,
+    "eligible": 825,
+    "thin_labels": 575
+  },
+  {
+    "id": "m72",
+    "selected": 7693,
+    "eligible": 7693,
+    "thin_labels": 6019
+  },
+  {
+    "id": "m74",
+    "selected": 8192,
+    "eligible": 8014,
+    "thin_labels": 7083
+  },
+  {
+    "id": "m75",
+    "selected": 8192,
+    "eligible": 7995,
+    "thin_labels": 2094
+  },
+  {
+    "id": "m77",
+    "selected": 8192,
+    "eligible": 7704,
+    "thin_labels": 6092
+  },
+  {
+    "id": "m78",
+    "selected": 7559,
+    "eligible": 7431,
+    "thin_labels": 6333
+  },
+  {
+    "id": "m79",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7211
+  },
+  {
+    "id": "m8",
+    "selected": 4147,
+    "eligible": 1917,
+    "thin_labels": 1647
+  },
+  {
+    "id": "m81",
+    "selected": 8192,
+    "eligible": 8102,
+    "thin_labels": 7160
+  },
+  {
+    "id": "m82",
+    "selected": 2839,
+    "eligible": 0,
+    "thin_labels": 0
+  },
+  {
+    "id": "m83",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7631
+  },
+  {
+    "id": "m84",
+    "selected": 7339,
+    "eligible": 7339,
+    "thin_labels": 6606
+  },
+  {
+    "id": "m87",
+    "selected": 2674,
+    "eligible": 433,
+    "thin_labels": 103
+  },
+  {
+    "id": "m88",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6590
+  },
+  {
+    "id": "m9",
+    "selected": 6981,
+    "eligible": 3034,
+    "thin_labels": 1139
+  },
+  {
+    "id": "m90",
+    "selected": 6107,
+    "eligible": 6107,
+    "thin_labels": 4407
+  },
+  {
+    "id": "m93",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7855
+  },
+  {
+    "id": "m94",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 6709
+  },
+  {
+    "id": "m95",
+    "selected": 8192,
+    "eligible": 8192,
+    "thin_labels": 7648
+  },
+  {
+    "id": "m98",
+    "selected": 7767,
+    "eligible": 7505,
+    "thin_labels": 6276
+  }
+]

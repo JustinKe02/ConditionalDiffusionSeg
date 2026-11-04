@@ -1,0 +1,17 @@
+{
+  "parameters": [
+    2465,
+    2465
+  ],
+  "backbone_trainable": 0,
+  "updates_per_arm": 600,
+  "batch": 512,
+  "pixel_draws_per_arm": 307200,
+  "training_seed": 42,
+  "pool_class_counts": [
+    0,
+    339319,
+    244927,
+    0
+  ]
+}

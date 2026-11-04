@@ -1,0 +1,35 @@
+{
+  "status": "failed",
+  "arms": {
+    "ordinal": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Training and full best-checkpoint validation completed"
+    },
+    "onehot": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Training and full best-checkpoint validation completed"
+    },
+    "permuted": {
+      "retries": 0,
+      "status": "arm_completed",
+      "message": "Training and full best-checkpoint validation completed"
+    },
+    "direct": {
+      "retries": 0,
+      "status": "failed",
+      "message": "CUDA allocation failure; configuration is frozen and automatic retry is disabled"
+    }
+  },
+  "current_arm": "direct",
+  "message": "CUDA allocation failure; configuration is frozen and automatic retry is disabled",
+  "expected_commit": "7f8ca3e30ac0b13b18de847a63b522dac1ccadd4",
+  "pid": 13184,
+  "updated_at_utc": "2026-11-04T04:37:41.531391+00:00",
+  "completed_arms": [
+    "ordinal",
+    "onehot",
+    "permuted"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+ "note": "oracle anchors per class, preliminary; 16 joint-eligible images; fitted only on eligible train-fold images",
+ "n": 16,
+ "targetCount": 80,
+ "perImage": {
+  "m111": {
+   "same_same": 1.0,
+   "same_cross": 0.99609375,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m39": {
+   "same_same": 0.71875,
+   "same_cross": 0.90234375,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m153": {
+   "same_same": 0.8828125,
+   "same_cross": 0.80859375,
+   "cross_cross": 0.8125,
+   "target_target": 0.75
+  },
+  "m2": {
+   "same_same": 1.0,
+   "same_cross": 0.953125,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m37": {
+   "same_same": 1.0,
+   "same_cross": 0.9244791666666666,
+   "cross_cross": 0.9973958333333333,
+   "target_target": 1.0
+  },
+  "m118": {
+   "same_same": 1.0,
+   "same_cross": 0.87890625,
+   "cross_cross": 0.921875,
+   "target_target": 1.0
+  },
+  "m141": {
+   "same_same": 1.0,
+   "same_cross": 0.892578125,
+   "cross_cross": 0.953125,
+   "target_target": 1.0
+  },
+  "m59": {
+   "same_same": 0.8385416666666666,
+   "same_cross": 0.8229166666666667,
+   "cross_cross": 0.8515625,
+   "target_target": 0.8333333333333333
+  },
+  "m110": {
+   "same_same": 1.0,
+   "same_cross": 0.9375,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m14": {
+   "same_same": 1.0,
+   "same_cross": 0.73046875,
+   "cross_cross": 0.75,
+   "target_target": 0.75
+  },
+  "m147": {
+   "same_same": 1.0,
+   "same_cross": 0.984375,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m166": {
+   "same_same": 1.0,
+   "same_cross": 1.0,
+   "cross_cross": 1.0,
+   "target_target": 1.0
+  },
+  "m158": {
+   "same_same": 0.75,
+   "same_cross": 0.76171875,
+   "cross_cross": 0.75,
+   "target_target": 0.75
+  },
+  "m145": {
+   "same_same": 0.8333333333333333,
+   "same_cross": 0.6901041666666667,
+   "cross_cross": 0.5260416666666667,
+   "target_target": 0.5
+  },
+  "m156": {
+   "same_same": 0.9296875,
+   "same_cross": 0.890625,
+   "cross_cross": 0.8515625,
+   "target_target": 0.8333333333333333
+  },
+  "m100": {
+   "same_same": 0.85546875,
+   "same_cross": 0.8515625,
+   "cross_cross": 0.75390625,
+   "target_target": 0.75
+  }
+ }
+}

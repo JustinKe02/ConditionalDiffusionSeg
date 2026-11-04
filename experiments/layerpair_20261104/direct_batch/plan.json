@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "expected_commit": "7f8ca3e30ac0b13b18de847a63b522dac1ccadd4",
+  "order": [
+    "ordinal",
+    "onehot",
+    "permuted",
+    "direct"
+  ],
+  "configs": {
+    "ordinal": {
+      "path": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/configs/ordinal.json",
+      "sha256": "d667a363a970d7fe6c23a9b86722390a5fa114007cd4c2686829325aca3cbd1e"
+    },
+    "onehot": {
+      "path": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/configs/onehot.json",
+      "sha256": "8c6af201fdc75241b2c1157db399b0b50445b650c162e1ddd32435376d314eba"
+    },
+    "permuted": {
+      "path": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/configs/permuted.json",
+      "sha256": "b04e5614dd3329e8ae65701252cbbe45b6eb78d184273be5355b109844c0451c"
+    },
+    "direct": {
+      "path": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/configs/direct.json",
+      "sha256": "1c72c973050ddca61eddf5ec955751cec12f953b9e5d397d546464af5aba490c"
+    }
+  },
+  "runs": {
+    "ordinal": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/ordinal",
+    "onehot": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/onehot",
+    "permuted": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/permuted",
+    "direct": "/root/autodl-tmp/ConditionalDiffusionSeg/outputs/diffusion_seg_20261103/direct"
+  },
+  "budgets": {
+    "ordinal": {
+      "epochs": 150,
+      "batch_size": 12,
+      "updates_per_epoch": 20,
+      "total_updates": 3000,
+      "total_crop_exposures": 36000,
+      "validation_epochs": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120,
+        135,
+        150
+      ],
+      "training_validation_passes": 10,
+      "final_best_validation_passes": 1
+    },
+    "onehot": {
+      "epochs": 150,
+      "batch_size": 12,
+      "updates_per_epoch": 20,
+      "total_updates": 3000,
+      "total_crop_exposures": 36000,
+      "validation_epochs": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120,
+        135,
+        150
+      ],
+      "training_validation_passes": 10,
+      "final_best_validation_passes": 1
+    },
+    "permuted": {
+      "epochs": 150,
+      "batch_size": 12,
+      "updates_per_epoch": 20,
+      "total_updates": 3000,
+      "total_crop_exposures": 36000,
+      "validation_epochs": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120,
+        135,
+        150
+      ],
+      "training_validation_passes": 10,
+      "final_best_validation_passes": 1
+    },
+    "direct": {
+      "epochs": 150,
+      "batch_size": 12,
+      "updates_per_epoch": 20,
+      "total_updates": 3000,
+      "total_crop_exposures": 36000,
+      "validation_epochs": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90,
+        105,
+        120,
+        135,
+        150
+      ],
+      "training_validation_passes": 10,
+      "final_best_validation_passes": 1
+    }
+  },
+  "protocol": {
+    "manifest": "/root/autodl-tmp/ConditionalDiffusionSeg/data_manifests/source_dataset.json",
+    "device": "cuda",
+    "workers": 8,
+    "cpu_threads": 4,
+    "epochs": 150,
+    "batch_size": 12,
+    "crop_size": 512,
+    "stride": 384,
+    "crops_per_image": 2,
+    "thin_crop_fraction": 0.5,
+    "photometric_gain": 0.1,
+    "photometric_gamma": 0.1,
+    "lr": 0.0002,
+    "min_lr": 1e-06,
+    "warmup_epochs": 8,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "timesteps": 1000,
+    "sampling_steps": 20,
+    "sampling_seed": 3407,
+    "window_batch_size": 16,
+    "val_every": 15,
+    "boundary_tolerance": 2,
+    "seed": 42,
+    "ce_weight": 0.5,
+    "dice_weight": 0.5,
+    "reconstruction_weight": 1.0,
+    "prior_loss_weight": 0.5,
+    "model": {
+      "widths": [
+        32,
+        64,
+        128,
+        192
+      ],
+      "token_dim": 256,
+      "heads": 4,
+      "na_kernel": 7
+    }
+  },
+  "provenance": {
+    "source": {
+      "src/conditional_diffusion/__init__.py": "fe32a5ad86e88f26078c5f3548ad395ff8fb1c03a9ff648861b660a3bda98147",
+      "src/conditional_diffusion/data.py": "2ee6dd19025787880add8b42536e3be93ccba0253604c8b75539ed33ebf3a115",
+      "src/conditional_diffusion/model.py": "47e4d44cbc939ae22cfaff2f62d2ec153166db605b51692fc3bc2f338f138d76",
+      "src/conditional_diffusion/diffusion.py": "ecc76c3e7e6ca88263ea4faa99ea1bdf1341ad2b7e7031eafe9efd77fb75319f",
+      "src/conditional_diffusion/objectives.py": "a41953e4360075a3015ed6372413c47aed6511d101eece0f8e8f8cd2cad719d4",
+      "src/conditional_diffusion/metrics_impl.py": "20bb74815f4f517b64630a05ee16513ba592e573e166e3ac0d42a22393e63a91",
+      "src/conditional_diffusion/inference.py": "982f040aef5b5e28c7865c3e788d4e88b47f89153dd8ab693473683cc8bc1417",
+      "src/conditional_diffusion/runtime.py": "76ca37f6d6d5d75905c86a20e12787153a53a5e699a15e6cfa7eb4c362b8d665",
+      "src/conditional_diffusion/trainer.py": "f7591ae1128b70a49439140f8c85f00f1b8b301e705de543ffb13419b35e490b",
+      "src/conditional_diffusion/recycling.py": "7f84d12950096c8fac9468c1d830eddef091b4baa9e8d1d97e7a01dcb070e458",
+      "src/conditional_diffusion/reference_data.py": "c01741628a50b42a798aa7a4716254e3826b59acc53e222edd7905732f069f65",
+      "src/conditional_diffusion/condition_model.py": "4600aae2957d643093f3001f78f767da1aa4c54eeaad6c976bf9c06b1a29e3fe",
+      "src/conditional_diffusion/reference_adapter.py": "7fe89d8b1913165b6dd924ab5e417ad8295e4ebf31e3dd373dd6d42d3d7a171e",
+      "src/conditional_diffusion/static_semantic.py": "162cbf1e7d4656b751646b8ed367ae99ef168961293b12aa2477a9a3e968019f",
+      "src/conditional_diffusion/static_experiment.py": "ab4acc3e4651f0052c897dfb96e3054d424cc4ab11ee439af033bef57752f858",
+      "src/conditional_diffusion/state_objective.py": "6891a06789aaf9e71d8364061df2bb9ab988b5efd138122dfb473eb9e65e98e8",
+      "src/conditional_diffusion/material_conditions.py": "fb3040d4133e318cdd510bc0ef79e5acc10082e68a1df049a95c25532308e11d",
+      "src/conditional_diffusion/material_categorical.py": "dba159faa2a20a0ecde6e9adc6a84b8d7aa91438081e61c7e1e2fe15651fb804",
+      "src/conditional_diffusion/material_experiment.py": "4e1ff56e569e0af4735111d815b170c9af3c1933e0890949698a56ee77277ddd",
+      "src/conditional_diffusion/mask_diffusion.py": "f5e69ebd871b415a04e76e30df14f0343229e70409d65fc35b9bd4cb4b6be0ea",
+      "src/conditional_diffusion/diffusion_seg_model.py": "12360f0c1a53f0d09563997a6cd1752d4ed800e8847f21af50dcc4431285b9a3",
+      "src/conditional_diffusion/diffusion_seg_experiment.py": "4333de47ca8999deffcddd2d9cda2baf82ca32f04c5c636687cb7c3d077e998f",
+      "scripts/check_storage.py": "81adfd0f97e1f3f2b1b38ed85782629dd29f6b1e0d1fb48685f8fa5c027b9f69",
+      "scripts/train.py": "5b84500da3e48daa462aa3d16eeea8b75c8b2eae2dab768ffc98ce3b005fc538",
+      "scripts/audit_data.py": "d28464ac30a5031d89646bc25468ea94c192f8efdf42b943a03c2ec6cc6192ae",
+      "scripts/evaluate.py": "0f6550a4cdfc2ca3d2d07ebc4803d7924b8f68dda02416d4c74138f1b21c70be",
+      "scripts/plot_curves.py": "3f6cbb4e077b66a3f143b31559a570dcec17416c2b46a2994a7b9fe6754ea920",
+      "scripts/smoke_resources.py": "0d14bc1c24829882636023a1f8aef8e5c2b0b444b7d5632f6ca5f191ee3fd0f5",
+      "scripts/verify_pipeline.py": "a4d267b769d42ea7a92d7ac9e71f1727e7d67eabddf266ed4d96721da07988d2",
+      "scripts/setup_diffusion.sh": "a4688889a8c53126fc6ebaf6d59835143619b80607f222a221658a9e73c66533",
+      "scripts/prepare_p0.py": "d5eb8af80b09cfb8b4400800dcbc0e44a97d6a66b366fd79e4f1bb3c722c299a",
+      "scripts/check_p0.py": "f6b1b88feb99e9887e05b643a2a8de58012c22a227c5a40cc583ee82926910f3",
+      "scripts/check_environment.py": "76084f532f0f75fe05521866e57ce25dc018c70c2dd3df7c13050925fa058748",
+      "scripts/run_experiments.sh": "1c34f076df6c506c3e2f32e886f5ddef042200eb779b1a0bf7f6e562a2b0a69d",
+      "scripts/summarize_batch.py": "c307a7e29346d927148528cbbee78d0d905f6dea953738fff07db9e60756befe",
+      "scripts/run_p0_ablations.py": "3b8209e13f77659434e7d307b170b5a2e2ca824b5f5120ce7fa2a61f98e8a37b",
+      "scripts/diffusion_seg.py": "975e811d6d4c01085c1bec09a730321964290518c9cb1cada26f60392fbb646a",
+      "scripts/profile_diffusion_seg.py": "be06c51cd88d450eaadbf7d346f7974724b7421694f0537668e8951871c3c992",
+      "scripts/run_diffusion_seg.sh": "ef2372a1a35d575e9d0776415a442dc337d456ba51b138e8732f19aa3206948d",
+      "configs/experiment_plan.json": "51621f11c5c129d4e2292f2c601f0535fa6caedc64f085f5662771bc088cc969",
+      "configs/pilot.json": "6e23ffece1236512a6a65d062ad9f41af7bf3c2d39a1c50c4fe824db2afde69a",
+      "configs/formal.json": "b1fa2c69d2336e6b20a3d54f5ed2b4a8420cf8179d31a554ba25431fcaf2ecad",
+      "configs/debug.json": "8f4048ea43df80a831dcfe3d24b05ea0434ad2aa69c34d1464b2dff84501d399",
+      "configs/p0.json": "b6cbe1a3cc9d2a8bc89707310b7f03cae012a9f1864c8923a141d678229c675a",
+      "configs/p0_high_noise.json": "0feede98f8e9722e3f6c491c9caf867401402456cf60715f6ccfc1d620c4a8a2",
+      "configs/p0_cosine_lr.json": "f15fc2c3fabdbf277d8d1f7654f08b352f6f461211da6d2e371e8ba0d74f11eb",
+      "configs/pilot_high_noise.json": "2ab3385f53899c26e4c3d94066415cc086b4ac52f2d78c4dfceeeea314a000d6",
+      "configs/pilot_recycling.json": "617958b830e12d21cd0e5b30fa28c63cab5a112273e95fb5660774fd6425544f",
+      "configs/pilot_uniform_recycling.json": "ef69f9e05542562dded739fa1843711c78d41ee87b35b2c16885fdd543f9ca88",
+      "configs/pilot_dual_head.json": "449b894237a102012be62105e08584849d20aab41df9606724bff0eedc9a1bfc",
+      "configs/pilot_reference_f0.json": "6e95970606434173d881bd17e7a1999055a879751f698e48c9dda306ab14ca58",
+      "configs/pilot_reference_f1.json": "0e81a5bb70114e7dcfbfa8a11c9e703052b63cb584e7371c1d8a016b386c4782",
+      "configs/pilot_reference_adapter_a.json": "1fff32313e42f955013c35b98de8317770ea017da50de4d2ef90ddb5e2b9d6f0",
+      "configs/pilot_reference_adapter_b.json": "cc363061b8eaeb932c7f25c96c350d4a37052125160f233256146f8bafa4c487",
+      "configs/pilot_static_semantic_s0.json": "65471a7cefda441beb804e5e5e7932c5229c93015b83cc42ab338748f2fae52a",
+      "configs/pilot_static_semantic_s1.json": "13bafbb227812bf11ee377844d5175a17c3cee1425bc406091b2d4bf07ba9cb3",
+      "configs/pilot_static_semantic_s2.json": "91b2bed137fa26232ffff40b7b9e23d554a7e8b32b98d2d4ef579794fc646e2f",
+      "configs/pilot_state_objective_p0.json": "8e95abda2582925df0c604a96ff28510d0d45a75935200d62c8cac33d5991ba7",
+      "configs/pilot_state_objective_p1.json": "0d2f5d905290d3b6fd026f99e8744dd388d514afed98f88ef184ebc4129fff91",
+      "configs/material_categorical_n0.json": "2364ebac92f896d8f3a8170903765c6ad58eca3a2d66c2803d8d173859303e5e",
+      "configs/material_categorical_n1.json": "5c3e4b35889c17f261c8a95f9b052ed1a7330729400cb63161a0bd64480c5621",
+      "configs/material_categorical_n2.json": "2ead5292934c956e79e48a7b2c53d167a28661eb0a7b04af9a674ac488a7c560",
+      "configs/material_categorical_n3.json": "75683783f6e848f266f950772ddba98f92fd164206345cc675203bb1844f2072",
+      "configs/diffusion_seg_onehot.json": "8c6af201fdc75241b2c1157db399b0b50445b650c162e1ddd32435376d314eba",
+      "configs/diffusion_seg_ordinal.json": "d667a363a970d7fe6c23a9b86722390a5fa114007cd4c2686829325aca3cbd1e",
+      "configs/diffusion_seg_permuted.json": "b04e5614dd3329e8ae65701252cbbe45b6eb78d184273be5355b109844c0451c",
+      "configs/diffusion_seg_direct.json": "1c72c973050ddca61eddf5ec955751cec12f953b9e5d397d546464af5aba490c"
+    },
+    "manifest": "632ae9cd6ebb53cb0306c3ee1eb4bf6c872bf748ef449554557ee3118d37dc8c",
+    "splits": {
+      "train": "e99bd53e964c00b3a8c82dc696e05bab61942211b7d4cb0b4790497248c4b0e4",
+      "val": "55ee8360ac48c2150cd60ee451f42059b3fe9463d23b5e5697a938131319db27"
+    }
+  },
+  "selection": "validation four-class mIoU; evaluate best before next arm",
+  "retry_policy": "At most one automatic checkpoint resume per arm; stop immediately on CUDA OOM"
+}

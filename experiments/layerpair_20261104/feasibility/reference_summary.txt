@@ -1,0 +1,8 @@
+{'epoch': 99, 'step': 1980, 'sha256': 'aadd2f233b814a7e92981dc8a7ab9c4dc7eef84b4c55e223e7b08bf517cf4dc8', 'rule': 'at most four 32x32 anchors per thin class, one per 8-connected predicted majority component, select maximal minimum of 2x2 prior cell probabilities; ties row-major; complete native cells only', 'levels': [0.7, 0.85, 0.95]}
+completed 25
+completed 50
+completed 75
+completed 100
+0.7 {'n': 300, 'correct': 273, 'any_img': 119, 'two_true_regions': 88, 'both_correct': 86, 'any_good': 119, 'byclass': {1: [153, 145], 2: [147, 128]}, 'thinimages': 120, 'gtboth': 91}
+0.85 {'n': 291, 'correct': 273, 'any_img': 119, 'two_true_regions': 88, 'both_correct': 86, 'any_good': 119, 'byclass': {1: [150, 145], 2: [141, 128]}, 'thinimages': 120, 'gtboth': 91}
+0.95 {'n': 287, 'correct': 272, 'any_img': 119, 'two_true_regions': 88, 'both_correct': 86, 'any_good': 119, 'byclass': {1: [150, 145], 2: [137, 127]}, 'thinimages': 120, 'gtboth': 91}

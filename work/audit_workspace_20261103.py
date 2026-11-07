@@ -84,6 +84,14 @@ for p in pyfiles:
  except Exception as e:syntax.append({'path':str(p.relative_to(ROOT)),'error':str(e)})
 report['syntax']={'files':len(pyfiles),'errors':syntax}
 report['paper_variants']=[{'path':str(p.relative_to(ROOT)),'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted((ROOT/'docs/thesis').rglob('chapters/04_flow.md'))]
+report['document_build_findings']=[
+ {'file':str((DOC/'scripts/revise_chapter4_assets.py').relative_to(ROOT)), 'line':12,
+  'problem':'ROOT=O.parents[2] resolves to project/docs in this nested copy; required source JSON is absent.'},
+ {'file':str((DOC/'scripts/chapter5_plots.py').relative_to(ROOT)), 'line':8,
+  'problem':'Output directory is hard-coded to the older chapter5_revision_20261101 copy.'},
+ {'file':'work/chapter_controlled_20261031/benchmark.py', 'line':22,
+  'problem':'Agreement checks cover m108 only. The latest integrated chapter explicitly states this scope; not an outstanding manuscript error.'}]
+report['leave_one_out_note']='R-I mIoU difference becomes +0.54447156 pp when m109 is omitted. Sensitivity only; the primary evaluation retains all 25 images.'
 report['checks_passed']=not(report['frozen_sources']['mismatches'] or report['frozen_data']['mismatches'] or syntax or missing) and all(checks) and max(cis)<1e-10 and all(v['checkpoint_hash_matches'] and v['max_metric_absolute_error']<1e-12 for v in rep.values())
 log=Path('/tmp/conditional_diffusion_code_audit_20261103_tests.log')
 if log.exists():

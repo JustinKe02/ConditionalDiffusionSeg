@@ -8,6 +8,7 @@ The direct control keeps the ordinal auxiliary loss and receives zero state/time
 from __future__ import annotations
 
 import contextlib
+import copy
 import hashlib
 import json
 import math
@@ -60,6 +61,16 @@ def validate_config(config):
             raise ValueError(f'{name} must be finite and nonnegative')
     if config['min_lr'] > config['lr']:
         raise ValueError('min_lr must not exceed lr')
+    vignette = config.get('photometric_vignette', 0.0)
+    if isinstance(vignette, bool) or not isinstance(vignette, (int, float)) or not math.isfinite(vignette) or not 0 <= vignette <= 0.5:
+        raise ValueError('photometric_vignette must be finite and in [0, 0.5]')
+    flip_mode = config.get('flip_mode', 'both')
+    if flip_mode not in ('both', 'horizontal'):
+        raise ValueError('flip_mode must be both or horizontal')
+    sigma_rel = config.get('ema_sigma_rel', None)
+    if sigma_rel is not None:
+        if isinstance(sigma_rel, bool) or not isinstance(sigma_rel, (int, float)) or not math.isfinite(sigma_rel) or not 0 < sigma_rel < 1:
+            raise ValueError('ema_sigma_rel must be null or finite in (0, 1)')
     if config['method'] == 'direct' and codec.representation != 'ordinal':
         raise ValueError('The registered direct control uses ordinal auxiliary supervision')
     return codec
@@ -96,8 +107,9 @@ class SegmentationDataset(Dataset):
     condition and is cropped off predictions before any metric computation.
     """
 
-    def __init__(self, config, split='train'):
-        if split not in ('train', 'val'):
+    def __init__(self, config, split='train', allow_test=False):
+        allowed = ('train', 'val', 'test') if allow_test else ('train', 'val')
+        if split not in allowed:
             raise ValueError('This experiment exposes train and val only')
         self.config, self.split, self.epoch = config, split, 0
         self.source = MaterialDataset(config['manifest'], split, augment=False)
@@ -117,12 +129,27 @@ class SegmentationDataset(Dataset):
             values = rgb.astype(np.float32) / 255
             gamma = np.exp(generator.uniform(-config['photometric_gamma'], config['photometric_gamma']))
             gain = 1 + generator.uniform(-config['photometric_gain'], config['photometric_gain'], 3)
-            rgb = (np.clip(values ** gamma * gain, 0, 1) * 255 + .5).astype(np.uint8)
+            vignette = config.get('photometric_vignette', 0.0)
+            if vignette > 0:
+                values = values ** float(gamma) * gain.astype(np.float32)
+                height_raw, width_raw = values.shape[:2]
+                cy = generator.uniform(.3, .7) * height_raw
+                cx = generator.uniform(.3, .7) * width_raw
+                yy = ((np.arange(height_raw, dtype=np.float32) - cy) / (height_raw / 2))[:, None]
+                xx = ((np.arange(width_raw, dtype=np.float32) - cx) / (width_raw / 2))[None, :]
+                values = values * (1 - generator.uniform(0, vignette) * (yy ** 2 + xx ** 2) / 2)[:, :, None]
+                rgb = (np.clip(values, 0, 1) * 255 + .5).astype(np.uint8)
+            else:
+                rgb = (np.clip(values ** gamma * gain, 0, 1) * 255 + .5).astype(np.uint8)
             turns = int(generator.integers(4))
             rgb, mask = np.rot90(rgb, turns), np.rot90(mask, turns)
-            for axis in (0, 1):
+            if config.get('flip_mode', 'both') == 'horizontal':
                 if generator.random() < .5:
-                    rgb, mask = np.flip(rgb, axis), np.flip(mask, axis)
+                    rgb, mask = np.ascontiguousarray(rgb[:, ::-1]), np.ascontiguousarray(mask[:, ::-1])
+            else:
+                for axis in (0, 1):
+                    if generator.random() < .5:
+                        rgb, mask = np.flip(rgb, axis), np.flip(mask, axis)
         rgb, mask = pad_full_image(rgb, mask, config['crop_size'])
         thumbnail, soft = global_inputs(rgb, mask)
         height, width = mask.shape
@@ -217,7 +244,8 @@ def train_step(model, diffusion, optimizer, batch, config):
 
 
 @torch.no_grad()
-def predict_image(model, diffusion, image, thumbnail, ident, config, native_shape=None):
+def predict_image(model, diffusion, image, thumbnail, ident, config, native_shape=None,
+                  sampling_steps=None, sampling_seed=None):
     """Only image-derived conditions enter prediction. The caller owns labels."""
     model.eval()
     device = next(model.parameters()).device
@@ -229,12 +257,14 @@ def predict_image(model, diffusion, image, thumbnail, ident, config, native_shap
     size = config['crop_size']
     if min(height, width) < size or native_h > height or native_w > width:
         raise ValueError('Use aligned full-image padding before prediction')
+    steps = config['sampling_steps'] if sampling_steps is None else sampling_steps
+    seed = config['sampling_seed'] if sampling_seed is None else sampling_seed
     coordinates = [(y, x) for y in positions(height, size, config['stride'])
                    for x in positions(width, size, config['stride'])]
     context = model.encode_global([thumbnail.to(device)])[0]
     noise = None
     if config['method'] == 'diffusion':
-        generator = torch.Generator().manual_seed(image_seed(ident, config['sampling_seed']))
+        generator = torch.Generator().manual_seed(image_seed(ident, seed))
         noise = torch.randn((diffusion.codec.channels, height, width), generator=generator)
     total, counts = torch.zeros((4, height, width)), torch.zeros((height, width))
     batch_size = config['window_batch_size']
@@ -250,7 +280,7 @@ def predict_image(model, diffusion, image, thumbnail, ident, config, native_shap
             probabilities = model.denoise(condition, states, times).softmax(1)
         else:
             states = torch.stack([noise[:, y:y + size, x:x + size] for y, x in part]).to(device)
-            probabilities = diffusion.sample(model, condition, states, config['sampling_steps'])
+            probabilities = diffusion.sample(model, condition, states, steps)
         if not bool(torch.isfinite(probabilities).all()):
             raise FloatingPointError('Nonfinite window probabilities')
         for probability, (y, x) in zip(probabilities.cpu(), part):
@@ -262,26 +292,41 @@ def predict_image(model, diffusion, image, thumbnail, ident, config, native_shap
     prediction = probabilities.argmax(0).numpy().astype(np.uint8)
     if device.type == 'cuda':
         torch.cuda.synchronize(device)
-    steps = 1 if config['method'] == 'direct' else config['sampling_steps']
+    effective_steps = 1 if config['method'] == 'direct' else steps
     return prediction, dict(seconds=time.perf_counter() - started, windows=len(coordinates),
-                            nfe=len(coordinates) * steps, sampling_steps=steps)
+                            nfe=len(coordinates) * effective_steps, sampling_steps=effective_steps)
 
 
 @torch.no_grad()
-def evaluate(model, diffusion, config):
-    dataset = SegmentationDataset(config, 'val')
+def evaluate(model, diffusion, config, split='val', sampling_steps=None, sampling_seed=None,
+             allow_test=False, extra_tolerances=()):
+    dataset = SegmentationDataset(config, split, allow_test=allow_test)
     rows, matrices, boundaries = [], [], []
+    extra_borders = {tol: [] for tol in extra_tolerances}
     for item in dataset:
         target = item['mask'].numpy()
         prediction, timing = predict_image(model, diffusion, item['image'], item['thumb'], item['id'],
-                                           config, native_shape=target.shape)
+                                           config, native_shape=target.shape,
+                                           sampling_steps=sampling_steps, sampling_seed=sampling_seed)
         matrix = confusion(target, prediction)
         border = boundary_counts(target, prediction, config['boundary_tolerance'])
         matrices.append(matrix)
         boundaries.append(border)
-        rows.append(dict(id=item['id'], confusion=matrix.tolist(), boundaries=border.tolist(), **timing))
+        row = dict(id=item['id'], confusion=matrix.tolist(), boundaries=border.tolist(), **timing)
+        for tol in extra_tolerances:
+            eb = boundary_counts(target, prediction, tol)
+            extra_borders[tol].append(eb)
+            row[f'boundaries_tol{tol}'] = eb.tolist()
+        rows.append(row)
     matrix, border = np.sum(matrices, axis=0), np.sum(boundaries, axis=0)
-    return dict(metrics={**summarize_material(matrix), **summarize_boundaries(border)}, images=rows,
+    metrics = {**summarize_material(matrix), **summarize_boundaries(border)}
+    for tol in extra_tolerances:
+        eb_sum = np.sum(extra_borders[tol], axis=0)
+        bmetrics = summarize_boundaries(eb_sum)
+        metrics[f'boundary_f1_foreground_tol{tol}'] = bmetrics['boundary_f1_foreground']
+        for name in ('background', 'monolayer', 'fewlayer', 'multilayer'):
+            metrics[f'boundary_f1_{name}_tol{tol}'] = bmetrics[f'boundary_f1_{name}']
+    return dict(metrics=metrics, images=rows,
                 nfe=sum(row['nfe'] for row in rows), seconds=sum(row['seconds'] for row in rows),
                 error_rate_definition='Original semantic order 0/1/2/3; mono-few and absolute class-distance >=2 errors divided by all native pixels',
                 timing_scope='predict only; excludes disk IO, dataset normalization and metric computation')
@@ -308,10 +353,11 @@ def digest(path):
     return checksum.hexdigest()
 
 
-def provenance(config, project):
+def provenance(config, project, include_test=False):
     manifest = read_manifest(config['manifest'])
+    split_names = ('train', 'val', 'test') if include_test else ('train', 'val')
     return dict(source=source_hashes(project), manifest=digest(config['manifest']),
-                splits={split: digest(manifest['splits'][split]['snapshot_path']) for split in ('train', 'val')})
+                splits={split: digest(manifest['splits'][split]['snapshot_path']) for split in split_names})
 
 
 class RunStorage:
@@ -331,7 +377,7 @@ def atomic_save(path, value, storage, checkpoint=False):
     estimate = 1 << 20
     if checkpoint:
         weights = sum(tensor.numel() * tensor.element_size() for tensor in value['model'].values())
-        estimate += weights * (4 if 'optimizer' in value else 1)
+        estimate += weights * ((4 if 'optimizer' in value else 1) + (1 if 'ema' in value else 0))
     storage.check(estimate)
     temporary = None
     try:
@@ -388,6 +434,39 @@ def run_lock(run):
                 fcntl.flock(stream, fcntl.LOCK_UN)
 
 
+class PowerEMA:
+    """EDM2 power-function EMA profile with fixed sigma_rel (online; no post-hoc snapshots)."""
+    def __init__(self, model, sigma_rel):
+        self.gamma = self.solve(sigma_rel)
+        self.shadow = copy.deepcopy(model).eval().requires_grad_(False)
+        self.n = 0
+
+    @staticmethod
+    def solve(sigma_rel):
+        lo, hi = 0., 1000.
+        for _ in range(200):
+            g = (lo + hi) / 2
+            s = math.sqrt((g + 1) / ((g + 2) ** 2 * (g + 3)))
+            lo, hi = (g, hi) if s > sigma_rel else (lo, g)
+        return (lo + hi) / 2
+
+    @torch.no_grad()
+    def update(self, model):
+        self.n += 1
+        beta = (1 - 1 / self.n) ** (self.gamma + 1)
+        for e, p in zip(self.shadow.parameters(), model.parameters()):
+            e.lerp_(p.detach(), 1 - beta)
+        for e, p in zip(self.shadow.buffers(), model.buffers()):
+            e.copy_(p)
+
+    def state_dict(self):
+        return dict(n=self.n, gamma=self.gamma, model=self.shadow.state_dict())
+
+    def load_state_dict(self, state):
+        self.n = state['n']
+        self.shadow.load_state_dict(state['model'])
+
+
 def scheduler_for(optimizer, config):
     def multiplier(epoch):
         warmup = config['warmup_epochs']
@@ -399,7 +478,7 @@ def scheduler_for(optimizer, config):
     return torch.optim.lr_scheduler.LambdaLR(optimizer, multiplier)
 
 
-def train(config, run, project, resume=False, stop_after_epoch=None):
+def train(config, run, project, resume=False, stop_after_epoch=None, max_batches=None):
     configure(config)
     run, project = Path(run).resolve(), Path(project).resolve()
     if not run.is_relative_to(project / 'outputs') or run == project / 'outputs':
@@ -421,6 +500,8 @@ def train(config, run, project, resume=False, stop_after_epoch=None):
             state = None
         storage = RunStorage(run, config)
         model, diffusion = build(config)
+        ema_sigma_rel = config.get('ema_sigma_rel', None)
+        ema = None if ema_sigma_rel is None else PowerEMA(model, ema_sigma_rel)
         optimizer = torch.optim.AdamW(model.parameters(), lr=config['lr'], weight_decay=config['weight_decay'])
         scheduler = scheduler_for(optimizer, config)
         frozen = provenance(config, project)
@@ -429,14 +510,22 @@ def train(config, run, project, resume=False, stop_after_epoch=None):
             model.load_state_dict(state['model'])
             optimizer.load_state_dict(state['optimizer'])
             scheduler.load_state_dict(state['scheduler'])
+            if ema is not None:
+                if 'ema' not in state:
+                    raise ValueError('EMA checkpoint state is missing')
+                ema.load_state_dict(state['ema'])
             epoch0, step, history, best = state['epoch'], state['global_step'], state['history'], state['best']
             restore_rng(state['rng'])
         atomic_save(run / 'config.json', config, storage)
         atomic_save(run / 'provenance.json', frozen, storage)
+        aug_desc = ('whole-image gamma/gain' +
+                    (', vignette' if config.get('photometric_vignette', 0.0) > 0 else '') +
+                    f", rotations and {config.get('flip_mode', 'both')} flips; edge pad to multiple of 64")
         atomic_save(run / 'metadata.json', dict(parameter_count=sum(p.numel() for p in model.parameters()),
-                    precision='FP32; TF32 disabled', ema=False,
+                    precision='FP32; TF32 disabled',
+                    ema=False if ema_sigma_rel is None else dict(type='PowerEMA', sigma_rel=ema_sigma_rel),
                     direct_control='zero state/time; same ordinal reconstruction loss',
-                    augmentation='whole-image gamma/gain, rotations and flips; edge pad to multiple of 64',
+                    augmentation=aug_desc,
                     validation='val only; best selected by four-class mIoU'), storage)
 
         def commit(epoch):
@@ -445,6 +534,8 @@ def train(config, run, project, resume=False, stop_after_epoch=None):
             payload = dict(config=config, provenance=frozen, model=model.state_dict(), optimizer=optimizer.state_dict(),
                            scheduler=scheduler.state_dict(), rng=rng_state(), epoch=epoch, global_step=step,
                            history=history, best=best)
+            if ema is not None:
+                payload['ema'] = ema.state_dict()
             atomic_save(run / 'last.pt', payload, storage, checkpoint=True)
             # last.pt is the authoritative commit, including the selected weights.
             # A resumed run repairs best.pt/history after any interrupted export.
@@ -464,8 +555,12 @@ def train(config, run, project, resume=False, stop_after_epoch=None):
             sums, seen = {}, 0
             started = time.perf_counter()
             learning_rate = optimizer.param_groups[0]['lr']
-            for batch in loader:
+            for batch_index, batch in enumerate(loader):
+                if max_batches is not None and batch_index >= max_batches:
+                    break
                 terms, gradient = train_step(model, diffusion, optimizer, batch, config)
+                if ema is not None:
+                    ema.update(model)
                 count = len(batch['image'])
                 seen += count
                 step += 1
@@ -474,11 +569,12 @@ def train(config, run, project, resume=False, stop_after_epoch=None):
             row = dict(epoch=epoch, global_step=step, lr=learning_rate, train_seconds=time.perf_counter() - started,
                        train={key: value / seen for key, value in sums.items()})
             if epoch % config['val_every'] == 0 or epoch == config['epochs']:
-                row['validation'] = evaluate(model, diffusion, config)
+                eval_model = model if ema is None else ema.shadow
+                row['validation'] = evaluate(eval_model, diffusion, config)
                 score = row['validation']['metrics']['miou_4class']
                 if best is None or score > best['validation']['metrics']['miou_4class']:
                     best = dict(epoch=epoch, global_step=step, validation=row['validation'],
-                                model={key: value.detach().cpu().clone() for key, value in model.state_dict().items()})
+                                model={key: value.detach().cpu().clone() for key, value in eval_model.state_dict().items()})
             scheduler.step()
             history.append(row)
             commit(epoch)

@@ -239,7 +239,7 @@ def git_head_sha() -> str:
 
 def cmd_prepare(args):
     out = ensure_out_dir(args.out)
-    for sub in ('configs', 'g_onehot', 'g_ordinal', 'eval', 'diagnostics',
+    for sub in ('configs', 'eval', 'diagnostics',
                 'benchmark/objects', 'benchmark/train_objects', 'logs', 'tables', 'figures', 'qa/figure_previews'):
         (out / sub).mkdir(parents=True, exist_ok=True)
 
@@ -505,6 +505,8 @@ def cmd_train(args):
     if DSE.provenance(cfg, ROOT, include_test=False) != plan['provenance']:
         raise RuntimeError('Source or train/val split provenance changed since prepare')
     run_dir = Path(plan['runs'][arm])
+    if not args.resume and run_dir.is_dir() and not any(run_dir.iterdir()):
+        run_dir.rmdir()
     t0 = time.perf_counter()
     res = DSE.train(cfg, run_dir, ROOT, resume=args.resume)
     elapsed = time.perf_counter() - t0
